@@ -1,0 +1,51 @@
+---
+title: "Курс"
+subtitle: "Тема"
+author: "Преподаватель"
+date: "Дата"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    lib_dir: libs
+    css: [libs/main.css, libs/fonts.css, libs/animate.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "8:5"
+---
+class: animated, fadeIn
+## Сегодня
+
+- Ранее в курсе
+
+- Летучка: ...
+
+- ...
+
+- ...
+
+---
+class: animated, fadeIn
+## ...
+
+...
+
+---
+class: animated, fadeIn
+## ...
+
+...
+
+---
+class: animated, fadeIn
+## ...
+
+...
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+### До встречи через неделю
+
