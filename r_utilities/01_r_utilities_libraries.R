@@ -11,6 +11,7 @@ library(styler)
 ## LOADING DATA ----------------------------------------------------------------
 library(readxl)
 library(haven)
+library(gsheet)
 
 ## MANIPULATING data.frames, data.tables etc -----------------------------------
 library(dplyr)
