@@ -1,17 +1,38 @@
-# reports, slides, documentation -----
+# REPORTS, SLIDES, DOCUMENTATION, OUTPUTS ======================================
 library(rmarkdown)
 library(knitr)
 library(xaringan)
 library(stargazer)
+library(broom)
+library(xtable)
 
-# data manipulation -----
+# HANDLING DATA ================================================================
+## LOADING DATA ----------------------------------------------------------------
+library(readxl)
+library(haven)
+
+## MANIPULATING data.frames, data.tables etc -----------------------------------
 library(dplyr)
 library(tidyr)
 library(lubridate)
+library(zoo)
 
-# statistics and econometrics -----
+# STATISTICS and ECONOMETRICS ==================================================
+## CALCULATIONS ----------------------------------------------------------------
 library(lmtest)
 library(sandwich)
+library(clubSandwich)
+library(margins)
+library(erer)
+library(SteinIV)
+library(pROC)
 
-# plots -----
+## DATA COLLECTIONS ------------------------------------------------------------
+library(AER)
+library(wooldridge)
+
+# PLOTS ========================================================================
 library(ggplot2)
+library(GGally)
+library(ggpubr)
+library(scales)
