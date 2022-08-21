@@ -1,0 +1,454 @@
+/*
+CSS for xaringan slides in Middlebury College flavor
+Author: Joseph V. Casillas
+Updated: 06/29/2018
+*/
+
+
+/*
+Blue (official): #0D395F, PMS 294
+Blue accent 1:   #75A3CD, PMS 292
+Blue accent 2:   #97BBD5, PMS 544
+Grey accent 1:   #4C4B4C, PMS 426
+Grey accent 2:   #AAA59F, PMS 401
+*/
+
+/* Package defaults that we slightly tweak */
+
+a, a > code {
+  color: #97BBD5; /* blue accent 2 */
+  text-decoration: none;
+}
+
+/* slightly lower and bigger than default */
+.footnote {
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 95%;
+}
+
+/* important code slightly blue */
+.remark-code-line-highlighted {
+  background-color: #97BBD5 !important;
+}
+
+/* color tweak */
+.inverse {
+  background-color: #272822;
+  color: #777872;
+  text-shadow: 0 0 20px #333;
+}
+
+/* slightly spacing change */
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #f3f3f3;
+  line-height: 1.0em;
+}
+
+/* Two-column layout (slightly wider for aspect ration) */
+.left-column {
+  color: #777;
+  width: 25%;
+  height: 92%;
+  float: left;
+}
+
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+
+/* slightly thiner to suppor aspect ration */
+.right-column {
+  width: 70%;
+  float: right;
+  padding-top: 1em;
+}
+
+.pull-left {
+  float: left;
+  width: 45%;
+}
+
+.pull-right {
+  float: right;
+  width: 45%;
+}
+
+.pull-right ~ * {
+  clear: both;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: solid 5px lightgray;
+  padding-left: 1em;
+}
+
+/* adjust table horizontal spacing */
+th, td {
+    padding:0 15px 0 15px;
+}
+
+/* remove color from tables */
+table {
+  margin: auto;
+  border-top: none;
+  border-bottom: none;
+}
+
+table thead th { border-bottom: none; }
+thead, tfoot, tr:nth-child(even) { background: none; }
+
+/* leave this alone */
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/*~~~~~>>~~~~~~~~~*/
+/* MIDD additions */
+/*~~~~~~~>>~~~~~~~*/
+
+/* Title slide */
+
+/* Add image and change bg color */
+.title-slide {
+  background-image: url('cover.png');
+  background-position: 0% 0%;
+  background-size: cover;
+  background-color: #fff;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* H1 fonts */
+.title-slide h1 {
+  color: #4C4B4C; /* Middlebury blue */
+  padding-top: 250px;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 0.05;
+  text-align: left;
+  text-shadow: none;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+/* H2 fonts */
+.title-slide h2 {
+  color: #0D395F; /* Middlebury grey accent 1 */ 
+  font-size: 56px;
+  text-align: left;
+  text-shadow: none;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+/* H3 fonts */
+.title-slide h3 {
+  font-size: 40px;
+  font-weight: normal;
+  color: #AAA59F; /* Middlebury grey accent 2 */
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+}
+
+/* Remove slide count */
+.title-slide .remark-slide-number {
+  text-shadow: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* SECTION DIVIDERS */
+/*~~~~~~~~~~~~~~~~~~*/
+
+/* section divider blue */
+.title-slide-section-blue {
+  background-color: #0D395F;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider blue H1 fonts */
+.title-slide-section-blue h1, .title-slide-section-blue h2, .title-slide-section-blue h3, .title-slide-section-blue p {
+  color: #AAA59F;
+}
+
+.title-slide-section-blue p {
+  color: #fff;
+}
+
+/* section divider grey */
+.title-slide-section-grey {
+  background-color: #4C4B4C;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider grey H1 fonts */
+.title-slide-section-grey h1, .title-slide-section-grey h2, .title-slide-section-grey h3 {
+  color: #AAA59F;
+}
+
+.title-slide-section-grey p {
+  color: #fff;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* FINAL SLIDE      */
+/*~~~~~~~~~~~~~~~~~~*/
+
+.title-slide-final {
+  background-color: #AAA59F;
+  color: #fff;
+  padding-left: 100px;
+/*  text-shadow: 0 0 3px #333; */  
+  text-align: center;
+}
+
+.title-slide-final h1 {
+  color: #4C4B4C;
+}
+
+.title-slide-final h2 {
+  color: #4C4B4C;
+}
+
+.title-slide-final h3 {
+  color: #0D395F;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~*/
+/* Global adjustments */
+/*~~~~~~~~~~~~~~~~~~~~*/
+
+/* Add padding to all slides for 16:9 aspect ratio */
+.remark-slide-content {
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* Color adjustments for text */
+
+/* Make bold syntax compile to midd-blue */
+strong {
+  color: #0D395F;
+}
+
+.RUred {
+  color: #cc0033;
+}
+
+/* Add blue tag */
+.blue {
+  color: #0D395F;
+  font-weight: bold;
+}
+
+/* Add grey tag */
+.grey {
+  color: #4C4B4C;
+}
+
+.lightgrey {
+  color: #AAA59F;
+}
+
+/* Force black */
+.black {
+  color: black;
+  font-weight: bold;
+}
+
+/* Add white tag */
+.white {
+  color: white;
+}
+
+/*Add blue tag*/
+.blue {
+  color: #00008B;
+}
+
+/* Color adjustments to headers */
+h1 {
+  color: #0D395F;
+}
+
+h3 {
+  color: #4C4B4C;
+}
+
+/* Font size tags */
+.big {
+  font-size: 1.5em;
+}
+
+/* midd blockquote */
+midd-blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: solid 10px #0D395F;
+  background-color: #AAA59F;
+  padding: 1em;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~*/
+/* Extra adjustment   */
+/*~~~~~~~~~~~~~~~~~~~~*/
+
+.remark-slide-content {
+    font-size: 28px;
+}
+
+.bb {
+  border: 2px solid #0E467C;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #0E467C;
+  background: #61B1FF;
+} 
+
+.rb {
+  border: 2px solid #A70B2F;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #A70B2F;
+  background: #F68AA3;
+} 
+
+.gb {
+  border: 2px solid #007A4A;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: #007A4A;
+  background: #4CFBB8;
+  position: relative;
+  bottom: 5px;
+} 
+
+/* Add grey tag */
+.rmk {
+  color: #4C4B4C;
+  font-size: 0.8em;
+  background: #E6E6E6;
+  font-weight: lighter;
+}
+
+.center_img {
+  width: 600px;
+  margin: 0;
+  left: 20%;
+  top: 34%;
+  position: absolute;
+}
+
+.pro {
+  font-style: italic;
+  color: #006400;
+  background: #B6FCB6;
+  font-weight: lighter;
+}
+
+.con {
+  font-style: normal;
+  color: #800000;
+  background: #FFBCA1;
+  font-weight: lighter;
+}
+
+.section {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #92B4F2;
+}
+
+.section h1 {
+    color: #314873;
+    font-size: 62px;
+}
+
+.section h2 {
+    color: #4668A5;
+    font-size: 48px;
+}
+
+.section h3 {
+    color: #4668A5;
+    font-size: 36px;
+}
+
+.hands {
+    text-align: center;
+    background-color: #4CFBB8;
+    background-image: url('hands.png');
+    background-position: 50% 100%;
+    background-size: 25%;
+}
+
+.hands h1 {
+    color: #007A4A;
+    font-size: 62px;
+}
+
+.hands h2 {
+    color: #005533;
+    font-size: 48px;
+}
+
+.hands h3 {
+    color: #4CA180;
+    font-size: 36px;
+}
+
+.tps {
+    text-align: center;
+    background-color: #f2eeb2;
+    background-image: url('tps.png');
+    background-position: 50% 100%;
+    background-size: 33%;
+}
+
+.tps h1 {
+    color: #767424;
+    font-size: 62px;
+}
+
+.tps h2 {
+    color: #C2C070;
+    font-size: 48px;
+}
+
+.tps h3 {
+    color: #767424;
+    font-size: 36px;
+}
+
+}
