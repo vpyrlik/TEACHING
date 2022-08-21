@@ -5,6 +5,7 @@ library(xaringan)
 library(stargazer)
 library(broom)
 library(xtable)
+library(styler)
 
 # HANDLING DATA ================================================================
 ## LOADING DATA ----------------------------------------------------------------
