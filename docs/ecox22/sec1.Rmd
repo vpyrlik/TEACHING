@@ -1,0 +1,67 @@
+---
+title: "Раздел 1. Введение в курс."
+subtitle: "Эконометрика"
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+# Введение
+
+Это вводный раздел курса "Эконометрика". Здесь вы найдете основные сопроводительные инструкции к курсу и материалы для самостоятельного изучения на 1-2 недели семестра.
+
+[Назад на страницу курса](../ecox22.html)
+
+---
+
+# Связь
+
+Для текушей связи мы используем Телеграм. Пожалуйста, присоединяйтесь к общему чату и каналу. В чате можно задать любые вопросы по курсу и получить поддержку. Также в канал и чат будут транслироваться важные новости о ходе курса, информация о занятиях, оценках, новых материалах и пр. Оставайтесь на связи!
+
+- [Общий чат](https://t.me/+0kRsodLpmzRmZjEy)
+
+- [Канал "Важное"](https://t.me/+EEU2C0MI4oYwMzE6)
+
+---
+
+# Материалы
+## Организация курса
+
+- **Краткая программа курса**
+
+  - [Разделы курса, литература](https://docs.google.com/document/d/1cGaK7pvG61RI30DmtLCJt3qhrz1ExxO7hfP_9yeRBtU/edit?usp=sharing)
+  
+  - [Формула и криетрии оценки](https://docs.google.com/document/d/15Ccydaa_jH7cDcTY3i0-kO-YzLyn5TCkXpLY5jxLBFc/edit?usp=sharing)
+
+- [Инструкции по регистрации в Wooclap](https://docs.google.com/document/d/14Iq99s6JZkxJ0v8XJwFprWJGOqDh4MnzOGAnbvkUyQ0/edit?usp=sharing)
+
+## Учебники
+
+- [Основной учебник (на русском)](https://drive.google.com/file/d/1PtKqrh0cXjDLZy4rMeLwN2uH5lvlt7P-/view?usp=sharing)
+
+- [Основной учебник (English)](https://drive.google.com/file/d/1_2CIz-DHImH2K0NT-A6wYtzXhpD1f3zW/view?usp=sharing)
+
+- [Прочее](https://drive.google.com/drive/folders/16cJVmyi_MnzMTPcHWUDhigpaCdBQkm0g?usp=sharing)
+
+## Для самостоятельного изучение
+### ...
+
+---
+
+# *ВиО*
+
+Вопросы можно задать [в чате в Телеграм.](https://t.me/+0kRsodLpmzRmZjEy)
+
+---
+[Назад на страницу курса](../ecox22.html)
