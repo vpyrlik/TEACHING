@@ -1,0 +1,31 @@
+---
+title: "Раздел 1"
+subtitle: "Эконометрика"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+### Введение
+
+...
+
+[Назад на страницу курса](../ecox22.html)
+
+---
+
+### Материалы
+#### Материалы
+
+...
+
+---
+
+#### *ВиО*
+
+Вопросы можно задать в чате [в Телеграм.](https://t.me/+0kRsodLpmzRmZjEy)
+

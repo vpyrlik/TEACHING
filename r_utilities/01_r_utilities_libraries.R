@@ -5,11 +5,13 @@ library(xaringan)
 library(stargazer)
 library(broom)
 library(xtable)
+library(styler)
 
 # HANDLING DATA ================================================================
 ## LOADING DATA ----------------------------------------------------------------
 library(readxl)
 library(haven)
+library(gsheet)
 
 ## MANIPULATING data.frames, data.tables etc -----------------------------------
 library(dplyr)
