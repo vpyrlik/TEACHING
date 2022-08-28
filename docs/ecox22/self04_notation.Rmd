@@ -1,0 +1,35 @@
+---
+title: "Эконометрика"
+subtitle: "Нотация"
+author: "В. Н. Пырлик"
+date: "Август 2022"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    lib_dir: libs
+    css: [libs/main.css, libs/fonts.css, libs/animate.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "16:9"
+---
+class: animated, fadeIn
+## План
+
+- ...
+
+---
+class: section, animated, zoomIn
+## ...
+
+---
+class: animated, fadeIn
+## ...
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+
+

@@ -1,0 +1,65 @@
+---
+title: "Эконометрика"
+subtitle: "Организационные моменты"
+author: "В. Н. Пырлик"
+date: "Август 2022"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    lib_dir: libs
+    css: [libs/main.css, libs/fonts.css, libs/animate.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "16:9"
+---
+class: animated, fadeIn
+## План
+
+- Связь
+
+- Страница курса
+  
+- Wooclap
+
+- Программа и учебники
+
+- Оценка
+
+---
+class: center, animated, zoomIn
+
+## Связь
+
+.pull-left[
+
+**Общий чат**
+
+![](images/ecox22-tg-chat-qr-code.png)
+]
+
+.pull-right[
+
+**Канал "Важное"**
+
+![](images/ecox22-tg-channel-qr-code.png)
+
+]
+
+---
+class: center, animated, zoomIn
+
+## Страница курса
+
+### [**vpyrlik.github.io/TEACHING/ecox22.html**](https://vpyrlik.github.io/TEACHING/ecox22.html)
+
+![](images/ecox22-github-qr-code.png)
+
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+
+
