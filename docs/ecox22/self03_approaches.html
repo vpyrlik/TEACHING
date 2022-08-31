@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 class: animated, fadeIn
 ## План
 
-- Классификации подходов в эконометрике
+- Чтение
 
 - Вероятностный подход
 
@@ -40,12 +40,59 @@ class: animated, fadeIn
 - Параметрические модели
 
 ---
-class: section, animated, zoomIn
-## ...
+class: animated, fadeIn
+## Чтение
+
+**HE, Chapter 1.2**
+
+*The Probability Approach to Econometrics*
+
+&lt;/br&gt;
+
+**SW, Введение**
+
+*Теория, которой соответствует практика*
 
 ---
 class: animated, fadeIn
-## ...
+## Вероятностный подход
+
+- Экономические переменные и данные - **случайные величины**
+
+--
+
+- Взаимосвязи между величинами - **неслучайные, детерминированные**
+
+--
+
+## Параметрический подход
+
+- Зависимости между переменными описываются **моделями с параметрами**
+
+--
+
+- Параметры - **неслучайные, детерминированные**
+
+
+---
+class: animated, fadeIn
+## .gb[Пример.] Запись модели парной линейной регрессии
+
+`$$y = \beta_o + \beta_1 y + u,\;\;\mathbb{E}[u|x]=0,$$`
+--
+
+где:
+
+- `\(y\)` - общие издержки фирмы при производстве `\(x\)` единиц товара,
+
+--
+
+- `\(u\)` - *"случайная ошибка"*
+
+--
+
+- `\(\beta_o\)` - фиксированные издержки, `\(\beta_1\)` - предельные издержки
+
 
 ---
 class: section, animated, zoomIn
@@ -181,7 +228,7 @@ slideshow._releaseMath(document);
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  script.src  = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);

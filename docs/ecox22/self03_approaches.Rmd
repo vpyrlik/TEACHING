@@ -5,7 +5,7 @@ author: "В. Н. Пырлик"
 date: "Август 2022"
 output:
   xaringan::moon_reader:
-    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
     lib_dir: libs
     css: [libs/main.css, libs/fonts.css, libs/animate.css]
     chakra: libs/remark-latest.min.js
@@ -18,7 +18,7 @@ output:
 class: animated, fadeIn
 ## План
 
-- Классификации подходов в эконометрике
+- Чтение
 
 - Вероятностный подход
 
@@ -27,12 +27,59 @@ class: animated, fadeIn
 - Параметрические модели
 
 ---
-class: section, animated, zoomIn
-## ...
+class: animated, fadeIn
+## Чтение
+
+**HE, Chapter 1.2**
+
+*The Probability Approach to Econometrics*
+
+</br>
+
+**SW, Введение**
+
+*Теория, которой соответствует практика*
 
 ---
 class: animated, fadeIn
-## ...
+## Вероятностный подход
+
+- Экономические переменные и данные - **случайные величины**
+
+--
+
+- Взаимосвязи между величинами - **неслучайные, детерминированные**
+
+--
+
+## Параметрический подход
+
+- Зависимости между переменными описываются **моделями с параметрами**
+
+--
+
+- Параметры - **неслучайные, детерминированные**
+
+
+---
+class: animated, fadeIn
+## .gb[Пример.] Запись модели парной линейной регрессии
+
+$$y = \beta_o + \beta_1 y + u,\;\;\mathbb{E}[u|x]=0,$$
+--
+
+где:
+
+- $y$ - общие издержки фирмы при производстве $x$ единиц товара,
+
+--
+
+- $u$ - *"случайная ошибка"*
+
+--
+
+- $\beta_o$ - фиксированные издержки, $\beta_1$ - предельные издержки
+
 
 ---
 class: section, animated, zoomIn
