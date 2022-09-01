@@ -1,0 +1,267 @@
+---
+title: "Введение в курс. Условные матожидания."
+subtitle: "Эконометрика"
+author: "В. Н. Пырлик"
+date: "2 сентября 2022"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    lib_dir: libs
+    css: [libs/main.css, libs/fonts.css, libs/animate.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "16:9"
+---
+class: animated, fadeIn
+## Сегодня
+
+- **Введение в курс**
+
+- **Чем занимается эконометрика?**
+
+- **Эконометрчиеские вопросы**
+
+- **Вероятностный и параметрический подход**
+
+---
+class: animated, fadeIn
+## Сегодня
+
+- Введение в курс
+
+- Чем занимается эконометрика?
+
+- Эконометрчиеские вопросы
+
+- Вероятностный и параметрический подход
+
+- **Пример вопроса и модели**
+
+- **УМО и ЗИМО**
+
+---
+class: middle, hands, animated, flipInY
+
+### Является ли эконометрическим вопрос
+
+## "Существует ли на рынке труда *gender gap* в зарплате?"
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,\;\text{где}$$
+
+--
+
+- $wage$ - зарплата индивида (рублей за последний год),
+
+--
+
+- $female=1,$ если индивид - женщина, $=0$ иначе,
+
+--
+
+- $u$ - "случайное отклонение",
+
+--
+
+- $\beta_o,\beta_1$ - параметры модели.
+
+--
+
+.center[.bb[?] Что здесь случайные величины, а что параметры?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,\;\text{где}$$
+
+- $wage$ - зарплата индивида (рублей за последний год),
+
+- $female=1,$ если индивид - женщина, $=0$ иначе,
+
+- $u$ - "случайное отклонение",
+
+- $\beta_o,\beta_1$ - параметры модели.
+
+.center[.bb[?] Как определить *gender gap*?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0$$
+
+--
+
+$$wage|\{\text{индивид - мужчина}\} = \beta_o+u$$
+
+--
+
+$$wage|\{\text{индивид - женщина}\} = \beta_o+\beta_1+u$$
+
+--
+
+.center[.bb[?] В чем ошибка?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0$$
+
+$$wage|\{\text{индивид - мужчина}\} = \beta_o+u|\{\text{индивид - мужчина}\}$$
+
+$$wage|\{\text{индивид - женщина}\} = \beta_o+\beta_1+u|\{\text{индивид - женщина}\}$$
+
+</br>
+
+--
+
+.center[.rb[!] Очень сложно сравнивать случайные величины "целиком"]
+
+--
+
+.center[**Но можно сравнивать характеристики их распределений**]
+
+--
+
+.center[.bb[?] Какие характеристики мы можем сравнить в этой модели?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:...$$
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] "Простая" "модель" gender gap на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+--
+
+.center[.bb[?] Что мы можем с этим "делать"?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 2.] Абстрактная парная линейная регрессия (*почти*)
+
+$$y = \beta_o+\beta_1x+u,\;\;\mathbb{E}[u|x]=0$$
+$y,x$ - какие-то числовые характеристики (потенциально наблюдаемые)
+
+$u$ - случайная ошибка (ненаблюдаемая)
+
+$\beta_o,\beta_1$ - параметры (потенциально неизвестные)
+
+--
+
+.center[.bb[?] Что мы можем сказать о взаимосвязи наблюдаемых величин?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 2.] Абстрактная парная линейная регрессия (*почти*)
+
+$$y = \beta_o+\beta_1x+u,\;\;\mathbb{E}[u|x]=0$$
+1) $\mathbb{E}[y|x]=\beta_o+\beta_1x$
+
+--
+
+2) $\mathbb{E}y = \beta_o+\beta_1\mathbb{E}x+\mathbb{E}u=\;...$
+
+---
+class: animated, fadeIn
+## Закон итеративных математических ожиданий *aka* **ЗИМО**
+
+--
+
+*aka*
+
+- Law of iterated mathematical expectations, **LIME**
+
+--
+
+- Закон повторных математических ожиданий
+
+---
+class: animated, fadeIn
+## Закон итеративных математических ожиданий *aka* **ЗИМО**
+
+$$\mathbb{E}\Big[\mathbb{E}\big[y\:\big|\:A_1,\:A_2\big]\:\Big|\:A_1\Big]\:=\:E[y|A_1]$$
+
+--
+
+.center[
+.rb[!] **Трюк:** $\mathbb{E}[x]\:\equiv\:\mathbb{E}[x\:|\:\text{"всё что угодно"}]$
+]
+
+--
+
+### .gb[Примеры:]
+
+- $\mathbb{E}\big[\mathbb{E}[y|x]\big]=\mathbb{E}y$
+
+--
+
+- $\mathbb{E}u=\mathbb{E}[\mathbb{E}[u|x]]$
+
+--
+
+  - Если $\mathbb{E}[u|x]=0$, то $\mathbb{E}u=\mathbb{E}[\mathbb{E}[u|x]]=\mathbb{E}[0]=0$
+
+---
+class: animated, fadeIn
+## .gb[Пример 2.] Абстрактная парная линейная регрессия (*почти*)
+
+$$y = \beta_o+\beta_1x+u,\;\;\mathbb{E}[u|x]=0$$
+1) $\mathbb{E}[y|x]=\beta_o+\beta_1x$
+
+2) $\mathbb{E}y = \beta_o+\beta_1\mathbb{E}x+\mathbb{E}u=\;...$
+
+--
+
+$$...=\beta_o+\beta_1\mathbb{E}x.$$
+
+--
+
+</br>
+
+.rb[!] (2) можно получить и из (1), применив $\mathbb{E}$ итеративно.
+
+---
+class: animated, fadeIn
+## Резюме
+
+- Эконометрика занимается применением методов статистики для получения ответов на экономические вопросы двух типов: о взаимосвязи величин и прогнозировании будущего
+
+--
+
+- Мы придерживаемся вероятностного и параметрического подхода
+
+--
+
+- Для ответов на вопросы сложно сравнивать случайные величины "целиком", поэтому мы сравниваем характеристики распределений интересующих величин
+
+--
+
+  - Особенно условные математические ожидания
+
+--
+
+  - Закон итеративных математических ожиданий крут
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+### До встречи через неделю
+
