@@ -85,6 +85,22 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </br>
 
+## Лекция 1 - 02/09/2022
+
+*Введение в курс. Что такое и чем занимается эконометрика. Эконометрические вопросы. Вероятностный и параметрический подход. Простая "модель". Математические ожидания. Условные математические ожидания. Закон итеративных (повторяющихся) математических ожиданий.*
+
+- Запись лекции
+
+<iframe src="https://www.youtube.com/embed/Vkrp_HY6zrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+- **Дополнительно: невошедшее в лекцию.** Закон итеративных математических ожиданий.
+
+<iframe src="https://www.youtube.com/embed/5JWiQBsblvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
 ---
 
 # *ВиО*
