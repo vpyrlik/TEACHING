@@ -89,6 +89,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 *Введение в курс. Что такое и чем занимается эконометрика. Эконометрические вопросы. Вероятностный и параметрический подход. Простая "модель". Математические ожидания. Условные математические ожидания. Закон итеративных (повторяющихся) математических ожиданий.*
 
+- [Слайды](ecox22/lec01_intro_lime.html)
+
 - Запись лекции
 
 <iframe src="https://www.youtube.com/embed/Vkrp_HY6zrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
