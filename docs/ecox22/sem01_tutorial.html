@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2022-09-06" />
+
+<title>Семинар 1. Эмпирическая часть.</title>
+
+<script src="sem01_tutorial_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="sem01_tutorial_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem01_tutorial_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem01_tutorial_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem01_tutorial_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem01_tutorial_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem01_tutorial_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem01_tutorial_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem01_tutorial_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem01_tutorial_files/navigation-1.1/tabsets.js"></script>
+<link href="sem01_tutorial_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem01_tutorial_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 1. Эмпирическая часть.</h1>
+<h4 class="date">2022-09-06</h4>
+
+</div>
+
+
+<p>Эмпирическая часть семинаров проводится на языке программирования <a
+href="https://cran.r-project.org/">R</a> с использованием среды
+разработки <a href="https://www.rstudio.com/">RStudio</a>. В этой
+инструкции вам предлагается вспомнить основные команды, необходимые для
+обработки и анализа данных в R.</p>
+<p>Для начала загружаем необходимые пакеты.</p>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Начнем с загрузки пакетов, которые нужны нам для работы
+(предварительно все они должны быть установлены). Мы рекомендуем
+использовать команды из этих пакетов, но существует и множество других
+способов — выбирайте тот, который вам больше нравится.</p>
+<pre class="r"><code>library(AER)     # пакет содержит наборы данных, используемые в учебнике Стока и Уотсона</code></pre>
+<pre><code>## Warning: package &#39;AER&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;car&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;carData&#39; was built under R version 3.6.3</code></pre>
+<pre class="r"><code>library(dplyr)   # манипуляции с данными
+library(tidyr)   # манипуляции с данными
+library(ggplot2) # визуализация данных</code></pre>
+</div>
+<div id="загрузка-данных" class="section level2">
+<h2>Загрузка данных</h2>
+<p>В этом примере мы работаем данными <a
+href="https://en.wikipedia.org/wiki/Current_Population_Survey">Current
+Population Survey (CPS)</a>. Фрагмент данных можно загрузить, используя
+встроенный набор данных пакета <a
+href="https://rdrr.io/cran/AER/man/CPSSW.html">AER</a> (используйте
+набор данных <code>CPSSWEducation</code>).</p>
+<p>Загрузим встроенный набор данных.</p>
+<pre class="r"><code>data(&quot;CPSSWEducation&quot;)</code></pre>
+</div>
+<div id="разведочный-анализ-данных" class="section level2">
+<h2>Разведочный анализ данных</h2>
+<p>Изучите загруженный набор данных.</p>
+<div id="предварительное-ознакомление-с-данными-и-первичная-обработка"
+class="section level3">
+<h3>Предварительное ознакомление с данными и первичная обработка</h3>
+<p>Посмотрите, какие переменные содержатся в данных и какой тип у этих
+переменных. Для предварительного просмотра данных можно использовать
+команды <code>View()</code>, <code>dplyr::glimpse()</code> и проч.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% glimpse() # то же самое, что glimpse(CPSSWEducation)</code></pre>
+<pre><code>## Rows: 2,950
+## Columns: 4
+## $ age       &lt;int&gt; 30, 30, 30, 30, 30, 30, 30, 29, 29, 30, 29, 29, 29, 29, 29, ~
+## $ gender    &lt;fct&gt; male, female, female, female, female, female, male, male, ma~
+## $ earnings  &lt;dbl&gt; 34.615383, 19.230770, 13.736263, 13.942307, 19.230770, 8.000~
+## $ education &lt;int&gt; 16, 16, 12, 13, 16, 12, 12, 16, 16, 12, 14, 18, 18, 11, 12, ~</code></pre>
+<p>Иногда бывает необходимо создавать новые переменные. Это можно
+сделать при помощи команды <code>dplyr::mutate()</code>. Например,
+создадим переменную, равную 1 для людей с образованием выше среднего
+(будем считать такими тех, у кого количество лет образования больше 11)
+и 0 для всех остальных.</p>
+<pre class="r"><code>CPSSWEducation &lt;- CPSSWEducation %&gt;% mutate(edulevel = ifelse(education &gt; 11, 1, 0))</code></pre>
+</div>
+<div id="описательные-статистики" class="section level3">
+<h3>Описательные статистики</h3>
+<p>Важнейшей частью разведочного анализа является построение таблицы с
+описательными статистиками. В простом виде основные статистики можно
+посмотреть через базовую команду <code>summary()</code>.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% summary()</code></pre>
+<pre><code>##       age          gender        earnings        education        edulevel     
+##  Min.   :29.0   female:1202   Min.   : 2.137   Min.   : 6.00   Min.   :0.0000  
+##  1st Qu.:29.0   male  :1748   1st Qu.:10.577   1st Qu.:12.00   1st Qu.:1.0000  
+##  Median :29.0                 Median :14.615   Median :13.00   Median :1.0000  
+##  Mean   :29.5                 Mean   :16.743   Mean   :13.55   Mean   :0.9237  
+##  3rd Qu.:30.0                 3rd Qu.:20.192   3rd Qu.:16.00   3rd Qu.:1.0000  
+##  Max.   :30.0                 Max.   :97.500   Max.   :18.00   Max.   :1.0000</code></pre>
+<p>Более сложный, но гибкий и полезный способ — использовать команду
+<code>dplyr::summarise()</code> в комбинации с другими командами пакетов
+<code>dplyr</code> и <code>tidyr</code>.</p>
+<pre class="r"><code>CPSSWEducation %&gt;%
+  summarise(across(where(is.numeric), 
+                   list(mean = mean, median = median, sd = sd, min = min, max = max), 
+                   na.rm = TRUE)) %&gt;% 
+  pivot_longer(everything(), names_to = &quot;name&quot;, values_to = &quot;value&quot;) %&gt;% 
+  separate(name, c(&quot;variable&quot;, &quot;statistic&quot;), sep = &quot;_&quot;) %&gt;%
+  pivot_wider(names_from = statistic, values_from = value) %&gt;%
+  arrange(variable) %&gt;% 
+  select(variable, mean, median, sd, min, max)</code></pre>
+<pre><code>## # A tibble: 4 x 6
+##   variable    mean median    sd   min   max
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 age       29.5     29   0.500 29     30  
+## 2 earnings  16.7     14.6 9.40   2.14  97.5
+## 3 education 13.6     13   2.31   6     18  
+## 4 edulevel   0.924    1   0.265  0      1</code></pre>
+</div>
+<div id="графический-анализ" class="section level3">
+<h3>Графический анализ</h3>
+<p>Графический анализ данных — процесс творческий. Команды пакета
+<code>ggplot2</code> позволяют строить самые разные графики. Можно также
+использовать базовые возможности R и многие другие пакеты.</p>
+<p>Сопоставить между собой непрерывную переменную (например, доход) и
+дискретную переменную (например, пол) можно, построив “ящик с усами”
+(boxplot) или график плотности распределения (density plot) отдельно для
+каждого пола.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(y = earnings, x = gender)) + 
+  geom_boxplot()</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(earnings, col = gender, fill = gender)) + 
+  geom_density(alpha = 0.25)</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Визаулизировать связь между двумя непрерывными переменными можно,
+использую диаграмму рассеяния (scatter plot). В данном конкретном
+примере переменная <code>education</code> не совсем непрерывная, т. к.
+количество лет образования может принимать только целочисленные
+значения, но т. к. таких значений достаточно много, можно притвориться,
+что она таковой является.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(education, earnings)) +
+  geom_jitter(width = 0.25, alpha = 0.5) + 
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) + 
+  scale_x_continuous(name = &quot;Years of education&quot;, breaks = seq(6, 18, 1), minor_breaks = FALSE) + 
+  scale_y_continuous(name = &quot;Average hourly earnings&quot;)</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Команда <code>geom_jitter</code> на графике выше нужна для
+наглядности, т. к. в противном случае точки бы накладывались друг на
+друга (попробуйте построить график без этой команды и посмотрите, что
+выйдет). Дополнительно на графике выше показан способ для подписи осей.
+В качестве альтернативы можно использовать команды <code>labs()</code>,
+<code>xlab</code>, <code>ylab</code>. Но по сравнению с ними команда
+<code>scale_x_continuous</code> и <code>scale_y_continuous</code>
+позволяют не только подписывать названия осей, но и редактировать другие
+элементы осей.</p>
+<p>Также диаграммы рассеяния можно построить отдельно для мужчин и для
+женщин.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(education, earnings)) +
+  geom_jitter(width = 0.25, alpha = 0.5) + 
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) + 
+  scale_x_continuous(name = &quot;Years of education&quot;, breaks = seq(6, 18, 1), minor_breaks = FALSE) + 
+  scale_y_continuous(name = &quot;Average hourly earnings&quot;) + 
+  facet_wrap(~gender)</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(education, earnings, col = gender)) +
+  geom_jitter(width = 0.25, alpha = 0.5) + 
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) + 
+  scale_x_continuous(name = &quot;Years of education&quot;, breaks = seq(6, 18, 1), minor_breaks = FALSE) + 
+  scale_y_continuous(name = &quot;Average hourly earnings&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+</div>
+<div id="проведение-исследования" class="section level2">
+<h2>Проведение исследования</h2>
+<p>Предварительно ознакомившись с данными, можно использовать их для
+ответа на исследовательские вопросы, применяя методы статистики и
+эконометрики.</p>
+<div id="пол-и-образование" class="section level3">
+<h3>Пол и образование</h3>
+<p>Изучите связь между полом и образованием, оценив их соместное
+распределение. Для этого можно построить таблицу сопряженности между
+двумя переменными (можно использовать базовую команду
+<code>table()</code> и другие). На основе данных таблицы оцените
+основные показатели, характеризующие совместное распределение
+переменных. <strong>Сделайте содержательные выводы.</strong></p>
+<pre class="r"><code>CPSSWEducation %&gt;% select(gender, education) %&gt;% table() # (почти) то же самое, что table(CPSSWEducation$gender, CPSSWEducation$education)</code></pre>
+<pre><code>##         education
+## gender     6   8   9  10  11  12  13  14  16  18
+##   female   8   9  11  10  26 271 278 138 356  95
+##   male    37  26  38  25  35 616 329 169 396  77</code></pre>
+<p>В таблице выше представлено количество наблюдений для каждого пола и
+каждого уровня образования.</p>
+<pre class="r"><code>(CPSSWEducation %&gt;% select(gender, education) %&gt;% table() / nrow(CPSSWEducation)) %&gt;% round(digits = 3)</code></pre>
+<pre><code>##         education
+## gender       6     8     9    10    11    12    13    14    16    18
+##   female 0.003 0.003 0.004 0.003 0.009 0.092 0.094 0.047 0.121 0.032
+##   male   0.013 0.009 0.013 0.008 0.012 0.209 0.112 0.057 0.134 0.026</code></pre>
+<p>Аналогично можно сопоставить пол и уровень образования.</p>
+<pre class="r"><code>CPSSWEducation %&gt;% select(gender, edulevel) %&gt;% table()</code></pre>
+<pre><code>##         edulevel
+## gender      0    1
+##   female   64 1138
+##   male    161 1587</code></pre>
+<pre class="r"><code>(CPSSWEducation %&gt;% select(gender, edulevel) %&gt;% table() / nrow(CPSSWEducation)) %&gt;% round(digits = 3)</code></pre>
+<pre><code>##         edulevel
+## gender       0     1
+##   female 0.022 0.386
+##   male   0.055 0.538</code></pre>
+</div>
+<div id="пол-и-зарплата" class="section level3">
+<h3>Пол и зарплата</h3>
+<p>Известная проблема в экономике — разрыв в уровне заработной платы
+между мужчинами и женщинами. Еще один вопрос: влияет ли образование на
+заработную плату и одинакова ли сила этого влияния для мужчин и женщин.
+Изучите эти проблемы на используемом наборе данных. Для этого
+рекомендуется рассчитать базовые статистики и построить графики
+распределения дохода в разрезе по полу и уровню образования.
+<strong>Сделайте содержательные выводы.</strong></p>
+<pre class="r"><code>CPSSWEducation %&gt;% 
+  ggplot(aes(earnings)) + 
+  geom_density() + 
+  facet_grid(gender ~ edulevel)</code></pre>
+<p><img src="sem01_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>CPSSWEducation %&gt;%
+  group_by(gender, edulevel) %&gt;%
+  summarise(across(earnings, 
+                   list(mean = mean, median = median, sd = sd, min = min, max = max), 
+                   na.rm = TRUE)) %&gt;% 
+  pivot_longer(-c(gender, edulevel), names_to = &quot;name&quot;, values_to = &quot;value&quot;) %&gt;% 
+  separate(name, c(&quot;variable&quot;, &quot;statistic&quot;), sep = &quot;_&quot;) %&gt;%
+  pivot_wider(names_from = statistic, values_from = value) %&gt;%
+  arrange(variable, gender, edulevel) %&gt;% 
+  select(variable, gender, edulevel, mean, median, sd, min, max)</code></pre>
+<pre><code>## # A tibble: 4 x 8
+## # Groups:   gender [2]
+##   variable gender edulevel  mean median    sd   min   max
+##   &lt;chr&gt;    &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 earnings female        0  8.61   7.69  4.45  2.56  33.7
+## 2 earnings female        1 15.8   14.4   8.15  2.40  92.5
+## 3 earnings male          0 10.8   10     4.70  2.40  28.8
+## 4 earnings male          1 18.3   16.2  10.2   2.14  97.5</code></pre>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

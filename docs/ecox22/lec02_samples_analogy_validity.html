@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Данные, метод аналогии, оценки и их свойства.</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="В. Н. Пырлик" />
+    <script src="libs/header-attrs-2.15/header-attrs.js"></script>
+    <link rel="stylesheet" href="libs/main.css" type="text/css" />
+    <link rel="stylesheet" href="libs/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="libs/animate.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Данные, метод аналогии, оценки и их свойства.
+]
+.subtitle[
+## Эконометрика
+]
+.author[
+### В. Н. Пырлик
+]
+.date[
+### 9 сентября 2022
+]
+
+---
+
+class: animated, fadeIn
+## Сегодня
+
+- Ранее в ~~сериале~~ курсе
+
+- Принцип аналогии
+
+- Оценки и их свойства (начало)
+
+--
+
+### Дополнительно и на семинарах
+
+- Выборочный контекст
+
+- Оценки и свойства (продолжение)
+
+---
+class: animated, fadeIn
+## Ранее в курсе (1)
+
+*Эконометрика занимается применением методов статистики к экономическим моделям для анализа экономических данных и ответов на экономические вопросы.*
+
+---
+class: animated, fadeIn
+## Ранее в курсе (2)
+
+В рамках вероятностного и параметрического подходов,
+
+- экономические переменные и данные представляют собой случайные величины,
+
+- экономические модели - неслучайные зависимости, которые описывают наше представление о том, как в реальности связаны интересующие нас величины,
+
+  - параметры моделей - неслучайные характеристики этих взаимосвязей (как правило неизвестные).
+
+---
+class: animated, fadeIn
+## Ранее в курсе (3)
+
+*Эконометрика занимается применением методов статистики к экономическим моделям для анализа экономических данных и ответов на экономические вопросы.*
+
+**Чаще всего ответы на вопросы будут выражаться в различных выводах о параметрах моделей (и моделях вообще) и том, что мы можем сказать о них на основе имеющихся данных.**
+
+---
+class: animated, fadeIn
+## Ранее в курсе (4)
+###.gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+--
+
+.center[.bb[?] Какие вопросы мы можем задать?]
+
+--
+
+- Есть ли на рынке *gender gap*? `\(\beta_1=0\)` *vs* `\(\beta_1\neq0\)`
+
+  - Действительно ли *gender gap* не в пользу женщин? `\(\beta_1=0\)` *vs* `\(\beta_1&lt;0\)`
+
+--
+
+- Верна ли такая модель вообще? .right[
+.rb[!] На этот вопрос мы можем ответить на стадии формулировки модели
+]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+.center[.bb[?] Как мы будем отвечать на вопросы о неизвестных параметрах?]
+
+--
+
+.center[.rb[!] Будем использовать данные!]
+
+---
+class: section, hands, animated, zoomIn
+
+## Какие даные нам понадобятся в этом примере?
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+Допустим, мы располагаем данными:
+
+`$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$`
+
+--
+
+.center[.bb[?] Что дальше?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+Допустим, мы располагаем данными:
+
+`$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$`
+
+Оценка `\(gender\;gap\)`:
+
+`$$\widehat{gender\;gap} = n_o^{-1}\sum_{i=1}^{n_o}wage^o_i\;-\;n_1^{-1}\sum_{j=1}^{n_1}wage^1_i$$`
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+Допустим, мы располагаем данными:
+
+`$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$`
+
+Оценка `\(\beta_1\)`:
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$`
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+`$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$`
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$`
+
+.center[.bb[?] Какой метод оценки мы использовали?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+`$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$`
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+`$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$`
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$`
+
+.center[.rb[?] **Поможет ли эта оценка ответить на наши вопросы?**]
+
+---
+class: section, animated, zoomIn
+
+# Метод аналогии
+
+## *aka* **analogy principle**
+
+---
+class: animated, fadeIn
+## **Метод аналогии**
+
+### состоит в замене **популяционных характеристик** модели на **выборочные аналоги**.
+
+--
+
+.pull-left[
+- неизвестные параметры меняются на оценки
+]
+
+.pull-right[
+- `\(\beta\)` на `\(\hat\beta\)`
+]
+
+---
+class: animated, fadeIn
+## **Метод аналогии**
+
+### состоит в замене **популяционных характеристик** модели на **выборочные аналоги**.
+
+.pull-left[
+- неизвестные параметры меняются на оценки
+
+- популяционные математически ожидания меняются на средние по выборке
+
+- и т.д.
+]
+
+.pull-right[
+- `\(\beta\)` на `\(\hat\beta\)` &lt;/br&gt;&lt;/br&gt;
+
+- `\(\mathbb{E}x\)` на `\(n^{-1}\sum_{i=1}^nx_i\)`
+]
+
+---
+class: animated, fadeIn
+## Оценка методом аналогии
+
+Два **альтернативных способа** получить **оценку параметра методом аналогии**:
+
+1) решить популяционную характеристику модели относительно параметра и применить к решению метод аналогии
+
+--
+
+2) применить метод аналогии к популяционной характеристики модели и решить относительно оценки параметра
+
+--
+
+.right[.rb[!] Решения часто совпадают, но могут и отличаться]
+
+---
+class: section, animated, rotateIn
+
+# Оценки параметров и их свойства
+
+---
+class: animated, fadeIn
+## Популяционные характеристики **vs** выборочные аналоги
+
+.center[**Популяционная характеристика** из .gb[Примера 1]]
+
+`$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$`
+
+--
+
+- выражена в неизвестных и **не**случайных величинах
+
+--
+
+.center[Её **выборочный аналог**]
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$`
+
+- выражен в терминах **наблюдаемых данных**
+
+--
+
+- оценки являются **случайными величинами**
+
+---
+class: hands, animated, flipInY
+
+### .rb[Главный вопрос темы]
+
+&lt;/br&gt;
+&lt;/br&gt;
+
+`\(\beta_1\;-\;\text{неизвестная константа},\;\hat\beta_1\;-\;\text{с.в., завищая от данных}\)`
+
+# Как оценка поможет ответить на вопрос &lt;/br&gt; о неизвестном параметре?
+
+---
+class: animated, fadeIn
+## Свойства оценок (1)
+
+.center[Оценка из .gb[Примера 1]]
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$`
+
+.center[.bb[?] Как мы можем **охарактеризовать** ее распределение?]
+
+.center[
+.bb[?] И как оно соотносится с **параметром интереса** `\(\beta_1?\)`
+]
+
+--
+
+Например, рассмотрим `\(\mathbb{E}\hat\beta_1\)`
+
+---
+class: animated, fadeIn
+## Свойства оценок (2)
+
+.center[Оценка из .gb[Примера 1]]
+
+`$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$`
+
+1) `\(\hat\beta_1\)` является несмещенной оценкой `\(\beta_1\)`: `\(\mathbb{E}\hat\beta_1=\beta_1\)`
+
+.center[
+.bb[?] Что еще мы можем сказать о распределении `\(\hat\beta_1\)`?
+]
+
+--
+
+.rb[!] В общем-то ничего, т.к. **ничего не знаем о распределениях** `\(wage^{o,1}\)`
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+### До встречи через неделю
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"countIncrementalSlides": false,
+"highlightLines": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

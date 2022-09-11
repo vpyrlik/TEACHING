@@ -103,6 +103,33 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </br>
 
+## Семинар 1 - 06/09/2022
+
+*Повторение основ теории вероятностей. Введение в работу с данными в R. Решение задач, разбор простого эмпирического упражнения с данными.*
+
+- [Задание](sem01_prob_r.html)
+
+- [Разбор эмпирической части](sem01_tutorial.html)
+
+## Лекция 2 - 09/09/2022
+
+*Популяционные характеристики эконометрических моделей и их выборочные аналоги. Метод аналогии. Оценки параметров, как случайные величины. Несмещенность оценки.*
+
+- [Слайды](lec02_samples_analogy_validity.html)
+
+- [Результаты летучки](https://drive.google.com/file/d/1OQjOGU8euMd8ea97ZfqaZwjMRaZxRGg-/view?usp=sharing)
+
+- Запись лекции
+
+<iframe src="https://www.youtube.com/embed/fRUYCjT_Cnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- Дополнительно. 
+
+*Из материалов прошлого года:* классификация подходов, параметрические регрессионные модели, модель "регрессия на константу". **Обратите внимание на пример простой модели в качестве альтертативы простого примера про разрыв в зарплате мужчин и женщин, разобранный на лекции.**
+
+<iframe src="https://www.youtube.com/embed/YaatAkBSYiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ---
 
 # *ВиО*

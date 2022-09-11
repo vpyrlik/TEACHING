@@ -1,0 +1,323 @@
+---
+title: "Данные, метод аналогии, оценки и их свойства."
+subtitle: "Эконометрика"
+author: "В. Н. Пырлик"
+date: "9 сентября 2022"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    lib_dir: libs
+    css: [libs/main.css, libs/fonts.css, libs/animate.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "16:9"
+---
+class: animated, fadeIn
+## Сегодня
+
+- Ранее в ~~сериале~~ курсе
+
+- Принцип аналогии
+
+- Оценки и их свойства (начало)
+
+--
+
+### Дополнительно и на семинарах
+
+- Выборочный контекст
+
+- Оценки и свойства (продолжение)
+
+---
+class: animated, fadeIn
+## Ранее в курсе (1)
+
+*Эконометрика занимается применением методов статистики к экономическим моделям для анализа экономических данных и ответов на экономические вопросы.*
+
+---
+class: animated, fadeIn
+## Ранее в курсе (2)
+
+В рамках вероятностного и параметрического подходов,
+
+- экономические переменные и данные представляют собой случайные величины,
+
+- экономические модели - неслучайные зависимости, которые описывают наше представление о том, как в реальности связаны интересующие нас величины,
+
+  - параметры моделей - неслучайные характеристики этих взаимосвязей (как правило неизвестные).
+
+---
+class: animated, fadeIn
+## Ранее в курсе (3)
+
+*Эконометрика занимается применением методов статистики к экономическим моделям для анализа экономических данных и ответов на экономические вопросы.*
+
+**Чаще всего ответы на вопросы будут выражаться в различных выводах о параметрах моделей (и моделях вообще) и том, что мы можем сказать о них на основе имеющихся данных.**
+
+---
+class: animated, fadeIn
+## Ранее в курсе (4)
+###.gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+--
+
+.center[.bb[?] Какие вопросы мы можем задать?]
+
+--
+
+- Есть ли на рынке *gender gap*? $\beta_1=0$ *vs* $\beta_1\neq0$
+
+  - Действительно ли *gender gap* не в пользу женщин? $\beta_1=0$ *vs* $\beta_1<0$
+
+--
+
+- Верна ли такая модель вообще? .right[
+.rb[!] На этот вопрос мы можем ответить на стадии формулировки модели
+]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+.center[.bb[?] Как мы будем отвечать на вопросы о неизвестных параметрах?]
+
+--
+
+.center[.rb[!] Будем использовать данные!]
+
+---
+class: section, hands, animated, zoomIn
+
+## Какие даные нам понадобятся в этом примере?
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+Допустим, мы располагаем данными:
+
+$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$
+
+--
+
+.center[.bb[?] Что дальше?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+Допустим, мы располагаем данными:
+
+$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$
+
+Оценка $gender\;gap$:
+
+$$\widehat{gender\;gap} = n_o^{-1}\sum_{i=1}^{n_o}wage^o_i\;-\;n_1^{-1}\sum_{j=1}^{n_1}wage^1_i$$
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+Допустим, мы располагаем данными:
+
+$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$
+
+Оценка $\beta_1$:
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$
+
+.center[.bb[?] Какой метод оценки мы использовали?]
+
+---
+class: animated, fadeIn
+## .gb[Пример 1.] *Gender gap* на рынке труда
+
+$$wage = \beta_o + \beta_1\cdot female + u,\;\;\mathbb{E}[u|female]=0,$$
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+$$\{wage^o_i\}_{i=1,...n_o},\;\;\{wage^1_j\}_{j=1,...n_1}$$
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$
+
+.center[.rb[?] **Поможет ли эта оценка ответить на наши вопросы?**]
+
+---
+class: section, animated, zoomIn
+
+# Метод аналогии
+
+## *aka* **analogy principle**
+
+---
+class: animated, fadeIn
+## **Метод аналогии**
+
+### состоит в замене **популяционных характеристик** модели на **выборочные аналоги**.
+
+--
+
+.pull-left[
+- неизвестные параметры меняются на оценки
+]
+
+.pull-right[
+- $\beta$ на $\hat\beta$
+]
+
+---
+class: animated, fadeIn
+## **Метод аналогии**
+
+### состоит в замене **популяционных характеристик** модели на **выборочные аналоги**.
+
+.pull-left[
+- неизвестные параметры меняются на оценки
+
+- популяционные математически ожидания меняются на средние по выборке
+
+- и т.д.
+]
+
+.pull-right[
+- $\beta$ на $\hat\beta$ </br></br>
+
+- $\mathbb{E}x$ на $n^{-1}\sum_{i=1}^nx_i$
+]
+
+---
+class: animated, fadeIn
+## Оценка методом аналогии
+
+Два **альтернативных способа** получить **оценку параметра методом аналогии**:
+
+1) решить популяционную характеристику модели относительно параметра и применить к решению метод аналогии
+
+--
+
+2) применить метод аналогии к популяционной характеристики модели и решить относительно оценки параметра
+
+--
+
+.right[.rb[!] Решения часто совпадают, но могут и отличаться]
+
+---
+class: section, animated, rotateIn
+
+# Оценки параметров и их свойства
+
+---
+class: animated, fadeIn
+## Популяционные характеристики **vs** выборочные аналоги
+
+.center[**Популяционная характеристика** из .gb[Примера 1]]
+
+$$gender\;gap=\mathbb{E}[wage|female=0]-\mathbb{E}[wage|female=1]=\:-\beta_1$$
+
+--
+
+- выражена в неизвестных и **не**случайных величинах
+
+--
+
+.center[Её **выборочный аналог**]
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i = -\widehat{gender\;gap}$$
+
+- выражен в терминах **наблюдаемых данных**
+
+--
+
+- оценки являются **случайными величинами**
+
+---
+class: hands, animated, flipInY
+
+### .rb[Главный вопрос темы]
+
+</br>
+</br>
+
+$\beta_1\;-\;\text{неизвестная константа},\;\hat\beta_1\;-\;\text{с.в., завищая от данных}$
+
+# Как оценка поможет ответить на вопрос </br> о неизвестном параметре?
+
+---
+class: animated, fadeIn
+## Свойства оценок (1)
+
+.center[Оценка из .gb[Примера 1]]
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$
+
+.center[.bb[?] Как мы можем **охарактеризовать** ее распределение?]
+
+.center[
+.bb[?] И как оно соотносится с **параметром интереса** $\beta_1?$
+]
+
+--
+
+Например, рассмотрим $\mathbb{E}\hat\beta_1$
+
+---
+class: animated, fadeIn
+## Свойства оценок (2)
+
+.center[Оценка из .gb[Примера 1]]
+
+$$\hat\beta_1 = n_1^{-1}\sum_{j=1}^{n_1}wage^1_i\;-\;n_o^{-1}\sum_{i=1}^{n_o}wage^o_i$$
+
+1) $\hat\beta_1$ является несмещенной оценкой $\beta_1$: $\mathbb{E}\hat\beta_1=\beta_1$
+
+.center[
+.bb[?] Что еще мы можем сказать о распределении $\hat\beta_1$?
+]
+
+--
+
+.rb[!] В общем-то ничего, т.к. **ничего не знаем о распределениях** $wage^{o,1}$
+
+---
+class: section, animated, zoomIn
+## Спасибо!
+### До встречи через неделю
+
