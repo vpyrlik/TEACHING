@@ -9,18 +9,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="В. Пырлик, Д. Терещенко, Ю. Балагула, К. Ефимов" />
 
 
-<title>Эконометрика</title>
+<title>Раздел 2. Модель линейной регрессии.</title>
 
-<script src="ecox22_files/header-attrs-2.15/header-attrs.js"></script>
-<script src="ecox22_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="sec2_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="sec2_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="ecox22_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="ecox22_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="ecox22_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="ecox22_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="sec2_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sec2_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sec2_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sec2_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -30,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="ecox22_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="ecox22_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="ecox22_files/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="ecox22_files/navigation-1.1/tabsets.js"></script>
-<link href="ecox22_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="ecox22_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="sec2_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sec2_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sec2_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sec2_files/navigation-1.1/tabsets.js"></script>
+<link href="sec2_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sec2_files/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -244,63 +243,112 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Эконометрика</strong></h1>
-<h4 class="author"><em>В. Пырлик, Д. Терещенко, Ю. Балагула, К.
-Ефимов</em></h4>
-<h4 class="date">2022-23 учебный год</h4>
+<h1 class="title toc-ignore">Раздел 2. Модель линейной регрессии.</h1>
+<h3 class="subtitle">Эконометрика</h3>
 
 </div>
 
 
 <hr />
-<p>Вы на странице курса “Эконометрика” для студентов 3 курса ОП
-“Экономика” бакалавриата в 2022-23 учебном году. Здесь собраны материалы
-курса: ссылки на слайды и записи занятий, дополнительные материалы,
-некоторые объявления.</p>
-<p>Лекции проходят в 16:20 по пятницам <a
-href="https://cesnet.zoom.us/j/96338482138">по постоянной ссылке в
-Zoom</a>.</p>
-<p>Записи занятий, слайды, заметки и прочие материалы можно найти по
-ссылкам ниже.</p>
-<p><em>Курс в процессе реализации. Страница обновляется по мере
-появления новых материалов.</em></p>
+<div id="введение" class="section level1">
+<h1>Введение</h1>
+<p>Раздел курса, посвященный нашему основному объекту изучения -
+регрессионным моделям. Первое время мы сосредоточимся на более простом с
+технической стороны случае - парной регрессии. Рассмотрим в деталях
+теоретическую сторону модели, принцип получения оценок, их свойства и
+использование для анализа (Неделя 3). Поговорим об ограничениях модели
+парной регрессии и необходимости перехода к множественной модели.
+Рассмотрим Модель множественной линейной регресии (Недели 4-5).</p>
+<p><em>Материал раздела будет пополняться по ходу занятий</em></p>
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
 <hr />
-<div id="введение-в-курс" class="section level1">
-<h1>1. <a href="ecox22/sec1.html">Введение в курс</a></h1>
+</div>
+<div id="для-самостоятельного-изучения" class="section level1">
+<h1>Для самостоятельного изучения</h1>
+<p>Мы приступаем к разделам курса, посвященным нашему основному объекту
+изучения - регрессионным моделям. Первое время мы сосредоточимся на
+более простом с технической стороны случае - парной регрессии.</p>
+<div id="тема-4.-модель-регрессии---введение" class="section level2">
+<h2>Тема 4. Модель регрессии - введение</h2>
+<div id="обязательно" class="section level3">
+<h3>Обязательно</h3>
+<iframe src="https://www.youtube.com/embed/KOPlO00ZN_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="дополнительно" class="section level3">
+<h3>Дополнительно</h3>
 <ul>
-<li><p>Вкратце об эконометрике. Организация курса. Программа курса,
-формы работы, оценки.</p></li>
-<li><p>Повторение необходимых основ ТВиМС.</p></li>
-<li><p>Разное.</p></li>
+<li>HE, Глава 2</li>
 </ul>
 <hr />
 </div>
-<div id="модель-линейной-регрессии" class="section level1">
-<h1>2. <a href="ecox22/sec2.html">Модель линейной регрессии</a></h1>
+</div>
+<div id="тема-5.-модель-парной-линейной-регрессии"
+class="section level2">
+<h2>Тема 5. Модель парной линейной регрессии</h2>
+<div id="обязательно-1" class="section level3">
+<h3>Обязательно</h3>
 <ul>
-<li><p>Модель регрессии в среднем.</p></li>
-<li><p>Модель парной линейной регрессии.</p></li>
+<li><p>SW: вся глава 4, не упустите приложения после
+упражнений!</p></li>
+<li><p>Модель парной линейной регрессии в деталях</p></li>
 </ul>
-<p><em>Раздел пополняется</em></p>
+<iframe src="https://www.youtube.com/embed/Gni_FfQso4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<ul>
+<li>То же, укороченная версия</li>
+</ul>
+<iframe src="https://www.youtube.com/embed/MLD6DGmKYc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="дополнительно-1" class="section level3">
+<h3>Дополнительно</h3>
+<ul>
+<li>HE: 3.4, 3.5, 3.7, 4.1-4.4</li>
+</ul>
 <hr />
 </div>
-<div id="дополнительно" class="section level1">
-<h1><em>Дополнительно</em></h1>
+</div>
+<div id="дополнительно-ко-всей-теме" class="section level2">
+<h2>Дополнительно ко всей теме</h2>
+<div id="чтение" class="section level3">
+<h3>Чтение</h3>
 <ul>
-<li><p><a
-href="https://drive.google.com/drive/folders/1iK9cVeiHyVJd2XSIXqzcfw199MLajSvJ?usp=sharing">Все
-записи занятий в одном месте</a></p></li>
-<li><p><a
-href="https://drive.google.com/drive/folders/1r4XjXynrU72cjN-XfGcz8EexEX4pXfYS?usp=sharing">Все
-слайды в pdf</a></p></li>
-<li><p>…</p></li>
+<li><p>SW: Глава 3, приложения 3.2 и 3.3 (в конце главы)</p></li>
+<li><p>W: Глава 2</p></li>
+<li><p>HS: 16.1-2, 17.1</p></li>
+<li><p>MOOC-1: неделя 1</p></li>
+<li><p>MOOC-2: неделя 3</p></li>
+<li><p>MOOC-3: неделя 2</p></li>
 </ul>
 <hr />
 </div>
-<div id="контакты" class="section level1">
-<h1><em>Контакты</em></h1>
+<div id="рекомендуемые-задачи-для-самоконтроля" class="section level3">
+<h3><a href="sec2_self_control01.html">Рекомендуемые задачи для
+самоконтроля</a></h3>
+<hr />
+<ul>
+<li>Лекция 3</li>
+</ul>
+<p><em>TBA</em></p>
+<ul>
+<li>Семинар 3</li>
+</ul>
+<p><em>TBA</em></p>
+<ul>
+<li>Дополнительно</li>
+</ul>
+<p><em>TBA</em></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="вио" class="section level1">
+<h1><em>ВиО</em></h1>
 <p>Вопросы можно задать <a href="https://t.me/+0kRsodLpmzRmZjEy">в чате
 в Телеграм.</a></p>
+<hr />
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
 </div>
 
 

@@ -1,0 +1,108 @@
+---
+title: "Раздел 2. Модель линейной регрессии."
+subtitle: "Эконометрика"
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+# Введение
+
+Раздел курса, посвященный нашему основному объекту изучения - регрессионным моделям. Первое время мы сосредоточимся на более простом с технической стороны случае - парной регрессии. Рассмотрим в деталях теоретическую сторону модели, принцип получения оценок, их свойства и использование для анализа (Неделя 3). Поговорим об ограничениях модели парной регрессии и необходимости перехода к множественной модели. Рассмотрим Модель множественной линейной регресии (Недели 4-5).
+
+*Материал раздела будет пополняться по ходу занятий*
+
+[Назад на страницу курса](../ecox22.html)
+
+---
+
+# Для самостоятельного изучения
+
+Мы приступаем к разделам курса, посвященным нашему основному объекту изучения - регрессионным моделям. Первое время мы сосредоточимся на более простом с технической стороны случае - парной регрессии. 
+
+## Тема 4. Модель регрессии - введение
+
+### Обязательно
+
+<iframe src="https://www.youtube.com/embed/KOPlO00ZN_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Дополнительно
+
+- HE, Глава 2
+
+---
+
+## Тема 5. Модель парной линейной регрессии
+
+### Обязательно
+
+- SW: вся глава 4, не упустите приложения после упражнений!
+
+- Модель парной линейной регрессии в деталях
+
+<iframe src="https://www.youtube.com/embed/Gni_FfQso4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- То же, укороченная версия
+
+<iframe src="https://www.youtube.com/embed/MLD6DGmKYc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Дополнительно
+
+- HE: 3.4, 3.5, 3.7, 4.1-4.4
+
+---
+
+## Дополнительно ко всей теме
+
+### Чтение
+
+- SW: Глава 3, приложения 3.2 и 3.3 (в конце главы)
+
+- W: Глава 2
+
+- HS: 16.1-2, 17.1
+
+- MOOC-1: неделя 1
+
+- MOOC-2: неделя 3
+
+- MOOC-3: неделя 2
+
+---
+
+### [Рекомендуемые задачи для самоконтроля](sec2_self_control01.html)
+
+
+---
+
+- Лекция 3
+
+*TBA*
+
+- Семинар 3
+
+*TBA*
+
+-  Дополнительно
+
+*TBA*
+
+---
+
+# *ВиО*
+
+Вопросы можно задать [в чате в Телеграм.](https://t.me/+0kRsodLpmzRmZjEy)
+
+---
+[Назад на страницу курса](../ecox22.html)
