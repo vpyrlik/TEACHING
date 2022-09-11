@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2022-09-06" />
+
+<title>Семинар 1. Задание.</title>
+
+<script src="sem01_prob_r_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="sem01_prob_r_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem01_prob_r_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem01_prob_r_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem01_prob_r_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem01_prob_r_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem01_prob_r_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem01_prob_r_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem01_prob_r_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem01_prob_r_files/navigation-1.1/tabsets.js"></script>
+<link href="sem01_prob_r_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem01_prob_r_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 1. Задание.</h1>
+<h4 class="date">2022-09-06</h4>
+
+</div>
+
+
+<div id="часть-1.-повторение-теории-вероятностей"
+class="section level1">
+<h1>Часть 1. Повторение теории вероятностей</h1>
+<div id="sw-глава-2-упражение-2.6" class="section level2">
+<h2>SW, глава 2, упражение 2.6</h2>
+<p>В приведенной ниже таблице представлена информация о совместном
+распределении вероятностей между статусом занятости (занятый или
+безработный) и наличием высшего образования среди населения
+трудоспособного возраста США в 2008 году.</p>
+<p>Совместное распределение статуса занятости и наличия высшего
+образования среди населения США старше 25 лет в 2008 году</p>
+<table style="width:100%;">
+<colgroup>
+<col width="22%" />
+<col width="35%" />
+<col width="33%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">Без высшего образования (X = 0)</th>
+<th align="right">С высшим образованием (X = 1)</th>
+<th align="right">Итого</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">Безработный (Y = 0)</td>
+<td align="right">0,037</td>
+<td align="right">0,009</td>
+<td align="right">0,046</td>
+</tr>
+<tr class="even">
+<td align="right">Занятый (Y = 1)</td>
+<td align="right">0,622</td>
+<td align="right">0,332</td>
+<td align="right">0,954</td>
+</tr>
+<tr class="odd">
+<td align="right">Итого</td>
+<td align="right">0,659</td>
+<td align="right">0,341</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>а. Вычислите <span class="math inline">\(E ( Y )\)</span>.</p>
+<p>б. Уровень безработицы определяется как доля рабочей силы, которая в
+рассматриваемый момент является безработной. Покажите, что уровень
+безработицы определяется как <span class="math inline">\(1 - E ( Y
+)\)</span>.</p>
+<p>в. Вычислите <span class="math inline">\(E ( Y | X = 1 )\)</span> и
+<span class="math inline">\(E ( Y | X = 0)\)</span>.</p>
+<p>г. Определите уровень безработицы для:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>выпускников высших учебных заведений;</p></li>
+<li><p>людей, не имеющих высшего образования.</p></li>
+</ol>
+<p>д. Человек, выбранный случайным образом из всей генеральной
+совокупности, оказывался безработным. Какова вероятность того, что он
+имеет высшее образование? Какова вероятность того, что он не имеет
+высшего образования?</p>
+<p>е. Являются ли уровень образования и рабочий статус независимыми?
+Объясните ваш ответ.</p>
+</div>
+<div id="hs-5.12-ex.-5.14" class="section level2">
+<h2>HS, 5.12, Ex. 5.14</h2>
+<p>A random variable is <span class="math inline">\(Y = \sqrt Q
+e\)</span> where <span class="math inline">\(e \sim N(0, 1)\)</span>,
+<span class="math inline">\(Q \sim \chi^2_1\)</span>, and <span
+class="math inline">\(e\)</span> and <span
+class="math inline">\(Q\)</span> are independent. It will be helpful to
+know that <span class="math inline">\(E[e] = 0\)</span>, <span
+class="math inline">\(E [e^2] = 1\)</span>, <span
+class="math inline">\(E [e^3] = 0\)</span>, <span
+class="math inline">\(E [e^4] = 3\)</span>, <span
+class="math inline">\(E [Q] = 1\)</span>, and <span
+class="math inline">\(var [Q] = 2\)</span>. Find</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(E [Y]\)</span>.</p></li>
+<li><p><span class="math inline">\(E [Y^2]\)</span>.</p></li>
+<li><p><span class="math inline">\(E [Y^3]\)</span>.</p></li>
+<li><p><span class="math inline">\(E [Y^4]\)</span>.</p></li>
+<li><p>Compare these four moments with those of <span
+class="math inline">\(N(0, 1)\)</span>. What is the difference? (Be
+explicit.)</p></li>
+</ol>
+</div>
+<div id="he-2.34-ex.-2.10" class="section level2">
+<h2>HE, 2.34, Ex. 2.10</h2>
+<p>True or False. If <span class="math inline">\(Y = X \beta +
+e\)</span>, <span class="math inline">\(X \in R\)</span>, and <span
+class="math inline">\(E [e | X ] = 0\)</span>, then <span
+class="math inline">\(E [X^2 e] = 0\)</span>.</p>
+</div>
+<div id="he-2.34-ex.-2.12" class="section level2">
+<h2>HE, 2.34, Ex. 2.12</h2>
+<p>True or False. If <span class="math inline">\(Y = X&#39; \beta +
+e\)</span> and <span class="math inline">\(E [e | X] = 0\)</span>, then
+<span class="math inline">\(e\)</span> is independent of <span
+class="math inline">\(X\)</span>.</p>
+</div>
+</div>
+<div id="часть-2.-основы-работы-с-данными-в-r" class="section level1">
+<h1>Часть 2. Основы работы с данными в R</h1>
+<div id="набор-данных" class="section level2">
+<h2>Набор данных</h2>
+<p>На этом семинаре мы работаем данными <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2/topics/sleep75">о
+продолжительности сна и распределении времени</a>. Фрагмент данных можно
+загрузить, используя встроенный набор данных пакета <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2">wooldridge</a>
+(используйте набор данных <code>sleep75</code>).</p>
+</div>
+<div id="задание" class="section level2">
+<h2>Задание</h2>
+<p>Не забудьте загрузить рекомендуемые для использования пакеты.</p>
+<pre class="r"><code>library(wooldridge) # пакет содержит наборы данных, используемые в учебнике Wooldridge</code></pre>
+<pre><code>## Warning: package &#39;wooldridge&#39; was built under R version 3.6.3</code></pre>
+<pre class="r"><code>library(dplyr)      # манипуляции с данными
+library(tidyr)      # манипуляции с данными
+library(ggplot2)    # визуализация данных</code></pre>
+<p>Загрузите встроенный набор данных.</p>
+<pre class="r"><code>data(&quot;sleep75&quot;)</code></pre>
+<p>Выполните следующие задания:</p>
+<ol style="list-style-type: decimal">
+<li>Проведите предварительную работу с данными:</li>
+</ol>
+<ul>
+<li><p>Посмотрите, какие переменные содержатся в данных и какой тип у
+этих переменных.</p></li>
+<li><p>Обратите внимание, что некоторые переменные образованы с
+использованием других переменных (например, возраст в квадрате, логарифм
+зарплаты и т. п.). Попробуйте собственными силами создать аналогичные
+переменные, как будто их нет в датасете.</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Изучите и опишите загруженные данные:</li>
+</ol>
+<ul>
+<li><p>Выведите таблицу с описательными статистиками переменных
+(выберите наиболее важные, на ваш взгляд, переменные, исходя из описания
+набора данных по ссылке выше).</p></li>
+<li><p>Постройте графики, описывающие количественные переменные
+(гистограмма, график плотности распределения, бокс-плот и т.
+п.).</p></li>
+<li><p>Постройте графики для количественных переменных в разбивке по
+различным группам населения, используя категориальные перменные, которые
+считаете наиболее важными.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Оцените совместное распределение двух категориальных переменных
+(например, раса и членство в профсоюзе)</li>
+</ol>
+<ul>
+<li>Постройте для этого таблицу сопряженности.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Проверьте, существует ли разница в доходе между представителями
+разных рас и в зависимости от членства в профсоюзей:</li>
+</ol>
+<ul>
+<li><p>Выведите основные описательные статистики в разбивке по
+группам.</p></li>
+<li><p>Постройте необходимые графики в разбивке по группам.</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Проанализируйте взаимосвязь между сном и заработной платой:</li>
+</ol>
+<ul>
+<li><p>Покажите эту связь на диаграмме рассеяния.</p></li>
+<li><p>Постройте диаграммы рассеяния для разных групп
+населения.</p></li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
