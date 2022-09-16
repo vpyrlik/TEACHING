@@ -86,9 +86,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ---
 
-- Лекция 3
+- Лекция 3 *только запись, слайдов нет*
 
-*TBA*
+<iframe src="https://www.youtube.com/embed/piBx6-4NKjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Семинар 3
 
