@@ -48,6 +48,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ---
 
+# [ПРОЕКТ](ecox22/project_task.html)
+
+- Задание на проектную работу
+
+*Раздел пополняется*
+
+---
+
 # *Дополнительно*
 
 - [Все записи занятий в одном месте](https://drive.google.com/drive/folders/1iK9cVeiHyVJd2XSIXqzcfw199MLajSvJ?usp=sharing)
