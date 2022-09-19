@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2022-09-20" />
+
+<title>Семинар 3. Задание.</title>
+
+<script src="sem03_pair_reg_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem03_pair_reg_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem03_pair_reg_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem03_pair_reg_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem03_pair_reg_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem03_pair_reg_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem03_pair_reg_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem03_pair_reg_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem03_pair_reg_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem03_pair_reg_files/navigation-1.1/tabsets.js"></script>
+<link href="sem03_pair_reg_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem03_pair_reg_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 3. Задание.</h1>
+<h4 class="date">2022-09-20</h4>
+
+</div>
+
+
+<div id="часть-1.-упражнения" class="section level1">
+<h1>Часть 1. Упражнения</h1>
+<div id="sw-глава-4-упражнение-4.3-а-б-г-д" class="section level2">
+<h2>SW, глава 4, упражнение 4.3 (а, б, г, д)</h2>
+<p>Регрессия средней недельной зарплаты (<span
+class="math inline">\(AWE\)</span>, измеренной в долларах) от возраста
+(<span class="math inline">\(Age\)</span>, измеренного в годах) на
+основе случайной выборки 25–65-летних людей с высшим образованием и
+работающих полный рабочий день приводит к следующему:</p>
+<p><span class="math display">\[\hat{AWE} =  696.7 + 9.6 \times
+Age\]</span></p>
+<p>а. Объясните значение коэффициентов 696.7 и 9.6.</p>
+<p>б. Стандартная ошибка регрессии (SER) равна 624.1. Каковы единицы
+измерения SER? (Доллары? Годы? Или SER безразмерна?)</p>
+<p>в. —</p>
+<p>г. Чему равно предсказанное по регрессии значение зарплаты для
+25-летнего работника? Для 45-летнего работника?</p>
+<p>д. Будет ли регрессия давать надежное предсказание зарплаты для
+99-летнего работника? Почему да или почему нет?</p>
+</div>
+<div id="sw-глава-4-упражнение-4.9" class="section level2">
+<h2>SW, глава 4, упражнение 4.9</h2>
+<p>а. Известно, что оценка коэффициента наклона в модели парной линейной
+регрессии равна <span class="math inline">\(\beta_1 = 0\)</span>.
+Покажите, что <span class="math inline">\(R^2 = 0\)</span>.</p>
+<p>б. Теперь известно, что <span class="math inline">\(R^2 = 0\)</span>.
+Предполагает ли это, что <span class="math inline">\(\beta_1 =
+0\)</span>?</p>
+</div>
+<div id="sw-глава-4-упражнение-4.10-а" class="section level2">
+<h2>SW, глава 4, упражнение 4.10 (а)</h2>
+<p>Предположим, что <span class="math inline">\(Y_i = \beta_0 + \beta_1
+X_i + u_i\)</span>, где (<span class="math inline">\(X_i\)</span>, <span
+class="math inline">\(u_i\)</span>) является i.i.d., и <span
+class="math inline">\(X_i\)</span> является случайной величиной Бернулли
+с <span class="math inline">\(Pr(X = 1) = 0.20\)</span>. Когда <span
+class="math inline">\(X = 1\)</span>, <span
+class="math inline">\(u_i\)</span> имеет вид <span
+class="math inline">\(N(0, 4)\)</span>; когда <span
+class="math inline">\(X = 0\)</span>, <span
+class="math inline">\(u_i\)</span> имеет вид <span
+class="math inline">\(N(0,1)\)</span>.</p>
+<p>а. Покажите, что предположения метода наименьших квадратов из вставки
+“Основные понятия 4.3” выполнены.</p>
+</div>
+<div id="sw-глава-4-упражнение-4.11-а" class="section level2">
+<h2>SW, глава 4, упражнение 4.11 (а)</h2>
+<p>Рассмотрим модель парной линейной регрессии <span
+class="math inline">\(Y_i = \beta_0 + \beta_1 X_i + u_i\)</span>.</p>
+<p>а. Предположим, вы знаете, что <span class="math inline">\(\beta_0 =
+0\)</span>. Выведите формулу оценки наименьших квадратов для <span
+class="math inline">\(\beta_1\)</span>.</p>
+</div>
+<div id="sw-глава-4-упражнение-4.14" class="section level2">
+<h2>SW, глава 4, упражнение 4.14</h2>
+<p>Покажите, что линия выборочной регрессии проходит через точку <span
+class="math inline">\((\bar X, \bar Y)\)</span>.</p>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<div id="исследовательский-вопрос" class="section level2">
+<h2>Исследовательский вопрос</h2>
+<p>Ваша задача — ответить на вопрос: <em>правда ли, что дополнительная
+работа плохо сказывается на сне?</em></p>
+<p>Предварительно обсудите, есть ли смысл изучать эту взаимосвязь. Какие
+еще факторы могут влиять на сон? Сформулируйте гипотезу для
+исследовательского вопроса и механизм ее объясняющий.</p>
+</div>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Не забудьте загрузить необходимые пакеты.</p>
+<pre class="r"><code>library(wooldridge) # пакет содержит наборы данных, используемые в учебнике Wooldridge
+# ...самостоятельно выберите пакеты для работы с данными...
+library(lmtest)     # тестирование гипотез
+library(broom)      # удобное представление результатов тестов и регрессий</code></pre>
+</div>
+<div id="набор-данных" class="section level2">
+<h2>Набор данных</h2>
+<p>На этом семинаре мы продолжаем работать с данными <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2/topics/sleep75">о
+продолжительности сна и распределении времени</a>. Фрагмент данных можно
+загрузить, используя встроенный набор данных пакета <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2">wooldridge</a>
+(используйте набор данных <code>sleep75</code>).</p>
+<pre class="r"><code>data(&quot;sleep75&quot;)</code></pre>
+<p>Изучите загруженные данные. Обсудите, какие переменные лучше всего
+подходят для ответа на поставленный исследовательский вопрос.</p>
+</div>
+<div id="разведывательный-анализ-данных" class="section level2">
+<h2>Разведывательный анализ данных</h2>
+<p>Проведите разведывательный анализ данных:</p>
+<ol style="list-style-type: decimal">
+<li><p>Постройте таблицу с описательными статистиками основных
+переменных.</p></li>
+<li><p>Постройте графики, визуализирующие изучаемую
+взаимосвязь.</p></li>
+<li><p>Можете провести дополнительный разведывательный анализ на свое
+усмотрение.</p></li>
+</ol>
+</div>
+<div id="регрессионный-анализ" class="section level2">
+<h2>Регрессионный анализ</h2>
+<p>Проведите регрессионный анализ взаимосвязи между переменными сна и
+работы:</p>
+<ol style="list-style-type: decimal">
+<li><p>Оцените модель парной регрессии в полуавтоматическом режиме,
+используя функции <code>mean()</code>, <code>cov()</code>,
+<code>var()</code> и т. д.</p></li>
+<li><p>Оцените модель парной регрессии в автоматическом режиме,
+используя функцию <code>lm()</code> для оценки.</p></li>
+<li><p>Выведите полученные результаты при помощи базовой функции
+<code>summary()</code>. Эта команда не всегда удобно, так что в качестве
+альтернативы или дополнения рекомендуется использовать функцию
+<code>tidy()</code> из пакета <code>broom</code>. Также дополнительные
+возможности дает использование функции <code>coeftest()</code> из пакета
+<code>lmtest</code>, в частности опция <code>df = Inf</code> позволяет
+проводить асимптотические тесты в отношении коэффициентов вместо
+конечновыборочных.</p></li>
+<li><p>Проинтерпретируйте полученные результаты (особое внимание уделите
+оценке коэффициента при регрессоре).</p></li>
+<li><p>Проведите анализ значений зависимой переменной, предсказанных
+моделью. Для этого можно использовать функцию <code>fitted()</code>.
+Дополнительные возможности дает использование функции
+<code>augment()</code> из пакета <code>broom</code>. Также полезно
+визуализировать линию регрессии, нанеся ее на соответствующую диаграмму
+рассеяния (это можно сделать в <code>ggplot</code>автоматически с
+использованием функции <code>geom_smooth()</code> или в
+полуавтоматическом режиме с использованием функций
+<code>geom_line()</code> или <code>geom_abline()</code>).</p></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

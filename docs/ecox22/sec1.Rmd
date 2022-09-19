@@ -129,6 +129,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <iframe src="https://www.youtube.com/embed/YaatAkBSYiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Семинар 2 - 13/09/2022
+
+*Повторение математической статистики. Принцип аналогии. Тестирование гипотез.*
+
+- [Задание](sem02_stats.html)
 
 ---
 
