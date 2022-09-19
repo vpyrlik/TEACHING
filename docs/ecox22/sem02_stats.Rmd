@@ -1,14 +1,16 @@
 ---
-title: "Эконометрика-2022. Семинар 2. Повторение математической статистики. Принцип аналогии. Тестирование гипотез"
-author: "Преподаватели: В. Пырлик, Д. Терещенко, Ю. Балагула, К. Ефимов"
+title: "Семинар 2. Задание."
 date: '2022-09-13'
-# output:
-#   pdf_document:
-#     keep_tex: yes
-#     latex_engine: xelatex
-# mainfont: Liberation Serif
-# monofont: Liberation Mono
-output: html_document
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+mainfont: Liberation Serif
+monofont: Liberation Mono
 ---
 
 ```{r setup, include=FALSE}
