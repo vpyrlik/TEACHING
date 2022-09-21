@@ -1,0 +1,124 @@
+---
+title: "Праная линейная регрессия: эмпирический пример"
+date: 'Сентябрь 2022'
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+mainfont: Liberation Serif
+monofont: Courier New
+---
+
+```{r echo=FALSE}
+Sys.setlocale("LC_CTYPE", "russian")
+```
+
+Дорогие студенты! Данный пример разработан в демонстрационных и учебных целях для знакомства с *некоторыми* основными этапами работы над исследованием с использованием простой модели парной линейной регрессии. Пример основан на данных из работы Crampton, E. W. (1947). **The growth of the odontoblast of the incisor teeth as a criterion of vitamin C intake of the guinea pig.** *The Journal of Nutrition*, 33(5), 491--504. 10.1093/jn/33.5.491.
+
+## Загрузка пакетов
+
+Установку пакетов мы запускаем один раз или для обновления пакетов до текущей актуальной версии.
+
+```{r, message=FALSE}
+#' install.packages(c("datasets",
+#'                    "sandwich",
+#'                    "lmtest",
+#'                    "stargazer"))
+```
+
+Когда устанавливать или обновлять пакету не нужно, мы просто их подгружаем.
+
+```{r, message=FALSE}
+library(datasets)  #' пакет с наборами данных
+library(sandwich)  #' робастные стандартные ошибки
+library(lmtest)    #' диагностика моделей, проверка гипотез
+library(stargazer) #' вывод регрессионных таблиц 
+```
+
+## Данные
+
+Загружаем данные. [Краткое описание данных по ссылке](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/ToothGrowth.html) (детали - в статье).
+
+```{r, message=FALSE}
+data("ToothGrowth")
+```
+
+## Оценки парной регрессии
+
+### Подход "в лоб"
+
+Сначала мы рассмотрим прямое применение алгебры парной линейной регрессии для оценки параметров и графической иллюстрации результатов. В этой части мы намеренно игнорируем возможности применения пакетов и функций за пределами элементарных статистических. Это хорошая возможность убедиться на практике, что вы разобрались с основами алгебры парной модели.
+
+Необходимые для построения переменные:
+
+```{r, message=FALSE}
+y <- ToothGrowth$len    #' длина зубов - зависимая переменная
+x <- ToothGrowth$dose   #' доза витамина - объясняющая переменная
+```
+
+Диаграмма рассеивания для наших данных:
+
+```{r, message=FALSE, encoding = "utf-8"}
+plot(x = x,
+     y = y,
+     main = "Диаграмма рассеивания",
+     xlab = "Доза витамана C, мг",
+     ylab = "Длина зубов, мм")
+```
+
+Оценки МНК парной линейной регрессии без функции $\texttt{lm()}$ (просто алгебра):
+
+```{r, message=FALSE}
+b1 <- cov(x,y)/var(x)
+b0 <- mean(y) - b1*mean(x)
+```
+
+Дорисовываем на график регрессионную линию:
+
+```{r, message=FALSE}
+plot(x = x,
+     y = y,
+     main = "Диаграмма рассеивания",
+     xlab = "Доза витамана C, мг",
+     ylab = "Длина зубов, мм")
+abline(b0,b1)
+```
+
+### С использованием функций
+
+Оценка парной регрессии МНК, функция lm()
+
+```{r, message=FALSE}
+m1 <- lm(len ~ 1 + dose, data = ToothGrowth)
+```
+
+Оценка стандартных ошибок, робастная формула:
+
+```{r, message=FALSE}
+cf1 <- coeftest(m1, df = Inf, vcov = vcovHC, type = "HC0")
+```
+
+Вывод результатов в таблицу:
+
+```{r, message=FALSE, eval=FALSE}
+stargazer(m1,cf1,type='text')
+```
+
+````{=html}
+```{r, message=FALSE, echo=FALSE, results='asis'}
+stargazer(m1,cf1,type='html')
+```
+````
+## Проверка гипотезы
+
+```{r, message=FALSE}
+t1  <- cf1[2,1]/cf1[2,2]
+Pv1 <- 1-pnorm(t1) #1-сторонняя!!!
+
+print(t1)
+print(Pv1)
+```
