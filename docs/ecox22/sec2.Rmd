@@ -47,19 +47,69 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Обязательно
 
-- SW: вся глава 4, не упустите приложения после упражнений!
+#### Чтение
 
-- Модель парной линейной регрессии в деталях
+SW: вся глава 4, не упустите приложения после упражнений!
+
+</br>
+
+#### Модель парной линейной регрессии в деталях
 
 <iframe src="https://www.youtube.com/embed/Gni_FfQso4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- То же, укороченная версия
+</br>
+
+#### То же, укороченная версия
 
 <iframe src="https://www.youtube.com/embed/MLD6DGmKYc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+#### Лекция 3
+
+*только запись, слайдов нет*
+
+<iframe src="https://www.youtube.com/embed/piBx6-4NKjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+#### Семинар 3. *Парная линейная регрессия*
+
+- [**Задание**](sem03_pair_reg.html)
+
+</br>
+
+#### *Парная линейная регрессия: эмпирический пример*
+
+**Материал обязателен к просмотру перед 4 лекцией и семинарами.** 
+
+*Разбор кода не считается разбором материала!*
+
+<iframe src="https://www.youtube.com/embed/8zcoGypRMcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [**Код из примера**](teeth_example.R)
+  
+- [**Альтернативный код**](example_teeth.html)
+
+</br>
+
+#### Подготовка к Летучке 1
+
+Пред каждой летучкой на странице [wooclap.com/EX22TRAIN](https://app.wooclap.com/EX22TRAIN?from=event-page) будут появляться тесты для подготовке к летучкам и некоторые опросники для обратсной связи. 
+
+*Проходите тесты заблаговременно, задавайте вопросы в чате!*
+
+- [Пробный тест перед Летучкой 1](https://app.wooclap.com/EX22TRAIN/questionnaires/632b5a1c400f490227dd8ba6)
+
+</br>
+
+---
 
 ### Дополнительно
 
 - HE: 3.4, 3.5, 3.7, 4.1-4.4
+
+</br>
 
 ---
 
@@ -79,23 +129,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - MOOC-3: неделя 2
 
+</br>
+
 ---
 
 ### [Рекомендуемые задачи для самоконтроля](sec2_self_control01.html)
 
-
----
-
-- Лекция 3 *только запись, слайдов нет*
-
-<iframe src="https://www.youtube.com/embed/piBx6-4NKjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-- Семинар 3. *Парная линейная регрессия* ([Задание](sem03_pair_reg.html))
-
-
--  Дополнительно
-
-*TBA*
+</br>
 
 ---
 

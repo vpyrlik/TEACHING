@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Праная линейная регрессия: эмпирический пример</title>
+
+<script src="example_teeth_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="example_teeth_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="example_teeth_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="example_teeth_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="example_teeth_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="example_teeth_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="example_teeth_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="example_teeth_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="example_teeth_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="example_teeth_files/navigation-1.1/tabsets.js"></script>
+<link href="example_teeth_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="example_teeth_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Праная линейная регрессия: эмпирический
+пример</h1>
+<h4 class="date">Сентябрь 2022</h4>
+
+</div>
+
+
+<pre><code>## [1] &quot;Russian_Russia.1251&quot;</code></pre>
+<p>Дорогие студенты! Данный пример разработан в демонстрационных и
+учебных целях для знакомства с <em>некоторыми</em> основными этапами
+работы над исследованием с использованием простой модели парной линейной
+регрессии. Пример основан на данных из работы Crampton, E. W. (1947).
+<strong>The growth of the odontoblast of the incisor teeth as a
+criterion of vitamin C intake of the guinea pig.</strong> <em>The
+Journal of Nutrition</em>, 33(5), 491–504. 10.1093/jn/33.5.491.</p>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Установку пакетов мы запускаем один раз или для обновления пакетов до
+текущей актуальной версии.</p>
+<pre class="r"><code>#&#39; install.packages(c(&quot;datasets&quot;,
+#&#39;                    &quot;sandwich&quot;,
+#&#39;                    &quot;lmtest&quot;,
+#&#39;                    &quot;stargazer&quot;))</code></pre>
+<p>Когда устанавливать или обновлять пакету не нужно, мы просто их
+подгружаем.</p>
+<pre class="r"><code>library(datasets)  #&#39; пакет с наборами данных
+library(sandwich)  #&#39; робастные стандартные ошибки
+library(lmtest)    #&#39; диагностика моделей, проверка гипотез
+library(stargazer) #&#39; вывод регрессионных таблиц </code></pre>
+</div>
+<div id="данные" class="section level2">
+<h2>Данные</h2>
+<p>Загружаем данные. <a
+href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/ToothGrowth.html">Краткое
+описание данных по ссылке</a> (детали - в статье).</p>
+<pre class="r"><code>data(&quot;ToothGrowth&quot;)</code></pre>
+</div>
+<div id="оценки-парной-регрессии" class="section level2">
+<h2>Оценки парной регрессии</h2>
+<div id="подход-в-лоб" class="section level3">
+<h3>Подход “в лоб”</h3>
+<p>Сначала мы рассмотрим прямое применение алгебры парной линейной
+регрессии для оценки параметров и графической иллюстрации результатов. В
+этой части мы намеренно игнорируем возможности применения пакетов и
+функций за пределами элементарных статистических. Это хорошая
+возможность убедиться на практике, что вы разобрались с основами алгебры
+парной модели.</p>
+<p>Необходимые для построения переменные:</p>
+<pre class="r"><code>y &lt;- ToothGrowth$len    #&#39; длина зубов - зависимая переменная
+x &lt;- ToothGrowth$dose   #&#39; доза витамина - объясняющая переменная</code></pre>
+<p>Диаграмма рассеивания для наших данных:</p>
+<pre class="r"><code>plot(x = x,
+     y = y,
+     main = &quot;Диаграмма рассеивания&quot;,
+     xlab = &quot;Доза витамана C, мг&quot;,
+     ylab = &quot;Длина зубов, мм&quot;)</code></pre>
+<p><img src="example_teeth_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Оценки МНК парной линейной регрессии без функции <span
+class="math inline">\(\texttt{lm()}\)</span> (просто алгебра):</p>
+<pre class="r"><code>b1 &lt;- cov(x,y)/var(x)
+b0 &lt;- mean(y) - b1*mean(x)</code></pre>
+<p>Дорисовываем на график регрессионную линию:</p>
+<pre class="r"><code>plot(x = x,
+     y = y,
+     main = &quot;Диаграмма рассеивания&quot;,
+     xlab = &quot;Доза витамана C, мг&quot;,
+     ylab = &quot;Длина зубов, мм&quot;)
+abline(b0,b1)</code></pre>
+<p><img src="example_teeth_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="с-использованием-функций" class="section level3">
+<h3>С использованием функций</h3>
+<p>Оценка парной регрессии МНК, функция lm()</p>
+<pre class="r"><code>m1 &lt;- lm(len ~ 1 + dose, data = ToothGrowth)</code></pre>
+<p>Оценка стандартных ошибок, робастная формула:</p>
+<pre class="r"><code>cf1 &lt;- coeftest(m1, df = Inf, vcov = vcovHC, type = &quot;HC0&quot;)</code></pre>
+<p>Вывод результатов в таблицу:</p>
+<pre class="r"><code>stargazer(m1,cf1,type=&#39;text&#39;)</code></pre>
+
+<table style="text-align:center"><tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>len</td><td></td></tr>
+<tr><td style="text-align:left"></td><td><em>OLS</em></td><td><em>coefficient</em></td></tr>
+<tr><td style="text-align:left"></td><td><em></em></td><td><em>test</em></td></tr>
+<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">dose</td><td>9.764<sup>***</sup></td><td>9.764<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.953)</td><td>(0.866)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>7.423<sup>***</sup></td><td>7.423<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(1.260)</td><td>(1.264)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>60</td><td></td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.644</td><td></td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.638</td><td></td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>4.601 (df = 58)</td><td></td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>105.065<sup>***</sup> (df = 1; 58)</td><td></td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
+</div>
+</div>
+<div id="проверка-гипотезы" class="section level2">
+<h2>Проверка гипотезы</h2>
+<pre class="r"><code>t1  &lt;- cf1[2,1]/cf1[2,2]
+Pv1 &lt;- 1-pnorm(t1) #1-сторонняя!!!
+
+print(t1)</code></pre>
+<pre><code>## [1] 11.27144</code></pre>
+<pre class="r"><code>print(Pv1)</code></pre>
+<pre><code>## [1] 0</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
