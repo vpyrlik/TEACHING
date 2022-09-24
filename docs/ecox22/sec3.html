@@ -9,18 +9,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="В. Пырлик, Д. Терещенко, Ю. Балагула, К. Ефимов" />
 
 
-<title>Эконометрика</title>
+<title>Раздел 3. Модель множественной линейной регрессии.</title>
 
-<script src="ecox22_files/header-attrs-2.15/header-attrs.js"></script>
-<script src="ecox22_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="sec3_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="sec3_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="ecox22_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="ecox22_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="ecox22_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="ecox22_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="sec3_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sec3_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sec3_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sec3_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -30,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="ecox22_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="ecox22_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="ecox22_files/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="ecox22_files/navigation-1.1/tabsets.js"></script>
-<link href="ecox22_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="ecox22_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="sec3_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sec3_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sec3_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sec3_files/navigation-1.1/tabsets.js"></script>
+<link href="sec3_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sec3_files/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -244,95 +243,89 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Эконометрика</strong></h1>
-<h4 class="author"><em>В. Пырлик, Д. Терещенко, Ю. Балагула, К.
-Ефимов</em></h4>
-<h4 class="date">2022-23 учебный год</h4>
+<h1 class="title toc-ignore">Раздел 3. Модель множественной линейной
+регрессии.</h1>
+<h3 class="subtitle">Эконометрика</h3>
 
 </div>
 
 
 <hr />
-<p>Вы на странице курса “Эконометрика” для студентов 3 курса ОП
-“Экономика” бакалавриата в 2022-23 учебном году. Здесь собраны материалы
-курса: ссылки на слайды и записи занятий, дополнительные материалы,
-некоторые объявления.</p>
-<p>Лекции проходят в 16:20 по пятницам <a
-href="https://cesnet.zoom.us/j/96338482138">по постоянной ссылке в
-Zoom</a>.</p>
-<p>Записи занятий, слайды, заметки и прочие материалы можно найти по
-ссылкам ниже.</p>
-<p><em>Курс в процессе реализации. Страница обновляется по мере
-появления новых материалов.</em></p>
+<div id="введение" class="section level1">
+<h1>Введение</h1>
+<p>Основной раздел, касающийся теории и практики применения главного
+инструмента регрессионного анализа в эконометрики - <strong>модели
+множественной линейной регрессии</strong> (<em>aka</em>
+<strong>ММЛР</strong>).</p>
+<div id="где-я" class="section level3">
+<h3>Где я?</h3>
+<iframe src="https://www.youtube.com/embed/kI9ZTCBHYCw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p></br></p>
-<hr />
-<div id="введение-в-курс" class="section level1">
-<h1>1. <a href="ecox22/sec1.html">Введение в курс</a></h1>
-<ul>
-<li><p>Вкратце об эконометрике. Организация курса. Программа курса,
-формы работы, оценки.</p></li>
-<li><p>Повторение необходимых основ ТВиМС.</p></li>
-<li><p>Разное.</p></li>
-</ul>
+</div>
+<div id="проблема-пропущенных-переменных" class="section level3">
+<h3>Проблема пропущенных переменных</h3>
+<iframe src="https://www.youtube.com/embed/G9snb5U4ttw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<iframe src="https://www.youtube.com/embed/1Uj2-0xzXyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<p><em>Материал раздела будет пополняться по ходу занятий</em></p>
+<p></br></p>
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
 <p></br></p>
 <hr />
 </div>
-<div id="парная-линейная-регрессия" class="section level1">
-<h1>2. <a href="ecox22/sec2.html">Парная линейная регрессия</a></h1>
-<ul>
-<li><p>Модель регрессии в среднем (введение).</p></li>
-<li><p>Модель парной линейной регрессии.</p></li>
-<li><p>Алгебра парной линейной регрессии.</p></li>
-<li><p>Эмпирический пример.</p></li>
-</ul>
-<p></br></p>
-<hr />
 </div>
-<div id="модель-множественной-линейной-регрессии"
+<div id="тема-6.-основы-ммлр-запись-и-постановка-алгебра-мнк"
 class="section level1">
-<h1>3. <a href="ecox22/sec3.html">Модель множественной линейной
-регрессии</a></h1>
-<ul>
-<li><p>Проблема пропущенных переменных</p></li>
-<li><p>Алгебра ММЛР</p></li>
-<li><p>Эмпирические примеры</p></li>
-</ul>
-<p><em>раздел пополняется</em></p>
+<h1>Тема 6. Основы ММЛР: запись и постановка, алгебра МНК</h1>
+<div id="обязательно" class="section level2">
+<h2>Обязательно</h2>
+<div id="постановка-ммлр-и-формы-записи" class="section level3">
+<h3>Постановка ММЛР и формы записи</h3>
+<iframe src="https://www.youtube.com/embed/uszFRExmfVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+</div>
+</div>
+<div id="дополнительно" class="section level2">
+<h2>Дополнительно</h2>
+<div id="парная-регрессия-как-частный-случай-ммлр"
+class="section level3">
+<h3>Парная регрессия, как частный случай ММЛР</h3>
+<iframe src="https://www.youtube.com/embed/q0_REl2J6U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p></br></p>
 <hr />
 </div>
-<div id="проект" class="section level1">
-<h1><a href="ecox22/project_task.html">ПРОЕКТ</a></h1>
-<ul>
-<li>Задание на проектную работу</li>
-</ul>
-<p><em>Раздел пополняется</em></p>
+</div>
+</div>
+<div id="эмпирические-примеры" class="section level1">
+<h1>Эмпирические примеры</h1>
+<div id="пространственная-ценовая-конкуренция-на-airbnb-лекция-2021"
+class="section level2">
+<h2>Пространственная ценовая конкуренция на AirBnB (лекция 2021)</h2>
+<iframe src="https://www.youtube.com/embed/mabuNaYluqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+</div>
+<div id="риск-инфекционного-заоажения-в-больнице-материал-2021"
+class="section level2">
+<h2>Риск инфекционного заоажения в больнице (материал 2021)</h2>
+<iframe src="https://www.youtube.com/embed/0Rqa5z6rezw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p></br></p>
 <hr />
 </div>
-<div id="отчёты-по-летучкам" class="section level1">
-<h1><a href="ecox22/quizzes.html">ОТЧЁТЫ ПО ЛЕТУЧКАМ</a></h1>
-<p><em>Раздел пополняется</em></p>
-<p></br></p>
-<hr />
 </div>
-<div id="дополнительно" class="section level1">
-<h1><em>Дополнительно</em></h1>
-<ul>
-<li><p><a
-href="https://drive.google.com/drive/folders/1iK9cVeiHyVJd2XSIXqzcfw199MLajSvJ?usp=sharing">Все
-записи занятий в одном месте</a></p></li>
-<li><p><a
-href="https://drive.google.com/drive/folders/1r4XjXynrU72cjN-XfGcz8EexEX4pXfYS?usp=sharing">Все
-слайды в pdf</a></p></li>
-<li><p>…</p></li>
-</ul>
-<hr />
-</div>
-<div id="контакты" class="section level1">
-<h1><em>Контакты</em></h1>
+<div id="вио" class="section level1">
+<h1><em>ВиО</em></h1>
 <p>Вопросы можно задать <a href="https://t.me/+0kRsodLpmzRmZjEy">в чате
 в Телеграм.</a></p>
+<hr />
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
 </div>
 
 

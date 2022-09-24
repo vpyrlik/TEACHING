@@ -1,0 +1,92 @@
+---
+title: "Раздел 3. Модель множественной линейной регрессии."
+subtitle: "Эконометрика"
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+# Введение
+
+Основной раздел, касающийся теории и практики применения главного инструмента регрессионного анализа в эконометрики - **модели множественной линейной регрессии** (*aka* **ММЛР**).
+
+### Где я?
+
+<iframe src="https://www.youtube.com/embed/kI9ZTCBHYCw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+### Проблема пропущенных переменных
+
+<iframe src="https://www.youtube.com/embed/G9snb5U4ttw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+<iframe src="https://www.youtube.com/embed/1Uj2-0xzXyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+*Материал раздела будет пополняться по ходу занятий*
+
+</br>
+
+[Назад на страницу курса](../ecox22.html)
+
+</br>
+
+---
+
+# Тема 6. Основы ММЛР: запись и постановка, алгебра МНК
+
+## Обязательно
+
+### Постановка ММЛР и формы записи
+
+<iframe src="https://www.youtube.com/embed/uszFRExmfVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+## Дополнительно 
+
+### Парная регрессия, как частный случай ММЛР
+
+<iframe src="https://www.youtube.com/embed/q0_REl2J6U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+---
+
+# Эмпирические примеры
+
+## Пространственная ценовая конкуренция на AirBnB (лекция 2021)
+
+<iframe src="https://www.youtube.com/embed/mabuNaYluqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+## Риск инфекционного заоажения в больнице (материал 2021)
+
+<iframe src="https://www.youtube.com/embed/0Rqa5z6rezw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+---
+
+# *ВиО*
+
+Вопросы можно задать [в чате в Телеграм.](https://t.me/+0kRsodLpmzRmZjEy)
+
+---
+
+[Назад на страницу курса](../ecox22.html)
