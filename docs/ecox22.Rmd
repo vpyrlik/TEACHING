@@ -10,6 +10,7 @@ output:
     toc_float: true
     toc_collapsed: true
     toc_depth: 2
+    css: extra.css
 ---
 
 ```{r setup, include=FALSE}
@@ -27,6 +28,14 @@ knitr::opts_chunk$set(echo = FALSE)
 *Курс в процессе реализации. Страница обновляется по мере появления новых материалов.*
 
 </br>
+
+---
+
+:::: {.infobox .deadline}
+
+## **25.09 до 20:00** [**СБОР КОМАНДЫ**](file:///Z:/Documents/R/TEACHING/docs/ecox22/project_task_part01_team.html)
+
+::::
 
 ---
 
