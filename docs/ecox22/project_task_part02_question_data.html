@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Постановка вопроса и поиск источника данных</title>
+
+<script src="project_task_part02_question_data_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="project_task_part02_question_data_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="project_task_part02_question_data_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="project_task_part02_question_data_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="project_task_part02_question_data_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="project_task_part02_question_data_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="project_task_part02_question_data_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="project_task_part02_question_data_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="project_task_part02_question_data_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="project_task_part02_question_data_files/navigation-1.1/tabsets.js"></script>
+<link href="project_task_part02_question_data_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="project_task_part02_question_data_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Постановка вопроса и поиск источника
+данных</h1>
+<h3 class="subtitle">Проектное задание по курсу Эконометрика</h3>
+
+</div>
+
+
+<hr />
+<div id="обзор-этапа" class="section level1">
+<h1>Обзор этапа</h1>
+<div
+id="цель-выбрать-сформулировать-и-утвердить-у-преподавателей-исследовательский-вопрос-и-источник-и-тип-данных"
+class="section level3">
+<h3><strong>Цель:</strong> выбрать, сформулировать и <strong>утвердить у
+преподавателей</strong> исследовательский вопрос и источник и тип
+данных</h3>
+</div>
+<div id="дедлайн-2000-мск-15.10" class="section level3">
+<h3><strong>Дедлайн:</strong> 20:00 (Мск) 15.10</h3>
+<hr />
+</div>
+</div>
+<div id="исследовательский-вопрос" class="section level1">
+<h1>Исследовательский вопрос</h1>
+<div id="что-такое-исследовательский-вопрос" class="section level2">
+<h2>Что такое исследовательский вопрос?</h2>
+<p>Это тот содержательный с экономической точки зрения вопрос, поиск
+ответа на который будет целью вашей проектной работы. Вопрос должен быть
+поставлен таким образом, чтобы соответствовать логике эконометрического
+анализа. Примеры “хороших” и “плохих” вопросов мы обсуждали на лекциях и
+семинарских занятиях.</p>
+</div>
+<div id="какие-исследовательские-вопросы-допустимы"
+class="section level2">
+<h2>Какие исследовательские вопросы допустимы?</h2>
+<p>Одна из учебных целей проектной работы - развитие навыка работы с
+моделью множественной линейной регрессии в среднем для анализа
+причинно-следственных связей. Вопрос должен соответствовать этому
+направлению работы.</p>
+<p><strong>Недопустимы вопросы</strong> о прогнозировании будущего (это
+задачи для анализа временных рядов) и о выявлении важных факторов (это
+задача для экономической или иной теории).</p>
+</div>
+<div id="как-поставить-вопрос" class="section level2">
+<h2>Как поставить вопрос?</h2>
+<p>Допустимы два варианты поставки вопроса и выбоба данных:</p>
+<ol style="list-style-type: decimal">
+<li><p>Сначала вопрос, потом данные.</p></li>
+<li><p>Сначала данные, потом вопрос.</p></li>
+</ol>
+<p>Первый вариант более взрослый. Второй - более учебный и этим более
+удобный, но вопрос все равно должен быть максимально приближен к
+настоящему.</p>
+<hr />
+</div>
+</div>
+<div id="что-нужно-сделать" class="section level1">
+<h1>Что нужно сделать?</h1>
+<ol style="list-style-type: decimal">
+<li><p>Обсудить командой варианты вопросов и данных.</p></li>
+<li><p>Утвердить внутри команды вопрос и данные / источник
+данных.</p></li>
+<li><p>Необязательно, но желательно: собрать черновые данные для
+демонстрации формата, объема, качества или т.п.</p></li>
+<li><p>Создать черновик отчета и дать доступ к нему
+преподавателям.</p></li>
+<li><p><strong>Дождаться комментариев и замечаний или утверждения
+вопроса и подтверждения о зачета на этом этапе.</strong></p></li>
+<li><p>Если у преподавателей есть комментарии и замечания, нужно
+вернуться к групповому обсуждению и устранить их, сообщить об изменениях
+преподавателям, вернувшись к п.5.</p></li>
+</ol>
+<hr />
+</div>
+<div id="что-такое-черновик-отчёта" class="section level1">
+<h1>Что такое черновик отчёта?</h1>
+<ul>
+<li><p>Онлайн документ, к которому можно предоставить доступ по
+ссылке.</p></li>
+<li><p>До оформления итогового отчета черновик должен оставаться одним и
+тем же, постепенно меняясь по ходу работы.</p></li>
+<li><p><strong>На данном этапе</strong> достаточно включить черновые
+версии пп. 1 - 3 (титульный лист, введение, описание данных). Подробное
+описание разделов отчета см в <a href="project_task.html">полном задании
+на проект</a>, раздел “Итоговый отчёт”.</p></li>
+</ul>
+<hr />
+</div>
+<div id="когда-дедлайн" class="section level1">
+<h1>Когда дедлайн?</h1>
+<p>Жесткий дедлайн: до 20:00 (Мск) 15 октября (воскресенье). До этого
+времени преподаватели должны утвердить поставленный вопрос и выбранные
+данные. <strong>Если у преподавателей останутся вопросы или нерешенные
+комментарии к постановке вопроса или выбору данных, дедлайн не
+засчитывается.</strong></p>
+<p><strong>Настоятельно рекомендуем</strong> первую версию чернового
+отчета с постановкой вопроса и идеями о подходящих данных сделать и
+прислать уже до начала октября! Тогда у вас будет возможность получить
+развернутые комментарии и рекомендации по улучшению.</p>
+<hr />
+</div>
+<div id="помощь-в-поиске-данных" class="section level1">
+<h1>Помощь в поиске данных</h1>
+<p>Эта короткая инструкция - лишь рекомендация, не обязательно строго
+следовать ей. Единственное условие, которое мы жестко ставим
+относительно источников данных - <strong>нельзя использовать данные,
+выложенные на ресурсе <em>kaggle</em>.</strong></p>
+<p>Есть множество баз данных, которые могут вам помочь. Далее приведены
+ссылки на разные источники или коллекции источников, а также некоторые
+обзоры коллекций источников. Не старайтесь охватить все-все варианты -
+это просто невозможно. Постарайтесь сначала определиться если не с
+вопросом, то хотя бы с направлением, в котором вашей команде интересно
+работать, это поможет сузить диапазон вариантов данных - финансы, макро,
+экология, недвижимость, микро, здоровье, климат, эксперименты…. Если вам
+не нравится, что вы находите, или ненаходите устраивающие вас данные -
+переключайтесь на другой вопрос и данные.</p>
+<div id="где-искать-данные" class="section level2">
+<h2>Где искать данные:</h2>
+<ol style="list-style-type: decimal">
+<li><p><a href="http://sophist.hse.ru/data_access.shtml">Ресурсы, к
+которым есть доступ из ВШЭ</a></p></li>
+<li><p><a href="https://www.hse.ru/rlms/">РМЭЗ (RLMS)</a> - тоже ВШЭ, но
+это внутренний ресурс</p></li>
+<li><p><a href="https://rosstat.gov.ru/">Росстат</a></p></li>
+<li><p><a href="https://data.worldbank.org/">Мировой банк</a></p></li>
+<li><p><a href="https://www.imf.org/en/Data">Международный валютный
+фонд</a></p></li>
+<li><p><a
+href="https://www.nber.org/research/data?page=1&amp;perPage=50">Национальное
+бюро экономических исследований</a></p></li>
+<li><p><a href="https://www.bea.gov/data">Бюро экономического
+анализа</a></p></li>
+<li><p><a href="https://data.census.gov/cedsci/">Бюро переписи
+США</a></p></li>
+<li><p><a href="https://www.fbi.gov/services/cjis/ucr/">Данные ФБР по
+преступности</a></p></li>
+<li><p><a href="https://www.eia.gov/opendata/">Администрация США по
+энергетике</a></p></li>
+<li><p><a href="https://trends.google.ru/trends/">Google
+trends</a></p></li>
+<li><p><a href="https://data.gov.uk/">Портал официальной статистики по
+Великобритании</a></p></li>
+<li><p><a href="https://data.mos.ru/">Портал открытых данных
+правительства Москвы</a></p></li>
+<li><p><a href="https://www.data-in.ru/data-catalog/">Каталог данных
+ИНИД</a></p></li>
+</ol>
+<p><em>Этим, конечно, источники данных не ограничиваются. Если у вас
+есть идеи или предложения - предлагайте!</em></p>
+<p>Также рекомендуется познакомиться <a
+href="http://quantile.ru/06/06-AT.pdf">со статьей в журнале “Квантиль” о
+поиске данных в сети</a>.</p>
+<hr />
+<p>Вопросы можно задать <a href="https://t.me/+0kRsodLpmzRmZjEy">в чате
+в Телеграм.</a></p>
+<p><a href="project_task.html">Назад к проектному заданию</a></p>
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
