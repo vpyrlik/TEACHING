@@ -75,11 +75,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </br>
 
-## Риск инфекционного заоажения в больнице (материал 2021)
+## Риск инфекционного заражения в больнице (материал 2021)
 
 <iframe src="https://www.youtube.com/embed/0Rqa5z6rezw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </br>
+
+---
+
+### Семинар 5. *Модель множественной линейной регрессии. Проблема пропущенных переменных. Контрольные переменные*
+
+- [**Задание**](sem05_mult_reg.html)
+
 
 ---
 
