@@ -57,11 +57,67 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </br>
 
+### Алгебра МНК в ММЛР
+
+#### Оценки МНК парамтеров ММЛР
+
+*Следующие три ролика в колоссальном количестве деталей раскрывают технику выведения оценок методом наименьших квадратов в модели множественной линейной регрессии. Если вы уверенно себя чувствуете в работе с матрицами и вам понравилась матричная форма записи ММЛР из предыдущего ролика, то достаточно разобрать сокращенную версию выведения (ролик три).*
+
+</br>
+
+**Очень детально: от популяционной задачи к оценкам через скалярнужю запись**
+
+<iframe src="https://www.youtube.com/embed/32tYtUsQEb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+**Короче, меньше деталей, не такая страшная алгебра**
+
+<iframe src="https://www.youtube.com/embed/7XOUeEsLHzQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+**В матричной форме: еще короче, но алгебра пострашнее**
+
+<iframe src="https://www.youtube.com/embed/uP-fQQoGq5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+#### Свойства оценок МНК параметров ММЛР
+
+*Без преувеличения, центральный раздел темы про теорию модели линейной регрессии - свойства оценок МНК в ММЛР. Первые два ролика являются детальным подведением к третьему, в котором выводится асимптотическое распределение оценок МНК - объект колоссальной важности для эмпирической работы и понимания, на чём держится проверка гипотез, связанных с параметрами в моделях (не только в ММЛР).*
+
+<iframe src="https://www.youtube.com/embed/JZK2r9IMQcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+<iframe src="https://www.youtube.com/embed/2vHTt1wmRkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+<iframe src="https://www.youtube.com/embed/7_yXXYs74tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+#### Стандартные ошибки оценок МНК параметров ММЛР
+
+*Возможно, слищком сложный ролик... И длинный. Если вы еще не разобрались, кто такие стандартные ошибки - вам сюда.*
+
+<iframe src="https://www.youtube.com/embed/OTt4N6f_t7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
 ## Дополнительно 
 
 ### Парная регрессия, как частный случай ММЛР
 
 <iframe src="https://www.youtube.com/embed/q0_REl2J6U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Лекция 5
+
+Разбор летучек по введению в регрессию и парной регрессии
+
+<iframe src="https://www.youtube.com/embed/jFSOHebprKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </br>
 
@@ -76,6 +132,8 @@ knitr::opts_chunk$set(echo = FALSE)
 </br>
 
 ## Риск инфекционного заражения в больнице (материал 2021)
+
+### [Код из разбора](hospitaldata.R)
 
 <iframe src="https://www.youtube.com/embed/0Rqa5z6rezw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

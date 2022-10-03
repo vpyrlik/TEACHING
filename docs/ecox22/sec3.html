@@ -13,7 +13,7 @@
 
 <title>Раздел 3. Модель множественной линейной регрессии.</title>
 
-<script src="sec3_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sec3_files/header-attrs-2.15/header-attrs.js"></script>
 <script src="sec3_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="sec3_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -289,6 +289,61 @@ class="section level1">
 </iframe>
 <p></br></p>
 </div>
+<div id="алгебра-мнк-в-ммлр" class="section level3">
+<h3>Алгебра МНК в ММЛР</h3>
+<div id="оценки-мнк-парамтеров-ммлр" class="section level4">
+<h4>Оценки МНК парамтеров ММЛР</h4>
+<p><em>Следующие три ролика в колоссальном количестве деталей раскрывают
+технику выведения оценок методом наименьших квадратов в модели
+множественной линейной регрессии. Если вы уверенно себя чувствуете в
+работе с матрицами и вам понравилась матричная форма записи ММЛР из
+предыдущего ролика, то достаточно разобрать сокращенную версию выведения
+(ролик три).</em></p>
+<p></br></p>
+<p><strong>Очень детально: от популяционной задачи к оценкам через
+скалярнужю запись</strong></p>
+<iframe src="https://www.youtube.com/embed/32tYtUsQEb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<p><strong>Короче, меньше деталей, не такая страшная
+алгебра</strong></p>
+<iframe src="https://www.youtube.com/embed/7XOUeEsLHzQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<p><strong>В матричной форме: еще короче, но алгебра
+пострашнее</strong></p>
+<iframe src="https://www.youtube.com/embed/uP-fQQoGq5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+</div>
+<div id="свойства-оценок-мнк-параметров-ммлр" class="section level4">
+<h4>Свойства оценок МНК параметров ММЛР</h4>
+<p><em>Без преувеличения, центральный раздел темы про теорию модели
+линейной регрессии - свойства оценок МНК в ММЛР. Первые два ролика
+являются детальным подведением к третьему, в котором выводится
+асимптотическое распределение оценок МНК - объект колоссальной важности
+для эмпирической работы и понимания, на чём держится проверка гипотез,
+связанных с параметрами в моделях (не только в ММЛР).</em></p>
+<iframe src="https://www.youtube.com/embed/JZK2r9IMQcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<iframe src="https://www.youtube.com/embed/2vHTt1wmRkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+<iframe src="https://www.youtube.com/embed/7_yXXYs74tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+</div>
+<div id="стандартные-ошибки-оценок-мнк-параметров-ммлр"
+class="section level4">
+<h4>Стандартные ошибки оценок МНК параметров ММЛР</h4>
+<p><em>Возможно, слищком сложный ролик… И длинный. Если вы еще не
+разобрались, кто такие стандартные ошибки - вам сюда.</em></p>
+<iframe src="https://www.youtube.com/embed/OTt4N6f_t7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p></br></p>
+</div>
+</div>
 </div>
 <div id="дополнительно" class="section level2">
 <h2>Дополнительно</h2>
@@ -296,6 +351,12 @@ class="section level1">
 class="section level3">
 <h3>Парная регрессия, как частный случай ММЛР</h3>
 <iframe src="https://www.youtube.com/embed/q0_REl2J6U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="лекция-5" class="section level3">
+<h3>Лекция 5</h3>
+<p>Разбор летучек по введению в регрессию и парной регрессии</p>
+<iframe src="https://www.youtube.com/embed/jFSOHebprKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p></br></p>
 <hr />
@@ -314,10 +375,13 @@ class="section level2">
 <div id="риск-инфекционного-заражения-в-больнице-материал-2021"
 class="section level2">
 <h2>Риск инфекционного заражения в больнице (материал 2021)</h2>
+<div id="код-из-разбора" class="section level3">
+<h3><a href="hospitaldata.R">Код из разбора</a></h3>
 <iframe src="https://www.youtube.com/embed/0Rqa5z6rezw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p></br></p>
 <hr />
+</div>
 <div
 id="семинар-5.-модель-множественной-линейной-регрессии.-проблема-пропущенных-переменных.-контрольные-переменные"
 class="section level3">
