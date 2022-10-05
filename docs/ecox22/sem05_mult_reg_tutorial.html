@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2022-10-04" />
+
+<title>Разбор эмпирического задания к семинару 5</title>
+
+<script src="sem05_mult_reg_tutorial_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem05_mult_reg_tutorial_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem05_mult_reg_tutorial_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem05_mult_reg_tutorial_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem05_mult_reg_tutorial_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem05_mult_reg_tutorial_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem05_mult_reg_tutorial_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem05_mult_reg_tutorial_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem05_mult_reg_tutorial_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem05_mult_reg_tutorial_files/navigation-1.1/tabsets.js"></script>
+<link href="sem05_mult_reg_tutorial_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem05_mult_reg_tutorial_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="sem05_mult_reg_tutorial_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="sem05_mult_reg_tutorial_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Разбор эмпирического задания к семинару
+5</h1>
+<h4 class="date">2022-10-04</h4>
+
+</div>
+
+
+<p>Уважаемые студенты! В этой файле представлен <em>частичный</em>
+разбор задания к семинару 5. Основная цель — закрепить навыки расчета
+робастных стандартных ошибок и построения таблиц для сопоставления
+результатов нескольких регрессий. <strong>Разбор этого примера не
+освобождает от необходимости решения других заданий семинара, если вы их
+еще не выполнили.</strong></p>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Сначала загружаем необходимые пакеты.</p>
+<pre class="r"><code>library(wooldridge)   # наборы данных, используемые в учебнике Wooldridge
+library(dplyr)        # манипуляции с данными
+library(lmtest)       # тестирование гипотез
+library(sandwich)     # робастные стандартные ошибки
+library(stargazer)    # представление результатов нескольких регрессий в одной таблице
+library(modelsummary) # более современный пакет для представления результатов регрессий</code></pre>
+</div>
+<div id="набор-данных" class="section level2">
+<h2>Набор данных</h2>
+<p>Мы работаем с данными <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2/topics/discrim">“discrim”</a>.
+Фрагмент данных можно загрузить, используя встроенный набор данных
+пакета <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2">wooldridge</a>.</p>
+<p>Оригинальное исследование, на данные которого мы опираемся, описано в
+статье <strong>Graddy, K. (1997). Do fast-food chains price discriminate
+on the race and income characteristics of an area?. Journal of Business
+&amp; Economic Statistics, 15(4), 391-401</strong>.</p>
+<pre class="r"><code>data(&quot;discrim&quot;)
+discrim %&gt;% glimpse()</code></pre>
+<pre><code>## Rows: 410
+## Columns: 37
+## $ psoda    &lt;dbl&gt; 1.12, 1.06, 1.06, 1.12, 1.12, 1.06, 1.17, 1.17, 1.18, 1.17, 1…
+## $ pfries   &lt;dbl&gt; 1.06, 0.91, 0.91, 1.02, NA, 0.95, 0.95, 1.02, 1.02, 1.12, 1.0…
+## $ pentree  &lt;dbl&gt; 1.02, 0.95, 0.98, 1.06, 0.49, 1.01, 0.95, 1.06, 1.06, 1.02, 2…
+## $ wagest   &lt;dbl&gt; 4.25, 4.75, 4.25, 5.00, 5.00, 4.25, 4.65, 4.50, NA, 4.25, 4.7…
+## $ nmgrs    &lt;dbl&gt; 3, 3, 3, 4, 3, 4, 3, 3, 4, 3, 3, 4, 3, 4, 2, 4, 4, 3, 5, 3, 3…
+## $ nregs    &lt;int&gt; 5, 3, 5, 5, 3, 4, 2, 5, 4, 5, 5, 2, 5, NA, 2, 4, 5, 2, 4, 5, …
+## $ hrsopen  &lt;dbl&gt; 16.0, 16.5, 18.0, 16.0, 16.0, 15.0, 16.0, 17.0, 17.0, 18.0, 1…
+## $ emp      &lt;dbl&gt; 27.5, 21.5, 30.0, 27.5, 5.0, 17.5, 22.5, 18.5, 17.0, 27.0, 11…
+## $ psoda2   &lt;dbl&gt; 1.11, 1.05, 1.05, 1.15, 1.04, 1.05, 1.05, 1.11, 1.10, 1.11, 1…
+## $ pfries2  &lt;dbl&gt; 1.11, 0.89, 0.94, 1.05, 1.01, 0.94, 0.94, 1.06, 1.01, 1.12, 1…
+## $ pentree2 &lt;dbl&gt; 1.05, 0.95, 0.98, 1.05, 0.58, 1.00, 0.94, 1.05, 0.99, 1.05, 2…
+## $ wagest2  &lt;dbl&gt; 5.05, 5.05, 5.05, 5.05, 5.05, 5.05, 5.05, 5.05, 5.05, 5.05, 5…
+## $ nmgrs2   &lt;dbl&gt; 5, 4, 4, 4, 3, 3, 3, 3, 4, 6, 5, 4, 2, 0, 2, 5, 4, 3, 4, 4, 3…
+## $ nregs2   &lt;int&gt; 5, 3, 5, 5, 3, 4, 2, 5, 4, 5, 5, 2, 5, NA, 2, 4, 5, 2, 4, 5, …
+## $ hrsopen2 &lt;dbl&gt; 15.0, 17.5, 17.5, 16.0, 16.0, 15.0, 16.0, 16.0, 18.0, 17.0, 1…
+## $ emp2     &lt;dbl&gt; 27.0, 24.5, 25.0, NA, 12.0, 28.0, 18.5, 17.0, 34.0, 22.0, 32.…
+## $ compown  &lt;int&gt; 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0…
+## $ chain    &lt;int&gt; 3, 1, 1, 3, 1, 1, 1, 3, 1, 3, 2, 4, 2, 1, 1, 1, 1, 4, 1, 3, 1…
+## $ density  &lt;dbl&gt; 4030, 4030, 11400, 8345, 720, 4424, 2678, 6405, 18388, 18388,…
+## $ crmrte   &lt;dbl&gt; 0.0528866, 0.0528866, 0.0360003, 0.0484232, 0.0615890, 0.0334…
+## $ state    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ prpblck  &lt;dbl&gt; 0.1711542, 0.1711542, 0.0473602, 0.0528394, 0.0344800, 0.0591…
+## $ prppov   &lt;dbl&gt; 0.0365789, 0.0365789, 0.0879072, 0.0591227, 0.0254145, 0.0835…
+## $ prpncar  &lt;dbl&gt; 0.0788428, 0.0788428, 0.2694298, 0.1366903, 0.0738020, 0.1151…
+## $ hseval   &lt;dbl&gt; 148300, 148300, 169200, 171600, 249100, 148000, 212700, 19880…
+## $ nstores  &lt;int&gt; 3, 3, 3, 3, 1, 2, 1, 1, 5, 5, 5, 5, 5, 1, 2, 2, 2, 1, 1, 3, 3…
+## $ income   &lt;dbl&gt; 44534, 44534, 41164, 50366, 72287, 44515, 62056, 53655, 31314…
+## $ county   &lt;int&gt; 18, 18, 12, 10, 10, 18, 10, 24, 10, 10, 10, 10, 10, 2, 2, 2, …
+## $ lpsoda   &lt;dbl&gt; 0.11332869, 0.05826885, 0.05826885, 0.11332869, 0.11332869, 0…
+## $ lpfries  &lt;dbl&gt; 0.058268853, -0.094310649, -0.094310649, 0.019802609, NA, -0.…
+## $ lhseval  &lt;dbl&gt; 11.90699, 11.90699, 12.03884, 12.05292, 12.42561, 11.90497, 1…
+## $ lincome  &lt;dbl&gt; 10.70401, 10.70401, 10.62532, 10.82707, 11.18840, 10.70358, 1…
+## $ ldensity &lt;dbl&gt; 8.301521, 8.301521, 9.341369, 9.029418, 6.579251, 8.394799, 7…
+## $ NJ       &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ BK       &lt;int&gt; 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1…
+## $ KFC      &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
+## $ RR       &lt;int&gt; 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0…</code></pre>
+</div>
+<div id="предварительная-обработка-данных" class="section level2">
+<h2>Предварительная обработка данных</h2>
+<p>При ознакомлении с данными вы можете заметить, что характеристики
+заведений фастфуда собирались в две волны, в то время как характеристики
+районов постоянны. Для сопоставимости создадим переменные, равные
+средним за две волны значениям необходимых переменных.</p>
+<p>Также заметим, что переменная дохода выражена в долларах, т. е.
+включается в себя довольно крупные значения. Для наглядности можно
+перевести ее в тысячи долларов. Тоже самое касается стоимости
+недвижимости.</p>
+<pre class="r"><code>discrim &lt;- discrim %&gt;% mutate(psoda_av = (psoda + psoda2) / 2,
+                              pfries_av = (pfries + pfries2) / 2,
+                              pentree_av = (pentree + pentree2) / 2,
+                              wagest_av = (wagest + wagest2) / 2,
+                              emp_av = (emp + emp2) / 2,
+                              income_thou = income / 1000,
+                              hseval_thou = hseval / 1000)</code></pre>
+</div>
+<div id="регрессионный-анализ" class="section level2">
+<h2>Регрессионный анализ</h2>
+<div id="подробный-разбор-первой-парной-регрессии"
+class="section level3">
+<h3>Подробный разбор первой парной регрессии</h3>
+<p>Для примера в качестве зависимой переменной мы возьмем цену газировки
+(<code>psoda_av</code>), но помните, что полноценный анализ предполагал
+бы еще и рассмотрение других ценовых переменных.</p>
+<p>Начинаем с парных регрессий. Сначала рассмотрим регрессию цены
+газировки на долю афроамериканцев среди жителей района.</p>
+<pre class="r"><code>msoda1 &lt;- lm(psoda_av ~ 1 + prpblck, data = discrim)</code></pre>
+<p>Для расчета робастных стандартных ошибок создадим ковариационную
+матрицу оценок коэффициентов. Для этого воспользуемся функцией
+<code>vcocHC()</code> из пакета <code>sandwich</code>.</p>
+<pre class="r"><code>cov_msoda1 &lt;- vcovHC(msoda1, type = &quot;HC0&quot;)
+cov_msoda1</code></pre>
+<pre><code>##               (Intercept)       prpblck
+## (Intercept)  2.340953e-05 -5.538577e-05
+## prpblck     -5.538577e-05  4.943651e-04</code></pre>
+<p>Заметьте, что эта матрица рассчитана не по той формуле, которая
+дается вам в материалах курса, но нам важно то, что если мы извлечем
+квадратный корень из ее диагональных элементов, мы получим вектор
+стандартных ошибок для оцененных коэффициентов регрессии.</p>
+<pre class="r"><code>se_msoda1 &lt;- sqrt(diag(cov_msoda1))
+se_msoda1</code></pre>
+<pre><code>## (Intercept)     prpblck 
+## 0.004838339 0.022234323</code></pre>
+<p>Мы также можем автоматически провести тест на значимость
+коэффицентов, используя функция <code>coeftest()</code> из пакета
+<code>lmtest</code>.</p>
+<pre class="r"><code>coeftest(msoda1, df = Inf, vcov = cov_msoda1)</code></pre>
+<pre><code>## 
+## z test of coefficients:
+## 
+##              Estimate Std. Error  z value  Pr(&gt;|z|)    
+## (Intercept) 1.0374949  0.0048383 214.4320 &lt; 2.2e-16 ***
+## prpblck     0.0661439  0.0222343   2.9749  0.002931 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="остальные-регрессии" class="section level3">
+<h3>Остальные регрессии</h3>
+<p>Повторим без подробного обсуждения все эти действия для оценки еще
+нескольких моделей.</p>
+<p>Сначала рассмотрим регрессию цены газировки на медианный доход семьи
+в районе.</p>
+<pre class="r"><code>msoda2 &lt;- lm(psoda_av ~ 1 + income_thou, data = discrim) 
+cov_msoda2 &lt;- vcovHC(msoda2, type = &quot;HC0&quot;)
+se_msoda2 &lt;- sqrt(diag(cov_msoda2))</code></pre>
+<p>После оценки базовых парных регрессий две переменные интереса
+(<code>prpblck</code> и <code>income</code>) можно объединить в одну
+модель. Туда же можно добавить еще одну переменную, связанную с доходом
+— <code>prppov</code> (доля бедных).</p>
+<pre class="r"><code>msoda3 &lt;- lm(psoda_av ~ 1 + prpblck + income_thou + prppov, data = discrim) 
+cov_msoda3 &lt;- vcovHC(msoda3, type = &quot;HC0&quot;)
+se_msoda3 &lt;- sqrt(diag(cov_msoda3))</code></pre>
+<p>Более того, для решения проблемы смещения из-за пропущенных
+переменных, модели нужно расширять путем добавления в них контрольных
+переменных.</p>
+<p>Добавим в качестве контрольных переменные, связанные с
+издержками.</p>
+<pre class="r"><code>msoda4 &lt;- lm(psoda_av ~ 1 + prpblck + income_thou + prppov + wagest_av + emp_av + crmrte + hseval_thou, 
+             data = discrim) 
+cov_msoda4 &lt;- vcovHC(msoda4, type = &quot;HC0&quot;)
+se_msoda4 &lt;- sqrt(diag(cov_msoda4))</code></pre>
+<p>Далее добавим в качестве контрольных переменные, связанные с
+конкуренцией.</p>
+<pre class="r"><code>msoda5 &lt;- lm(psoda_av ~ 1 + prpblck + income_thou + prppov + compown + prpncar + nstores, 
+             data = discrim) 
+cov_msoda5 &lt;- vcovHC(msoda5, type = &quot;HC0&quot;)
+se_msoda5 &lt;- sqrt(diag(cov_msoda5))</code></pre>
+<p>Наконец, оценким регрессию, включающую все переменные интереса и все
+контрольные переменные из предыдущих регрессиий.</p>
+<pre class="r"><code>msoda6 &lt;- lm(psoda_av ~                                     # зависимая переменная
+               1 +                                          # константа
+               prpblck + income_thou + prppov +             # переменные интереса
+               wagest_av + emp_av + crmrte + hseval_thou +  # контрольные переменные, связанные с издержками
+               compown + prpncar + nstores,                 # контрольные переменные, связанные с конкуренцией
+             data = discrim) 
+cov_msoda6 &lt;- vcovHC(msoda6, type = &quot;HC0&quot;)
+se_msoda6 &lt;- sqrt(diag(cov_msoda6))</code></pre>
+</div>
+</div>
+<div id="представление-результатов-регрессий-в-одной-таблице"
+class="section level2">
+<h2>Представление результатов регрессий в одной таблице</h2>
+<p>Здесь мы покажем два способа свести результаты нескольких регрессий в
+одну таблицу: функцию <code>modelsummary()</code> из пакета
+<code>modelsummary</code>, а также функцию <code>stargazer()</code> из
+пакета <code>stargazer</code>. Обе функции обладают огромным числом
+аргументов, т. е. вид таблиц можно очень гибко настраивать. Здесь будут
+показаны только базовые варианты использования этих функций.</p>
+<div id="modelsummary" class="section level3">
+<h3>modelsummary</h3>
+<pre class="r"><code>modelsummary(models = list(msoda1, msoda2, msoda3, 
+                           msoda4, msoda5, msoda6),                       # список оцененных моделей
+             vcov = list(cov_msoda1, cov_msoda2, cov_msoda3, 
+                         cov_msoda4, cov_msoda5, cov_msoda6),             # список ковариционных матриц для расчета стандартных ошибок
+             statistic = &quot;std.error&quot;,                                     # выводить стандартные ошибки
+             stars = TRUE,                                                # звездочки для уровня значимости
+             gof_omit = &quot;.*&quot;,                                             # не выводить никаких показателей качества моделей
+             notes = list(&quot;В скобках даны робастные стандартные ошибки&quot;), # комментарий по поводу расчета стандартных ошибок
+             title = &quot;Результаты оценки&quot;)                                 # заголовок таблицы</code></pre>
+<table style="NAborder-bottom: 0;border-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+Результаты оценки
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+<th style="text-align:center;">
+Model 2
+</th>
+<th style="text-align:center;">
+Model 3
+</th>
+<th style="text-align:center;">
+Model 4
+</th>
+<th style="text-align:center;">
+Model 5
+</th>
+<th style="text-align:center;">
+Model 6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+1.037***
+</td>
+<td style="text-align:center;">
+1.006***
+</td>
+<td style="text-align:center;">
+0.945***
+</td>
+<td style="text-align:center;">
+1.005***
+</td>
+<td style="text-align:center;">
+0.943***
+</td>
+<td style="text-align:center;">
+0.993***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.005)
+</td>
+<td style="text-align:center;">
+(0.015)
+</td>
+<td style="text-align:center;">
+(0.026)
+</td>
+<td style="text-align:center;">
+(0.090)
+</td>
+<td style="text-align:center;">
+(0.028)
+</td>
+<td style="text-align:center;">
+(0.091)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prpblck
+</td>
+<td style="text-align:center;">
+0.066**
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.100**
+</td>
+<td style="text-align:center;">
+0.124***
+</td>
+<td style="text-align:center;">
+0.086**
+</td>
+<td style="text-align:center;">
+0.120**
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.022)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.032)
+</td>
+<td style="text-align:center;">
+(0.036)
+</td>
+<td style="text-align:center;">
+(0.033)
+</td>
+<td style="text-align:center;">
+(0.036)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+income_thou
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001**
+</td>
+<td style="text-align:center;">
+0.002***
+</td>
+<td style="text-align:center;">
+−0.003***
+</td>
+<td style="text-align:center;">
+0.002***
+</td>
+<td style="text-align:center;">
+−0.003***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.000)
+</td>
+<td style="text-align:center;">
+(0.000)
+</td>
+<td style="text-align:center;">
+(0.001)
+</td>
+<td style="text-align:center;">
+(0.000)
+</td>
+<td style="text-align:center;">
+(0.001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prppov
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.087
+</td>
+<td style="text-align:center;">
+−0.315**
+</td>
+<td style="text-align:center;">
+−0.442**
+</td>
+<td style="text-align:center;">
+−0.409*
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.110)
+</td>
+<td style="text-align:center;">
+(0.097)
+</td>
+<td style="text-align:center;">
+(0.165)
+</td>
+<td style="text-align:center;">
+(0.165)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wagest_av
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.019)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.018)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+emp_av
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001*
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.001)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+crmrte
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.272+
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.222
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.155)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.168)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hseval_thou
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001***
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.000)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.000)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+compown
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.009)
+</td>
+<td style="text-align:center;">
+(0.009)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prpncar
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.342***
+</td>
+<td style="text-align:center;">
+0.083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.088)
+</td>
+<td style="text-align:center;">
+(0.100)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nstores
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.002)
+</td>
+<td style="text-align:center;">
+(0.002)
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt;
+0.001
+</td>
+</tr>
+</tfoot>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> В скобках даны робастные стандартные ошибки
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div id="stargazer" class="section level3">
+<h3>stargazer</h3>
+<pre class="r"><code>stargazer(msoda1, msoda2, msoda3, 
+          msoda4, msoda5, msoda6,                                # список оцененных моделей
+          se = list(se_msoda1, se_msoda2, se_msoda3, 
+                    se_msoda4, se_msoda5, se_msoda6),            # список векторов стандартных ошибок
+          title = &quot;Результаты оценки&quot;,                           # заголовок таблицы
+          keep.stat = &quot;n&quot;,                                       # оставить только число наблюдений для характеристики моделей
+          notes = &quot;В скобках даны робастные стандартные ошибки&quot;, # комментарий по поводу расчета стандартных ошибок
+          type = &#39;text&#39;)</code></pre>
+<pre><code>## 
+## Результаты оценки
+## =====================================================================
+##                                Dependent variable:                   
+##              --------------------------------------------------------
+##                                      psoda_av                        
+##                (1)      (2)      (3)       (4)       (5)       (6)   
+## ---------------------------------------------------------------------
+## prpblck      0.066***          0.100*** 0.124***  0.086***  0.120*** 
+##              (0.022)           (0.032)   (0.036)   (0.033)   (0.036) 
+##                                                                      
+## income_thou           0.001*** 0.002*** -0.003*** 0.002***  -0.003***
+##                       (0.0003) (0.0005)  (0.001)  (0.0005)   (0.001) 
+##                                                                      
+## prppov                          0.087   -0.315*** -0.442*** -0.409** 
+##                                (0.110)   (0.097)   (0.165)   (0.165) 
+##                                                                      
+## wagest_av                                -0.0003             0.0005  
+##                                          (0.019)             (0.018) 
+##                                                                      
+## emp_av                                   0.001**             0.001*  
+##                                          (0.001)             (0.001) 
+##                                                                      
+## crmrte                                   0.272*               0.222  
+##                                          (0.155)             (0.168) 
+##                                                                      
+## hseval_thou                             0.001***            0.001*** 
+##                                         (0.0002)            (0.0002) 
+##                                                                      
+## compown                                            0.0003     0.001  
+##                                                    (0.009)   (0.009) 
+##                                                                      
+## prpncar                                           0.342***    0.083  
+##                                                    (0.088)   (0.100) 
+##                                                                      
+## nstores                                             0.001     0.001  
+##                                                    (0.002)   (0.002) 
+##                                                                      
+## Constant     1.037*** 1.006*** 0.945*** 1.005***  0.943***  0.993*** 
+##              (0.005)  (0.015)  (0.026)   (0.090)   (0.028)   (0.091) 
+##                                                                      
+## ---------------------------------------------------------------------
+## Observations   379      379      379       340       379       340   
+## =====================================================================
+## Note:                                     *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01
+##                           В скобках даны робастные стандартные ошибки</code></pre>
+</div>
+</div>
+<div id="выводы" class="section level2">
+<h2>Выводы</h2>
+<p>Выводы делайте сами. ;)</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
