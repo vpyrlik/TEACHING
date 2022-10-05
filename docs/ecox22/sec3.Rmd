@@ -145,6 +145,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - [**Задание**](sem05_mult_reg.html)
 
+- [**Разбор эмпирической части**](sem05_mult_reg_tutorial.html)
 
 ---
 
