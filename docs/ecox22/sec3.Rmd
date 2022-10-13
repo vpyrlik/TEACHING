@@ -1,5 +1,5 @@
 ---
-title: "Раздел 3. Модель множественной линейной регрессии."
+title: "Раздел 3. Алгебра МНК в ММЛР."
 subtitle: "Эконометрика"
 output:  
   html_document:  
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Введение
 
-Основной раздел, касающийся теории и практики применения главного инструмента регрессионного анализа в эконометрики - **модели множественной линейной регрессии** (*aka* **ММЛР**).
+Раздел, касающийся теории и практики оценивания и анализа свойств оценок главного инструмента регрессионного анализа в эконометрике - **модели множественной линейной регрессии** (*aka* **ММЛР**).
 
 ### Где я?
 
@@ -34,10 +34,6 @@ knitr::opts_chunk$set(echo = FALSE)
 </br>
 
 <iframe src="https://www.youtube.com/embed/1Uj2-0xzXyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</br>
-
-*Материал раздела будет пополняться по ходу занятий*
 
 </br>
 
