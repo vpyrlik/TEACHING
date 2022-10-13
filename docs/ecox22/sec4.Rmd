@@ -1,0 +1,84 @@
+---
+title: "Раздел 4. Проверка гипотез о параметрах ММЛР."
+subtitle: "Эконометрика"
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+# Введение
+
+В этом разделе речь идет о теории и практике применения инструментов диагностики ММЛР и практического анализа для ответов на содержательные вопросы - проверке гипотез о парамтерах модели.
+
+### Где я? Что дальше?
+
+<iframe src="https://www.youtube.com/embed/NJMe4mQ0msU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+[Назад на страницу курса](../ecox22.html)
+
+</br>
+
+---
+
+# Тема 7. Проверка гипотез о параметрах ММЛР
+
+## Обязательно
+
+### Постановка гипотез, разные формы гипотез
+
+<iframe src="https://www.youtube.com/embed/AhtyxkURnbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</br>
+
+### Общая схема проверки гипотез, критерий Вальда
+
+<iframe src="https://www.youtube.com/embed/5nHmVp90nyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</br>
+
+## Дополнительно 
+
+### Дельта-метод и гипотезы с нелинейными ограничениями о параметрах, Хи-квадрат статистика
+
+<iframe src="https://www.youtube.com/embed/p1ApO06ZsDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+# Тема 8. Предельные эффекты в ММЛР.
+
+## Обязательно 
+
+### Базовые предельные эффекты, причяины для нелинейных эффектов
+
+<iframe src="https://www.youtube.com/embed/mXjxnv0MkBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Основные нелинейные эффекты в ММЛР
+
+<iframe src="https://www.youtube.com/embed/A5J3PemDD_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Дополнительно
+
+### Дополнительно о немонотонных эффектах
+
+<iframe src="https://www.youtube.com/embed/XnHKaHhjX3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+# *ВиО*
+
+Вопросы можно задать [в чате в Телеграм.](https://t.me/+0kRsodLpmzRmZjEy)
+
+---
+
+[Назад на страницу курса](../ecox22.html)
