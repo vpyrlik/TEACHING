@@ -53,6 +53,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <iframe src="https://www.youtube.com/embed/p1ApO06ZsDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+</br>
+
+### Лекция 7
+Консультация по проектам. "Карта" ресурсов по проверке гипотез во множественной регрессии
+
+<iframe src="https://www.youtube.com/embed/E9mwn0po8_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Слайды](lect07_projects_hypotheses.pdf)
+
+</br>
+
 ---
 
 # Тема 8. Предельные эффекты в ММЛР.
