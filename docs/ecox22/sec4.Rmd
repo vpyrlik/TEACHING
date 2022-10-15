@@ -53,6 +53,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <iframe src="https://www.youtube.com/embed/p1ApO06ZsDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+</br>
+
 ### Лекция 7
 Консультация по проектам. "Карта" ресурсов по проверке гипотез во множественной регрессии
 
@@ -60,6 +62,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [Слайды](lect07_projects_hypotheses.pdf)
 
+</br>
 
 ---
 
