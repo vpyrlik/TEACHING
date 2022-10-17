@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2022-10-18" />
+
+<title>Семинар 7. Задание.</title>
+
+<script src="sem07_Wald_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem07_Wald_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem07_Wald_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem07_Wald_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem07_Wald_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem07_Wald_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem07_Wald_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem07_Wald_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem07_Wald_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem07_Wald_files/navigation-1.1/tabsets.js"></script>
+<link href="sem07_Wald_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem07_Wald_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 7. Задание.</h1>
+<h4 class="date">2022-10-18</h4>
+
+</div>
+
+
+<div id="часть-1.-упражнения-и-вопросы" class="section level1">
+<h1>Часть 1. Упражнения и вопросы</h1>
+<div id="sw-глава-7-вопрос-7.1" class="section level2">
+<h2>SW, глава 7, вопрос 7.1</h2>
+<p>Объясните, как вы будете проверять нулевую гипотезу о том, что <span
+class="math inline">\(\beta_1 = 0\)</span> в модели множественной
+линейной регрессии <span class="math inline">\(Y_i = \beta_0 + \beta_1
+X_{1i} + \beta_2 X_{2i} + u_i\)</span>. Объясните, как вы будете
+проверять нулевую гипотезу о том, что <span
+class="math inline">\(\beta_2 = 0\)</span>. Объясните, как вы будете
+проверять совместную нулевую гипотезу о том, что <span
+class="math inline">\(\beta_1 = 0\)</span> и <span
+class="math inline">\(\beta_2 = 0\)</span>. Объясните, почему результат
+совместной гипотезы не следует из результатов проверки первых двух
+гипотез.</p>
+</div>
+<div id="sw-глава-7-упражнения-7.17.4" class="section level2">
+<h2>SW, глава 7, упражнения 7.1–7.4</h2>
+<p>Первые упражнения относятся к таблице оценок регрессии на стр. 249,
+рассчитанных с использованием данных за 1998 год из текущего
+обследования населения (CPS). Набор данных состоит из информации по 4000
+работникам занятым полный рабочий день в течение всего года. В
+рассматриваемой выборке присутствуют респонденты, имеющие либо аттестат
+средней школы, либо степень бакалавра. Возраст работника колеблется от
+25 до 34 лет. В данных также содержится информация о регионе проживания
+респондентов, их семейном положении и количестве детей. Для целей этого
+упражнения обозначим:</p>
+<ul>
+<li><p>AHE = средняя почасовая заработная плата (в долларах 1998
+года).</p></li>
+<li><p>College = бинарная переменная (1 — если респондент закончил
+колледж, 0 — если среднюю школу).</p></li>
+<li><p>Female = бинарная переменная (1 — если респондент является
+женщиной, 0 — если мужчиной).</p></li>
+<li><p>Age = возраст (в годах).</p></li>
+<li><p>Northeast = бинарная переменная (1 — если респондент проживает на
+Северо-Востоке, 0 — в противном случае).</p></li>
+<li><p>Midwest = бинарная переменная (1 — если респондент проживает на
+Среднем Западе, 0 — в противном случае).</p></li>
+<li><p>South = бинарная переменная (1 — если респондент проживает на
+Юге, 0 — в противном случае).</p></li>
+<li><p>West = бинарная переменная (1 — если регион респондент проживает
+на Западе, 0 — в противном случае).</p></li>
+</ul>
+<p><img src="images/SW_p249.png" /></p>
+<p>Задания:</p>
+<ol style="list-style-type: decimal">
+<li><p>Обозначьте в таблице уровень статистической значимости
+коэффициентов с помощью символов “*” (5 %) и “**” (1 %).</p></li>
+<li><p>Для результатов регрессии из колонки (1):</p></li>
+</ol>
+<ul>
+<li><p>Обсудите, является ли статистически значимыми на 5 %-м уровне
+значимости различия в доходах работников с дипломом бакалавра и школьным
+дипломом?</p></li>
+<li><p>Сформулируйте гипотезы в содержательной, модельной и нормальной
+формах, предполагая разумную одностороннюю альтернативу. Обсудите
+применение критерия. Сделайте выводы.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Для результатов регрессии из колонки (2):</li>
+</ol>
+<ul>
+<li><p>Обсудите, является ли возраст важным фактором, определяющим
+доход?</p></li>
+<li><p>Пусть Салли – 29-летняя женщина с дипломом бакалавра, а Бетси –
+34-летняя женщина с дипломом бакалавра. Сформулируйте гипотезы в
+содержательной, модельной и нормальной формах в отношении ожидаемых
+различий в их доходах. Обсудите применение критерия. Сделайте
+выводы.</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Для результатов регрессии из колонки (3):</li>
+</ol>
+<ul>
+<li><p>Обсудите, видите ли вы важные региональные различия в
+доходах?</p></li>
+<li><p>Опишите процедуру проверки соответствующей гипотезы.</p></li>
+<li><p>Что делать, если хотя бы одна из региональных бинарных переменных
+или все сразу окажутся незначимыми?</p></li>
+</ul>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<p>На этом семинаре мы продолжаем разбирать пример, в котором мы изучали
+взаимосвязь между медицинскими расходами и наличием страховки у
+человека.</p>
+<p>Вспомните и обсудите, какие контрольные переменные мы включали в
+модель.</p>
+<div id="модель" class="section level2">
+<h2>Модель</h2>
+<p>На этом семинаре мы рассмотрим один из вариантов модели:</p>
+<p><span class="math display">\[
+totexp_i = \beta_0 + \beta_1 suppins_i + \beta_2 phylim_i + \beta_3
+actlim_i + \beta_4 totchr_i + \beta_5 age_i + \beta_6 female_i + \beta_7
+income_i + u_i, \dots
+\]</span></p>
+</div>
+<div id="гипотезы" class="section level2">
+<h2>Гипотезы</h2>
+<p>Перед вами стоит задача — проверить следующие гипотезы:</p>
+<p>A. Число хронических заболеваний оказывает значимое влияние на
+медицинские расходы.</p>
+<p>B. Дополнительное хроническое заболевание увеличивает медицинские
+расходы на 2000 долл. в год.</p>
+<p>С. Наличие функциональных ограничений оказывает такое же влияние на
+медицинские расходы, как и ограничение активности (having a functional
+limitation has the same impact on medical expenditures as having
+activity limitation).</p>
+<p>D. Статус здоровья влияет на медицинские расходы.</p>
+<p>E. Разница в медицинских расходах людей с функциональными
+ограничениями и прочих в два раз больше, чем разница в медицинских
+расходах людей с ограничениями активности и прочих.</p>
+</div>
+<div id="задание-1-в-тетради-у-доски" class="section level2">
+<h2>Задание 1 (в тетради / у доски)</h2>
+<p>Для каждой из рассматриваемых содержательных гипотез:</p>
+<ul>
+<li><p>Представьте гипотезу в модельной и нормальной форме, если это
+возможно.</p></li>
+<li><p>Определите тип ограничений.</p></li>
+<li><p>Обсудите, какая форма статистики Вальда здесь подходит?</p></li>
+<li><p>Распишите формулу статистики Вальда, убедитесь, что размерности
+всех матриц соблюдаются.</p></li>
+<li><p>Выпишите в явном виде все необходимые матрицы, связанные с
+ограничениями.</p></li>
+</ul>
+</div>
+<div id="задание-2-в-r" class="section level2">
+<h2>Задание 2 (в R)</h2>
+<div id="набор-данных" class="section level3">
+<h3>Набор данных</h3>
+<p>На этом семинаре мы работаем с внешним набором данных <a
+href="datasets/MEPS.csv">MEPS.csv</a>. Загрузите эти данные.</p>
+</div>
+<div id="оценка-параметров" class="section level3">
+<h3>Оценка параметров</h3>
+<p>Оцените модель регрессии, представленную выше, используя функцию
+<code>lm()</code>.</p>
+</div>
+<div id="проверка-гипотез-в-автоматическом-режиме"
+class="section level3">
+<h3>Проверка гипотез в автоматическом режиме</h3>
+<p>Осуществите проверку гипотез, описанных в Задании 1. Во всех случая
+используйте формулу Уайта для оценки ковариационной матрицы оценок
+коэффициентов.</p>
+<p>Для проверки гипотез c линейными ограничениями мы рекомендуем
+использовать функцию <code>linearHypothesis()</code> из пакета
+<code>car</code>. Кроме этого, можно использовать функцию
+<code>waldtest()</code>.</p>
+<p>Для проверки гипотез с нелинейными ограничениями можно использовать
+функцию <code>nlWaldtest()</code> из пакета <code>nlWaldTest</code>.</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
