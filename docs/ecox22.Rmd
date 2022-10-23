@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 :::: {.infobox .deadline}
 
-## **15.10 до 20:00** [**ВОПРОС И ИСТОЧНИК ДАННЫХ**](ecox22/project_task_part02_question_data.html)
+## **12.11 до 20:00** [**ЧЕРНОВИК ОТЧЕТА I**](ecox22/project_task_part03_report_draft.html)
 
 ::::
 
