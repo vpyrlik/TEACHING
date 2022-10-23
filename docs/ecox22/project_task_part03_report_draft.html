@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Разведанализ данных и черновик полного отчета</title>
+
+<script src="project_task_part03_report_draft_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="project_task_part03_report_draft_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="project_task_part03_report_draft_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="project_task_part03_report_draft_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="project_task_part03_report_draft_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="project_task_part03_report_draft_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="project_task_part03_report_draft_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="project_task_part03_report_draft_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="project_task_part03_report_draft_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="project_task_part03_report_draft_files/navigation-1.1/tabsets.js"></script>
+<link href="project_task_part03_report_draft_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="project_task_part03_report_draft_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Разведанализ данных и черновик полного
+отчета</h1>
+<h3 class="subtitle">Проектное задание по курсу Эконометрика</h3>
+
+</div>
+
+
+<hr />
+<div id="обзор-этапа" class="section level1">
+<h1>Обзор этапа</h1>
+<div
+id="цель-предоставить-черновик-полного-отчета-с-законченным-введением-и-формулировкой-вопроса-описанием-и-результатами-разведывательного-анализа-данных-а-также-с-набросками-остальных-частей-полного-отчета"
+class="section level3">
+<h3><strong>Цель:</strong> предоставить черновик полного отчета с
+законченным введением и формулировкой вопроса, описанием и результатами
+разведывательного анализа данных, а также с набросками остальных частей
+полного отчета</h3>
+</div>
+<div id="дедлайн-2000-мск-12.11" class="section level3">
+<h3><strong>Дедлайн:</strong> 20:00 (Мск) 12.11</h3>
+<hr />
+</div>
+</div>
+<div id="первый-черновик-полного-отчета" class="section level1">
+<h1>Первый черновик полного отчета</h1>
+<p>На этом этапе вам необходимо предоставить первый черновик итогового
+отчета. Прежде всего для этого нужно доработать моменты, которые
+требовали доработки по результатам предыдущих этапов (постановка
+вопроса, выбор и сбор данных, уточнение вопроса).</p>
+<p>Далее требуется добавить разведанализ данных и предварительную
+формулировку модели, а также элементы остальных разделов итогового
+отчета (хотя бы на уровне заголовков элементарных формулировок).</p>
+<p>Все имеющиеся к окончанию этого этапа наработки необходимо объединить
+в один черновик итогового отчета. Рекомендации по структуре итогового
+отчета можно посмотреть в <a href="project_task.html">полном задании на
+проект</a>. Также далее в этом задании даны рекомендации на основе
+частых ошибок в подготовке отчета.</p>
+<hr />
+</div>
+<div id="что-нужно-сделать" class="section level1">
+<h1>Что нужно сделать?</h1>
+<ol style="list-style-type: decimal">
+<li><p>Обсудить командой состояние вашего исследовательского вопроса -
+утвержден ли вопрос преподавателями, какие рекомендации вам дали для
+уточнения или модификации вопроса.</p></li>
+<li><p>То же самое касательно выбора данных.</p></li>
+<li><p>Провести разведанализ данных (подробнее далее).</p></li>
+<li><p>Предварительно сформулировать модель и основную рабочую гипотезу
+(гипотезы).</p></li>
+<li><p>Коротко привести (хотя бы в виде заголовков или элементарных
+формулировок или плана действий) прочие разделы будущего итогового
+отчета.</p></li>
+<li><p>Объединить все имеющиеся наработки в черновик отчета, следуя
+требованиям к его структуре (подробнее далее и в полном задании на
+проект).</p></li>
+<li><p>Сообщить преподавателям об изменениях в отчете. Дождаться
+комментариев и замечаний или утверждения черновика отчета и зачета на
+этом этапе.</p></li>
+<li><p>Если у преподавателей есть комментарии и замечания, нужно
+вернуться к групповому обсуждению и устранить их, сообщить об изменениях
+преподавателям.</p></li>
+</ol>
+<hr />
+</div>
+<div id="как-провести-разведанализ-данных" class="section level1">
+<h1>Как провести разведанализ данных?</h1>
+<p><strong>Конкретных требований к тому, что должно входить в
+разведанализ данных, нет.</strong></p>
+<div
+id="основное-правило-результаты-разведанализа-данных-должны-помочь-вам-и-читателям-отчета-понять-как-именно-эти-данные-помогут-ответить-на-поставленный-исследовательский-вопрос."
+class="section level4">
+<h4><strong>Основное правило: результаты разведанализа данных должны
+помочь вам (и читателям отчета) понять, как именно эти данные помогут
+ответить на поставленный исследовательский вопрос.</strong></h4>
+</div>
+<div id="что-может-быть-в-разведанализе-данных" class="section level2">
+<h2>Что может быть в разведанализе данных?</h2>
+<ul>
+<li><p>Описательные статистики</p></li>
+<li><p>Базовые визуализации</p></li>
+<li><p>Классификации и опсиание грапповых статистик</p></li>
+<li><p>Анализ выбросов</p></li>
+<li><p>Анализ пропусков</p></li>
+<li><p>Критический анализ качества данных</p></li>
+<li><p>И пр.</p></li>
+</ul>
+<div id="чего-категорически-не-может-быть-в-разведанализе-данных"
+class="section level3">
+<h3>Чего категорически не может быть в разведанализе данных</h3>
+<p><strong>Категорически неприемлемы любые элементы из вышеперечисленных
+(или что-то подобное), если они не сопровождаются релевантными и
+уместными комментариями о том, как это вписывается в
+исследование.</strong></p>
+</div>
+</div>
+<div id="что-может-быть-итогом-разведанализа-данных"
+class="section level2">
+<h2>Что может быть итогом разведанализа данных?</h2>
+<ul>
+<li><p>Некоторые модификации вопроса (но небольшие). <em>Необходимо
+пояснить эти уточнения, обосновать с точки зрения логики, интуиции,
+теории, других исследований или т.п.</em></p></li>
+<li><p>Чистка данных (от выбросов, напрмиер, или обработка пропусков).
+<em>В этом случае нужно обновить описание данных, скорректировав
+описание переменных, размера выборки и пр.</em></p></li>
+<li><p>Предварительная формулировка модели (как синтес всех первых
+этапов: постановка вопроса + описание данных + разведка)</p></li>
+<li><p>И т.п. в той мере, насколько это вписывается в
+исследование.</p></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="еще-раз-об-отчете-отчет-neq-лабораторный-журнал"
+class="section level1">
+<h1>Еще раз об отчете: <strong>Отчет <span
+class="math inline">\(\neq\)</span> лабораторный журнал</strong></h1>
+<p>Главное, помните, что <em>“Итоговый отчет представляет собой
+законченный и самостоятельный документ формата «Аналитический отчет о
+проделанной работе»…”</em> (<a href="project_task.html">задание на
+проектную работу</a>, раздел “Итоговый отчет”).</p>
+<p>Даже черновик итогового отчета должен соответствовать формату отчёта.
+Документ должен читаться последовательно и относительно легко
+(подразумевается, что аудитория читателей - это люди, подкованные как
+минимум в основах экономики, работы с данными, эконометрике, чтении
+научной литературы).</p>
+<p>В основном тексте отчета не должно быть фрагментов кода, большого
+количества графиков и таблиц, огромных графиков и таблиц и т.д. Код
+необходимо оформить отдельно в виде приложения или (даже лучше) онлайн
+приложения, в основном тексте стоит затем дать ссылку на него или по
+необходимости ссылаться на необходимые фрагменты этого приложения.</p>
+<p>Аналогично стоит поступить с графиками, таблицами и прочими
+вспомогательными материалами. Все вспомогательные материалы, полученные
+в процессе работы, стоит оформить в виде приложений (очень большие - в
+виде онлайн-приложений) и поместить в соответствующие разделы отчета, а
+в основном тексте дать на них ссылку и по необходимости ссылаться на
+нужные фрагменты этих приложений.</p>
+<p>Однако в основном тексте необходимо использовать минималистичные и
+предельно информативные таблицы, графики и т.д. Все они должны
+подкреплять те или иные аргументы и объяснения, которые необходимы для
+чтения отчета и понимания хода и результатов работы. Эти материалы могут
+быть компиляцией основных результатов, приводимых в приложениях, их
+сокращенными версиями или выжимками. Полные версии, на основании которых
+составлены материалы для основного текста, должны быть оформлены в
+приложениях с соответствующими ссылками на них.</p>
+<hr />
+</div>
+<div id="когда-дедлайн" class="section level1">
+<h1>Когда дедлайн?</h1>
+<p>Жесткий дедлайн: до 20:00 (Мск) 12 ноября (суббота). До этого времени
+преподаватели должны утвердить предоставленный черновик отчета.
+<strong>Если у преподавателей останутся вопросы или нерешенные
+комментарии к постановке вопроса или выбору данных, дедлайн не
+засчитывается.</strong></p>
+<hr />
+<p>Вопросы можно задать <a href="https://t.me/+0kRsodLpmzRmZjEy">в чате
+в Телеграм.</a></p>
+<p><a href="project_task.html">Назад к проектному заданию</a></p>
+<p><a href="../ecox22.html">Назад на страницу курса</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
