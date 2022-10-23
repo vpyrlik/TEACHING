@@ -10,6 +10,7 @@ output:
     toc_float: true
     toc_collapsed: true
     toc_depth: 2
+    css: ../extra.css
 ---
 
 ```{r setup, include=FALSE}

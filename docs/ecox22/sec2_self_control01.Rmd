@@ -5,6 +5,7 @@ output:
   html_document:  
     self_contained: no  
     theme: cosmo
+    css: ../extra.css
 ---
 
 ```{r setup, include=FALSE}

@@ -9,3 +9,10 @@
 .deadline {
   background-image: url("images/deadline-icon.webp");
 }
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #bbe6e4;
+    border-color: #004e89;
+}
