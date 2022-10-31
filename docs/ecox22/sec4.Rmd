@@ -98,6 +98,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </br>
 
+### Семинар 8. *Нелинейные эффекты в ММЛР*
+
+- [**Задание**](sem08_nonlin.html)
+
 ---
 
 # *ВиО*
