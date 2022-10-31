@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Семинар 8. Задание.</title>
+
+<script src="sem08_nonlin_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem08_nonlin_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem08_nonlin_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem08_nonlin_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem08_nonlin_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem08_nonlin_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem08_nonlin_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem08_nonlin_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem08_nonlin_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem08_nonlin_files/navigation-1.1/tabsets.js"></script>
+<link href="sem08_nonlin_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem08_nonlin_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../extra.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 8. Задание.</h1>
+
+</div>
+
+
+<div id="часть-1.-упражнения-и-вопросы" class="section level1">
+<h1>Часть 1. Упражнения и вопросы</h1>
+<div id="sw-глава-8-вопрос-8.2" class="section level2">
+<h2>SW, глава 8, вопрос 8.2</h2>
+<p>Производственная функция Кобба–Дугласа устанавливает связь между
+выпуском (<span class="math inline">\(Q\)</span>) и факторами
+производства: капиталом (<span class="math inline">\(K\)</span>), трудом
+(<span class="math inline">\(L\)</span>) и сырьем (<span
+class="math inline">\(M\)</span>) и компонентой ошибок <span
+class="math inline">\(u\)</span>, используя соотношение <span
+class="math inline">\(Q = \lambda K^{\beta_1} L^{\beta_2} M^{\beta_3}
+e^u\)</span>, где <span class="math inline">\(\lambda\)</span>, <span
+class="math inline">\(\beta_1\)</span>, <span
+class="math inline">\(\beta_2\)</span>, <span
+class="math inline">\(\beta_3\)</span> являются параметрами
+производственной функции. Предположим, что у вас есть данные по выпуску
+и факторам производства из случайной выборки фирм с одинаковой
+производственной функцией Кобба—Дугласа. Как бы вы использовали
+регрессионный анализ для оценки параметров этой производственной
+функции?</p>
+</div>
+<div id="sw-глава-8-вопрос-8.5" class="section level2">
+<h2>SW, глава 8, вопрос 8.5</h2>
+<p>Предположим, что в вопросе 8.2 вы думали, что значение <span
+class="math inline">\(\beta_2\)</span> не является постоянным, а
+возрастает при росте <span class="math inline">\(K\)</span>. Как вы
+могли бы использовать компоненту взаимодействия, чтобы учесть этот
+эффект?</p>
+</div>
+<div id="sw-глава-8-вопрос-8.3" class="section level2">
+<h2>SW, глава 8, вопрос 8.3</h2>
+<p>Стандартная функция “спроса на деньги”, которая используется
+макроэкономистами, имеет форму <span class="math inline">\(ln(m) =
+\beta_0 + \beta_1 ln(GDP) + \beta_2 R\)</span>, где <span
+class="math inline">\(m\)</span> — (реаль­ ная) денежная масса, <span
+class="math inline">\(GDP\)</span> — значение (реального) валового
+внутреннего продукта и <span class="math inline">\(R\)</span> — значение
+номинальной процентной ставки, измеренной в процентах за год.
+Предположим, что <span class="math inline">\(\beta_1 = 1.0\)</span> и
+<span class="math inline">\(\beta_2 = −0.02\)</span>. Что случится со
+значением <span class="math inline">\(m\)</span>, если <span
+class="math inline">\(GDP\)</span> увеличится на 2 %? Что случится с
+<span class="math inline">\(m\)</span>, если процентная ставка
+увеличится с 4 до 5 %?</p>
+</div>
+<div id="sw-глава-8-упражнение-8.2" class="section level2">
+<h2>SW, глава 8, упражнение 8.2</h2>
+<p>Предположим, что исследователь собирает данные о домах, которые
+продаются в определенном районе за прошедший год, и получает оценки
+регрессий, представленные в таблице ниже.</p>
+<p>Определения переменных:</p>
+<ul>
+<li><p>Price = цена продажи (долл.);</p></li>
+<li><p>Size = площадь дома (в квадратных футах);</p></li>
+<li><p>Bedrooms = число спален;</p></li>
+<li><p>Pool = бинарная переменная (1 — если дом имеет бассейн, 0 — в
+противном случае);</p></li>
+<li><p>View = бинарная переменная (1 — если у дома прекрасный вид, 0 — в
+противном случае);</p></li>
+<li><p>Condition = бинарная переменная (1 — если агент по недвижимости
+сообщает об отличном состоянии дома, 0 — в противном случае).</p></li>
+</ul>
+<p><img src="images/SW_p304.png" /></p>
+<p>Задания:</p>
+<p>а) Используя результаты из столбца (1), определите ожидаемое
+изменение цены дома, если его площадь увеличится на 500 квадратных
+футов. Постройте 95 %-й доверительный интервал для процентного изменения
+стоимости дома.</p>
+<p>б) Сравнивая столбцы (1) и (2), скажите, какую переменную лучше
+использовать для объяснения стоимости домов: <span
+class="math inline">\(Size\)</span> или <span
+class="math inline">\(\ln(Size)\)</span>?</p>
+<p>в) Используя столбец (2), выясните, чему равен оцененный эффект
+влияния наличия бассейна в доме на его цену? (Убедитесь, что единицы
+измерения корректны.) Постройте 95 %-й доверительный интервал для этого
+эффекта.</p>
+<p>г) В регрессию из столбца (3) добавлена переменная, характеризующая
+число спален в доме. Насколько велик оцененный эффект от наличия
+дополнительной спальни? Является ли этот эффект статистически значимым?
+Почему, как вы думаете, оцененный эффект так мал? (Подсказка: какие
+другие переменные остаются постоянными?)</p>
+<p>д) Важна ли квадратичная компонента <span
+class="math inline">\(ln(Size)^2\)</span>?</p>
+<p>е) Используйте регрессию из столбца (5) для вычисления ожидаемого
+изменения в цене при наличии бассейна в доме без красивого вида.
+Является ли различие большим? Является ли различие статистически
+значимым?</p>
+</div>
+<div id="sw-глава-8-упражнение-8.10" class="section level2">
+<h2>SW, глава 8, упражнение 8.10+</h2>
+<p>Рассмотрим модель регрессии <span class="math inline">\(Y_i = \beta_0
++ \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 ( X_{1i} \times X_{2i}) +
+u_i\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Проинтерпретируйте коэффициент <span
+class="math inline">\(\beta_3\)</span>. Какую роль он выполняет в
+модели?</p></li>
+<li><p>Покажите, что:</p></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(\Delta Y / \Delta X_1 = \beta_1 +
+\beta_3 X_2\)</span> (эффект от изменения <span
+class="math inline">\(X_1\)</span> при постоянной <span
+class="math inline">\(X_2\)</span>).</p></li>
+<li><p><span class="math inline">\(\Delta Y / \Delta X_2 = \beta_2 +
+\beta_3 X_1\)</span> (эффект от изменения <span
+class="math inline">\(X_2\)</span> при постоянной <span
+class="math inline">\(X_1\)</span>).</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Опишите в деталях стратегию проверки значимости эффекта регрессора
+(“в деталях” означает довести до выражений формул необходимых статистик,
+обсудить варианты интерпретации результатов тестов). Обсудите, в чем
+отличие этой проверки от проверки <span class="math inline">\(H_0:
+\{\beta_1 = \beta_3 = 0\}\)</span></li>
+</ol>
+</div>
+<div id="sw-глава-8-упражнение-8.11" class="section level2">
+<h2>SW, глава 8, упражнение 8.11</h2>
+<p>Получите выражение для эластичностей, приведенных в приложении 8.2
+(см. таблицу ниже), для линейной и линейной в логарифмах моделей.
+(Подсказка: для линейной в логарифмах модели предположите, что <span
+class="math inline">\(u\)</span> и <span
+class="math inline">\(X\)</span> независимы, как сделано в приложении
+8.2 для логарифмически-линейной модели.)</p>
+<p><img src="images/SW_p317_elast.png" /></p>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<p>На этом семинаре мы продолжаем разбирать пример, в котором мы изучали
+ценовую дискриминацию на рынке фастфуда по расе и доходу.</p>
+<p>Вспомните и обсудите, как вы исследовали эту проблему на одном из
+предыдущих семинаров.</p>
+<div id="данные" class="section level2">
+<h2>Данные</h2>
+<p>На этом семинаре мы продолжаем работать с набром данных <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2/topics/discrim">“discrim”</a>,
+который можно загрузить из пакета <a
+href="https://www.rdocumentation.org/packages/wooldridge/versions/1.4-2">wooldridge</a>.</p>
+<p>Как вы должны помнить, эти данные требуют определенной
+предварительной обработки, поэтому мы рекомендуем использовать в
+качестве скрипты, которые вы составляли на предыдущих семинарах. Также
+напоминаем, что для части задания был доступен <a
+href="sem05_mult_reg_tutorial.html">разбор кода</a>.</p>
+</div>
+<div id="модель" class="section level2">
+<h2>Модель</h2>
+<p>На этом семинаре мы возьмем за основу такой вариант модели:</p>
+<p><span class="math display">\[
+\begin{aligned}
+psoda_i = \beta_0 + \beta_1 prpblck_i + \beta_2 income_i + \beta_3
+prppov_i + \\
+\beta_4 wagest_i + \beta_5 emp_i + \beta_6 crmrte_i + \beta_7 hseval_i +
+\\
+\beta_8 compown_i + \beta_9 prpncar_i + \beta_{10} nstores_i + u_i,
+\dots
+\end{aligned}
+\]</span></p>
+<p>Обсудите, является ли линейная форма регрессии достаточно адекватной
+для данной модели. Какие альтернативные функциональные формы можно
+предложить? Как можно обосновать выбор той или иной формы?</p>
+</div>
+<div id="оценка-параметров-в-моделях" class="section level2">
+<h2>Оценка параметров в моделях</h2>
+<ol style="list-style-type: decimal">
+<li><p>При необходимости проведите предварительные преобразования и
+создайте новые переменные.</p></li>
+<li><p>Оцените “линейную-линейную” модель. Обсудите результаты.</p></li>
+<li><p>Оцените модель, введя в нее натуральные логарифмы для тех
+переменных, для которых такое преобразование разумно. Обсудите
+результаты.</p></li>
+<li><p>Добавьте в модель произведение переменной <code>prpblck</code> с
+переменной <code>compown</code>. Обсудите смысл включения данной
+переменной в модель. Оцените модель, добавив в формулу выражение
+<code>I(prpblck * compown)</code> (альтернативой может быть выражение
+<code>prpblck:compown</code>).</p></li>
+<li><p>Добавьте в модель квадрат переменной <code>prpblck</code>.
+Обсудите смысл включения данной переменной в модель. Оцените модель,
+добавив в формулу выражение <code>+ I(prpblck^2)</code>.</p></li>
+<li><p>Для последней модели оцените предельный доли афроамериканцев в
+населении района на логарифм цены при различных уровнях этой переменной,
+зафиксировав значения остальных регрессоров на среднем уровне (для этого
+рекомендуется использовать функции <code>margins()</code> и
+<code>margins_summary()</code> из пакета <code>margins</code>).
+Рассчитайте доверительный интервал для этого предельного эффекта.
+Постройте график предельного эффекта с доверительным интервалом.
+Проинтерпретируйте полученные результаты.</p></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
