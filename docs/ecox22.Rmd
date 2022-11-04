@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 :::: {.infobox .deadline}
 
-## **11.11 в 16:20** [**КОНТРОЛЬНАЯ РАБОТА**](ecox22/project_task_part03_report_draft.html)
+## **11.11 в 16:20** [**КОНТРОЛЬНАЯ РАБОТА**](ecox22/ME_0.pdf)
 
 ::::
 
