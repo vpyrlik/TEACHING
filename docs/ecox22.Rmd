@@ -1,6 +1,6 @@
 ---
 title: "**Эконометрика**"
-author: "*В. Пырлик, Д. Терещенко, Ю. Балагула, К. Ефимов*"
+author: "*В. Пырлик, Д. Терещенко, К. Ефимов, Д. Кислицын, Ю. Балагула*"
 date: "2022-23 учебный год"
 output:  
   html_document:  
@@ -33,7 +33,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 :::: {.infobox .deadline}
 
-## **12.11 до 20:00** [**ЧЕРНОВИК ОТЧЕТА I**](ecox22/project_task_part03_report_draft.html)
+## **11.11 в 16:20** [**КОНТРОЛЬНАЯ РАБОТА**](ecox22/project_task_part03_report_draft.html)
+
+::::
+
+
+:::: {.infobox .deadline}
+
+## **18.11 до 20:00** [**ЧЕРНОВИК ОТЧЕТА I**](ecox22/project_task_part03_report_draft.html)
 
 ::::
 
@@ -112,6 +119,14 @@ knitr::opts_chunk$set(echo = FALSE)
 # [ОТЧЁТЫ ПО ЛЕТУЧКАМ](ecox22/quizzes.html)
 
 *Раздел пополняется*
+
+</br>
+
+---
+
+# КОНТРОЛЬНАЯ РАБОТА
+
+[Пробник](ecox22/ME_0.pdf)
 
 </br>
 
