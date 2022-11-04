@@ -40,7 +40,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 :::: {.infobox .deadline}
 
-## **18.11 до 20:00** [**ЧЕРНОВИК ОТЧЕТА I**](ecox22/project_task_part03_report_draft.html)
+## **19.11 до 20:00** [**ЧЕРНОВИК ОТЧЕТА I**](ecox22/project_task_part03_report_draft.html)
 
 ::::
 
