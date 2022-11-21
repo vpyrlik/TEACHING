@@ -49,3 +49,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - [Ссылка на видео](https://drive.google.com/file/d/10BEKLUZSiv60ePQsQ4TkE4LwAhvPmWop/view)
 
+
+## Семинар 11
+Инструментальные переменные (1)
+
+- [Задание](sem11_IV.html)
