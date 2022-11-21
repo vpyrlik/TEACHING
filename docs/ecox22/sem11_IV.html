@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Семинар 11. Задание.</title>
+
+<script src="sem11_IV_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem11_IV_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem11_IV_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem11_IV_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem11_IV_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem11_IV_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem11_IV_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem11_IV_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem11_IV_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem11_IV_files/navigation-1.1/tabsets.js"></script>
+<link href="sem11_IV_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem11_IV_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../extra.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 11. Задание.</h1>
+
+</div>
+
+
+<div id="часть-1.-упражнения-и-вопросы" class="section level1">
+<h1>Часть 1. Упражнения и вопросы</h1>
+<div id="sw-глава-12-вопрос-12.1" class="section level2">
+<h2>SW, глава 12, вопрос 12.1</h2>
+<p>Каким образом (положительно или отрицательно) <span
+class="math inline">\(ln(P_i^{butter})\)</span> коррелирует с <span
+class="math inline">\(u_i\)</span> в регрессионной модели спроса,
+представленной уравнением (12.3)? Если оценка проводится с помощью МНК,
+то можно ли ожидать, что оценка <span class="math inline">\(\hat
+\beta_1\)</span> будет больше или меньше своего истинного значения <span
+class="math inline">\(\beta_1\)</span>. Поясните свой ответ.</p>
+</div>
+<div id="sw-глава-12-вопрос-12.3" class="section level2">
+<h2>SW, глава 12, вопрос 12.3</h2>
+<p>В работе Левитта (Levitt, 1996) изучалось влияние количества
+заключенных на 100 тыс. человек населения на уровень преступности.
+Автором в качестве инструментальной переменной рассматривалось
+количество адвокатов на душу населения. Является ли этот инструмент
+релевантным? Является ли он экзогенным? Является ли инструмент
+допустимым?</p>
+</div>
+<div id="he-chapter-12-ex.-12.1" class="section level2">
+<h2>HE, chapter 12, ex. 12.1</h2>
+<p><span class="math display">\[ y_i = \beta_0 + \beta_1 x_i + u_i
+\]</span></p>
+<p><span class="math display">\[ IV: z_i = \{0, 1 \} \]</span></p>
+<p>Find a simple expression for the IV estimator in this context.</p>
+</div>
+<div id="sw-глава-12-упражнение-12.2" class="section level2">
+<h2>SW, глава 12, упражнение 12.2</h2>
+<p>Рассмотрим модель регрессии с одним регрессором: <span
+class="math inline">\(y_i = \beta_0 + \beta_1 x_i + u_i\)</span>.
+Предположим, что все предположения из вставки “Основные понятия 4.3”
+выполнены.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Покажите, что <span class="math inline">\(x_i\)</span> является
+допустимым инструментом. То есть покажите, что выполнено условие <span
+class="math inline">\(z_i = x_i\)</span> из вставки “Основные понятия
+12.3”.</p></li>
+<li><p>Покажите, что при таком выборе <span
+class="math inline">\(z_i\)</span> предположения модели регрессии с
+инструментальными переменными из вставки “Основные понятия 12.3”
+выполняются.</p></li>
+<li><p>Покажите, что IV-оценки, построенные с помощью данного
+инструмента, идентичны МНК-оценкам.</p></li>
+</ol>
+</div>
+<div id="sw-глава-12-упражнение-12.4" class="section level2">
+<h2>SW, глава 12, упражнение 12.4</h2>
+<p>Рассмотрим 2МНК-оценку с единственной включенной эндогенной
+переменной и единственным инструментом. Тогда предсказанное значение,
+полученное на основе регрессии, оцененной на первом шаге, равно <span
+class="math inline">\(\hat x_i = \hat \pi_0 + \hat \pi_1 z_i\)</span>.
+Используя определения выборочных дисперсии и ковариации, покажите, что
+<span class="math inline">\(s_{\hat x y} = \hat \pi_1 s_{zy}\)</span> и
+<span class="math inline">\(s^2_{\hat x} = \hat \pi_1^2 s_z^2\)</span>.
+Используйте этот результат, чтобы дополнить выкладки в приложении 12.2
+для вывода формулы (12.4).</p>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<p>Ваша задача — исследовать взаимосвязь между экономическим развитием и
+институтами.</p>
+<div id="исследовательский-вопрос" class="section level2">
+<h2>Исследовательский вопрос</h2>
+<ol style="list-style-type: decimal">
+<li><p>Сформулируйте исследовательский вопрос.</p></li>
+<li><p>Сформулируйте исследовательскую гипотезу.</p></li>
+<li><p>Обсудите экономический механизм, который бы ее объяснял.</p></li>
+</ol>
+</div>
+<div id="модель" class="section level2">
+<h2>Модель</h2>
+<ol style="list-style-type: decimal">
+<li><p>Обсудите модель парной линейной регрессии, которая подходит для
+описания изучаемых взаимосвязей.</p></li>
+<li><p>Обсудите проблему эндогенности. К каким последствиям она может
+привести?</p></li>
+<li><p>Обсудите, какие инструментальные переменные необходимо включить в
+модель для решения проблемы эндогенности.</p></li>
+</ol>
+</div>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Не забудьте загрузить необходимые пакеты.</p>
+</div>
+<div id="набор-данных" class="section level2">
+<h2>Набор данных</h2>
+<p>На этом семинаре мы работаем с материалами статьи <strong>Acemoglu,
+D., Johnson, S., &amp; Robinson, J. A. (2001). The colonial origins of
+comparative development: An empirical investigation. American economic
+review, 91(5), 1369-1401</strong>. Статья доступна по <a
+href="https://www.aeaweb.org/articles?id=10.1257/aer.91.5.1369">ссылке</a>.</p>
+<p>Обычно хорошие статьи являются <em>воспроизводимыми</em>, т. е. их
+результаты при желании можно повторить. Так и в этой статьи данные и код
+доступны <a
+href="https://www.openicpsr.org/openicpsr/project/112564/version/V1/view">онлайн</a>.
+Мы же сегодня будет использовать похожие данные, которые можно скачать
+по <a href="AJR2001.txt">ссылке</a> в формате .txt.</p>
+<p>Загрузите и изучите данные. Обсудите, какие переменные лучше всего
+подходят для ответа на поставленный исследовательский вопрос.</p>
+<details>
+<summary>
+Описание переменных
+</summary>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>longname</td>
+<td>full country name</td>
+</tr>
+<tr class="even">
+<td>shortnam</td>
+<td>3 letter country name</td>
+</tr>
+<tr class="odd">
+<td>logmort0</td>
+<td>Original Log Settler Mortality</td>
+</tr>
+<tr class="even">
+<td>risk</td>
+<td>Exp Risk</td>
+</tr>
+<tr class="odd">
+<td>loggdp</td>
+<td>Log GDP per capita (PPP) in 1995</td>
+</tr>
+<tr class="even">
+<td>campaign</td>
+<td>Original mortality from campaign</td>
+</tr>
+<tr class="odd">
+<td>source0</td>
+<td>Country source of own m. rate</td>
+</tr>
+<tr class="even">
+<td>slave</td>
+<td>Data from forced labor</td>
+</tr>
+<tr class="odd">
+<td>latitude</td>
+<td>Absolute value of latitude</td>
+</tr>
+<tr class="even">
+<td>neoeuro</td>
+<td>‘New-Europes’(USA,CAN,AUS,NZL)</td>
+</tr>
+<tr class="odd">
+<td>asia</td>
+<td>Asia</td>
+</tr>
+<tr class="even">
+<td>africa</td>
+<td>Africa</td>
+</tr>
+<tr class="odd">
+<td>other</td>
+<td>‘Other’ Cont (AUS, NZL, MLT)</td>
+</tr>
+<tr class="even">
+<td>edes1975</td>
+<td>Pop of Euro Descent, 1975</td>
+</tr>
+<tr class="odd">
+<td>campaignsj</td>
+<td>Ошибка:509</td>
+</tr>
+<tr class="even">
+<td>campaignsj2</td>
+<td>Ошибка:509</td>
+</tr>
+<tr class="odd">
+<td>mortnaval1</td>
+<td>mortality using naval stations, method 1</td>
+</tr>
+<tr class="even">
+<td>logmortnaval1</td>
+<td>logr mortality using naval stations, method 1</td>
+</tr>
+<tr class="odd">
+<td>mortnaval2</td>
+<td>mortality using naval stations, method 2</td>
+</tr>
+<tr class="even">
+<td>logmortnaval2</td>
+<td>log mortality using naval stations, method 2</td>
+</tr>
+<tr class="odd">
+<td>mortjam</td>
+<td>mortality benchmarking to the Caribbean</td>
+</tr>
+<tr class="even">
+<td>logmortjam</td>
+<td>log mortality benchmarking to the Caribbean</td>
+</tr>
+<tr class="odd">
+<td>logmortcap250</td>
+<td>log mortality capped at 250</td>
+</tr>
+<tr class="even">
+<td>logmortjam250</td>
+<td>log mortality benchmarked to the Caribbean, capped at 250</td>
+</tr>
+<tr class="odd">
+<td>wandcafrica</td>
+<td>west and central Africa</td>
+</tr>
+<tr class="even">
+<td>malfal94</td>
+<td>Falciparum malaria index 1994</td>
+</tr>
+<tr class="odd">
+<td>wacacontested</td>
+<td>contested observations in west and central Africa</td>
+</tr>
+<tr class="even">
+<td>mortnaval2250</td>
+<td>mortality using naval stations, capped at 250</td>
+</tr>
+<tr class="odd">
+<td>logmortnaval2250</td>
+<td>log mortality using naval stations capped at 250</td>
+</tr>
+<tr class="even">
+<td>mortnaval1250</td>
+<td>mortality using naval stations, capped at 250</td>
+</tr>
+<tr class="odd">
+<td>logmortnaval1250</td>
+<td>log mortality using naval stations capped at 250</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<div id="разведывательный-анализ-данных" class="section level2">
+<h2>Разведывательный анализ данных</h2>
+<p>Проведите разведывательный анализ данных:</p>
+<ol style="list-style-type: decimal">
+<li><p>Постройте таблицу с описательными статистиками основных
+переменных.</p></li>
+<li><p>Постройте графики, визуализирующие изучаемую
+взаимосвязь.</p></li>
+</ol>
+</div>
+<div id="регрессионный-анализ" class="section level2">
+<h2>Регрессионный анализ</h2>
+<p>Проведите регрессионный анализ:</p>
+<ol style="list-style-type: decimal">
+<li><p>Оцените базовую модель парной регрессии. Рассчитайте робастные
+стандартные ошибки.</p></li>
+<li><p>Оцените изучаемую взаимосвязь с использованием инструментальных
+переменных и двухшагового метода наименьших квадратов:</p></li>
+</ol>
+<ul>
+<li><p>используйте функцию <code>ivreg()</code> из пакета
+<code>AER</code>, рассчитайте робастные стандартные ошибки.</p></li>
+<li><p>попробуйте повторить результаты, используя функцию
+<code>lm()</code>.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Сведите результаты оценки всех регрессий в одну таблицу.</p></li>
+<li><p>Проинтерпретируйте полученные результаты.</p></li>
+<li><p>Оформите скрипт R так, чтобы он был понятным и
+воспроизводимым.</p></li>
+</ol>
+</div>
+<div id="бонусы" class="section level2">
+<h2>Бонусы</h2>
+<ol style="list-style-type: decimal">
+<li><p>Пробуйте ориентироваться на материалы статьи и “воспроизвести”
+графики и таблицы, которые используют авторы.</p></li>
+<li><p>Обсудите, как можно было бы оценить подобные модели для случая
+множественной регрессии. Произведите оценивание в R.</p></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
