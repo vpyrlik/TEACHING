@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 :::: {.infobox .deadline}
 
-## ПРОДОЛЖАЕМ РАБОТАТЬ ПО [**ПРОЕКТУ**](ecox22/project_task.html)
+## **3.12 до 20:00**  [**ЧЕРНОВИК ОТЧЕТА 2**](ecox22/project_task_part05_report_draft_2.html)
 
 ::::
 
