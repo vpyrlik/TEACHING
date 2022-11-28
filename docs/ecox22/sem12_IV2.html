@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Семинар 12. Задание.</title>
+
+<script src="sem12_IV2_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem12_IV2_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem12_IV2_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem12_IV2_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem12_IV2_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem12_IV2_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem12_IV2_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem12_IV2_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem12_IV2_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem12_IV2_files/navigation-1.1/tabsets.js"></script>
+<link href="sem12_IV2_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem12_IV2_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../extra.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 12. Задание.</h1>
+
+</div>
+
+
+<div id="часть-1.-упражнения-и-вопросы" class="section level1">
+<h1>Часть 1. Упражнения и вопросы</h1>
+<div id="sw-глава-12-упражнение-12.5" class="section level2">
+<h2>SW, глава 12, упражнение 12.5</h2>
+<p>Рассмотрим модель регрессии с инструментальными переменными
+следующего вида:</p>
+<p><span class="math display">\[ y_i = \beta_0 + \beta_1 x_i + \beta_2
+w_i + u_i \]</span></p>
+<p>где <span class="math inline">\(x_i\)</span> коррелирована с <span
+class="math inline">\(u_i\)</span>, а <span
+class="math inline">\(z_i\)</span> — инструмент. Предположим, что три
+основных предположения из вставки “Основные понятия 12.4” выполнены.
+Какое из условий инструментальных переменных не выполняется, если:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(z_i\)</span> не зависит от <span
+class="math inline">\((y_i, x_i, w_i)\)</span>?</p></li>
+<li><p><span class="math inline">\(z_i = w_i\)</span>?</p></li>
+<li><p><span class="math inline">\(w_i = 1\)</span> для всех <span
+class="math inline">\(i\)</span>?</p></li>
+<li><p><span class="math inline">\(z_i = x_i\)</span>?</p></li>
+</ol>
+</div>
+<div id="sw-глава-12-упражнение-12.10" class="section level2">
+<h2>SW, глава 12, упражнение 12.10</h2>
+<p>Рассмотрим модель регрессии с инструментальными переменными <span
+class="math inline">\(Y_i = \beta_0 + \beta_1 X_i + \beta_2 W_i +
+u_i\)</span>, где <span class="math inline">\(Z_i\)</span> —
+инструментальная переменная. Предположим, что данные по <span
+class="math inline">\(W_i\)</span> недоступны, а модель оценивается с
+исключением из нее переменной <span
+class="math inline">\(W_i\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Предположим, что <span class="math inline">\(Z_i\)</span> и <span
+class="math inline">\(W_i\)</span> не коррелированы. Являются ли
+IV-оценки состоятельными?</p></li>
+<li><p>Предположим, что <span class="math inline">\(Z_i\)</span> и <span
+class="math inline">\(W_i\)</span> коррелированы. Являются ли IV-оценки
+состоятельными?</p></li>
+</ol>
+</div>
+<div id="he-ch.12-ex.-12.8" class="section level2">
+<h2>HE, ch.12, ex. 12.8</h2>
+<p>Suppose that price and quantity are determined by the intersection of
+the linear demand and supply curves</p>
+<ul>
+<li><p>Demand: <span class="math inline">\(Q = a_0 + a_1 P + a_2 Y +
+u_1\)</span></p></li>
+<li><p>Supply: <span class="math inline">\(Q = b_0 + b_1 P + b_2 W +
+u_2\)</span></p></li>
+</ul>
+<p>where income (<span class="math inline">\(Y\)</span>) and wage (<span
+class="math inline">\(W\)</span>) are determined outside the market.</p>
+<p><strong>In this model are the parameters identified?</strong></p>
+</div>
+<div id="he-ch.-12-ex.-12.15" class="section level2">
+<h2>HE, ch. 12, ex. 12.15</h2>
+<p>Take the linear instrumental variables equation:</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \beta_2 z_i + u_i,
+\]</span></p>
+<p>with <span class="math inline">\(\mathbb{E}(u_i | z_i) = 0\)</span>
+where both <span class="math inline">\(x_i\)</span> and <span
+class="math inline">\(z_i\)</span> are scalar <span
+class="math inline">\(1 \times 1\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Can the coefficients be estimated by 2SLS using <span
+class="math inline">\(z_i\)</span> as an instrument for <span
+class="math inline">\(x_i\)</span>? Why or why not?</p></li>
+<li><p>Can the coefficients be estimated by 2SLS using <span
+class="math inline">\(z_i\)</span> и <span
+class="math inline">\(z_i^2\)</span> as instruments? Why or why
+not?</p></li>
+<li><p>For the 2SLS estimator suggested in (b), what is the implicit
+exclusion restriction?</p></li>
+<li><p>In (b) what is the implicit assumption about instrument
+relevance?</p></li>
+<li><p>In a generic application would you be comfortable with the
+assumptions in (c) and (d)?</p></li>
+</ol>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<p>Ваша задача — исследовать взаимосвязь между заработной платой и
+образованием.</p>
+<div id="исследовательский-вопрос" class="section level2">
+<h2>Исследовательский вопрос</h2>
+<ol style="list-style-type: decimal">
+<li><p>Сформулируйте исследовательский вопрос.</p></li>
+<li><p>Сформулируйте исследовательскую гипотезу.</p></li>
+<li><p>Обсудите экономический механизм, который бы ее объяснял.</p></li>
+</ol>
+</div>
+<div id="модель" class="section level2">
+<h2>Модель</h2>
+<ol style="list-style-type: decimal">
+<li><p>Обсудите ММЛР, которая подходит для описания изучаемых
+взаимосвязей.</p></li>
+<li><p>Обсудите проблему эндогенности. К каким последствиям она может
+привести?</p></li>
+<li><p>Обсудите, какие инструментальные переменные необходимо включить в
+модель для решения проблемы эндогенности.</p></li>
+</ol>
+</div>
+<div id="загрузка-пакетов" class="section level2">
+<h2>Загрузка пакетов</h2>
+<p>Не забудьте загрузить необходимые пакеты.</p>
+</div>
+<div id="набор-данных" class="section level2">
+<h2>Набор данных</h2>
+<p>На этом семинаре мы работаем с материалами исследования <strong>Card,
+D. (1993). Using geographic variation in college proximity to estimate
+the return to schooling</strong>. Работа доступна по <a
+href="https://www.nber.org/papers/w4483">ссылке</a>.</p>
+<p>Данные для воспроизведения результатов исследования можно скачать по
+<a href="datasets/Card1995.txt">ссылке</a> в формате .txt. Это выборка
+из обследования молодых американцев (National Longitudinal Survey of
+Young Men). Обследование проводилось дважды: в 1966 и 1976 гг.</p>
+<p>Также данные и другие материалы доступны на <a
+href="http://davidcard.berkeley.edu/data_sets.html">странице
+автора</a>.</p>
+<p>Загрузите и изучите данные. Обсудите, какие переменные лучше всего
+подходят для ответа на поставленный исследовательский вопрос.</p>
+<details>
+<summary>
+Описание переменных
+</summary>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>sequential id runs from 1 to 5225</td>
+</tr>
+<tr class="even">
+<td>nearc2</td>
+<td>grew up near 2-yr college</td>
+</tr>
+<tr class="odd">
+<td>nearc4</td>
+<td>grew up near 4-yr college</td>
+</tr>
+<tr class="even">
+<td>nearc4a</td>
+<td>grew up near 4-yr public college</td>
+</tr>
+<tr class="odd">
+<td>nearc4b</td>
+<td>grew up near 4-yr priv college</td>
+</tr>
+<tr class="even">
+<td>ed76</td>
+<td>education in 1976</td>
+</tr>
+<tr class="odd">
+<td>ed66</td>
+<td>education in 1966</td>
+</tr>
+<tr class="even">
+<td>age76</td>
+<td>age in 1976</td>
+</tr>
+<tr class="odd">
+<td>daded</td>
+<td>dads education missing=avg</td>
+</tr>
+<tr class="even">
+<td>nodaded</td>
+<td>1 if daded imputed</td>
+</tr>
+<tr class="odd">
+<td>momed</td>
+<td>moms education</td>
+</tr>
+<tr class="even">
+<td>nomomed</td>
+<td>1 if momed imputed</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>nls weight for 1976 cross-section</td>
+</tr>
+<tr class="even">
+<td>momdad14</td>
+<td>1 if live with mom and dad age 14</td>
+</tr>
+<tr class="odd">
+<td>sinmom14</td>
+<td>lived with single mom age 14</td>
+</tr>
+<tr class="even">
+<td>step14</td>
+<td>lived step parent age 14</td>
+</tr>
+<tr class="odd">
+<td>reg661</td>
+<td>dummy for region=1 in 1966</td>
+</tr>
+<tr class="even">
+<td>reg662</td>
+<td>dummy for region=2 in 1966</td>
+</tr>
+<tr class="odd">
+<td>reg663</td>
+<td>dummy for region=3 in 1966</td>
+</tr>
+<tr class="even">
+<td>reg664</td>
+<td>dummy for region=4 in 1966</td>
+</tr>
+<tr class="odd">
+<td>reg665</td>
+<td>dummy for region=5 in 1966</td>
+</tr>
+<tr class="even">
+<td>reg666</td>
+<td>dummy for region=6 in 1966</td>
+</tr>
+<tr class="odd">
+<td>reg667</td>
+<td>dummy for region=7 in 1966</td>
+</tr>
+<tr class="even">
+<td>reg668</td>
+<td>dummy for region=8 in 1966</td>
+</tr>
+<tr class="odd">
+<td>reg669</td>
+<td>dummy for region=9 in 1966</td>
+</tr>
+<tr class="even">
+<td>south66</td>
+<td>lived in south in 1966</td>
+</tr>
+<tr class="odd">
+<td>work76</td>
+<td>worked in 1976</td>
+</tr>
+<tr class="even">
+<td>work78</td>
+<td>worked in 1978</td>
+</tr>
+<tr class="odd">
+<td>lwage76</td>
+<td>log wage (outliers trimmed) 1976</td>
+</tr>
+<tr class="even">
+<td>lwage78</td>
+<td>log wage in 1978 outliers trimmed</td>
+</tr>
+<tr class="odd">
+<td>famed</td>
+<td>mom-dad education class 1-9</td>
+</tr>
+<tr class="even">
+<td>black</td>
+<td>1 if black</td>
+</tr>
+<tr class="odd">
+<td>smsa76r</td>
+<td>in smsa in 1976</td>
+</tr>
+<tr class="even">
+<td>smsa78r</td>
+<td>in smsa in 1978</td>
+</tr>
+<tr class="odd">
+<td>reg76r</td>
+<td>in south in 1976</td>
+</tr>
+<tr class="even">
+<td>reg78r</td>
+<td>in south in 1978</td>
+</tr>
+<tr class="odd">
+<td>reg80r</td>
+<td>in south in 1980</td>
+</tr>
+<tr class="even">
+<td>smsa66r</td>
+<td>in smsa in 1966</td>
+</tr>
+<tr class="odd">
+<td>wage76</td>
+<td>raw wage cents per hour 1976</td>
+</tr>
+<tr class="even">
+<td>wage78</td>
+<td>raw wage cents per hour 1978</td>
+</tr>
+<tr class="odd">
+<td>wage80</td>
+<td>raw wage cents per hour 1980</td>
+</tr>
+<tr class="even">
+<td>noint78</td>
+<td>if noninterview in 1978</td>
+</tr>
+<tr class="odd">
+<td>noint80</td>
+<td>if noninterview in 1980</td>
+</tr>
+<tr class="even">
+<td>enroll76</td>
+<td>1 if enrolled in 1976</td>
+</tr>
+<tr class="odd">
+<td>enroll78</td>
+<td>1 if enrolled in 1978</td>
+</tr>
+<tr class="even">
+<td>enroll80</td>
+<td>1 if enrolled in 1980</td>
+</tr>
+<tr class="odd">
+<td>kww</td>
+<td>the kww score</td>
+</tr>
+<tr class="even">
+<td>iq</td>
+<td>a normed iq score</td>
+</tr>
+<tr class="odd">
+<td>marsta76</td>
+<td>mar status in 1976 1=married, spouse present</td>
+</tr>
+<tr class="even">
+<td>marsta78</td>
+<td>mar status in 1978 1=married, spouse present</td>
+</tr>
+<tr class="odd">
+<td>marsta80</td>
+<td>mar status in 1980 1=married, spouse present</td>
+</tr>
+<tr class="even">
+<td>libcrd14</td>
+<td>1 if library card in home age 14</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<div id="разведывательный-анализ-данных" class="section level2">
+<h2>Разведывательный анализ данных</h2>
+<p>Проведите разведывательный анализ данных:</p>
+<ol style="list-style-type: decimal">
+<li><p>Постройте таблицу с описательными статистиками основных
+переменных.</p></li>
+<li><p>Постройте графики, визуализирующие изучаемую
+взаимосвязь.</p></li>
+<li><p>Сделайте выводы о качестве данных.</p></li>
+<li><p>Обсудите, можно ли провести разведанализ для подтверждения силы
+инструментов? Годности? Если да, то как его провести?</p></li>
+</ol>
+</div>
+<div id="регрессионный-анализ" class="section level2">
+<h2>Регрессионный анализ</h2>
+<p>Проведите регрессионный анализ:</p>
+<ol style="list-style-type: decimal">
+<li><p>Оцените базовую ММЛР (рекомендация на основе статьи: <span
+class="math inline">\(\log(wage_i) = \beta_0 + \beta_1 educ_i + \beta_2
+exper_i + \beta_3 exper_i^2 + \beta_4 black_i + \beta_5 smsa_i +
+u_i\)</span>). Проинтерпретируйте результаты.</p></li>
+<li><p>Добавьте в модель образование матери.</p></li>
+</ol>
+<ul>
+<li><p>Что показывает коэффициент при новой переменной? Имеет ли он
+ожидаемый знак? Значим ли этот коэффициент в ваших расчетах?</p></li>
+<li><p>Чему равна отдача от образования в данном случае? Как она
+изменилась по сравнению с ответом в предыдущем пункте?</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Добавьте в модель кросс-эффект образования матери и образования
+самого респондента.</li>
+</ol>
+<ul>
+<li><p>Что показывает коэффициент при новой переменной? Имеет ли он
+ожидаемый знак? Значим ли этот коэффициент в ваших расчетах?</p></li>
+<li><p>Чему равна отдача от образования в данном случае? Как она
+изменилась по сравнению с ответом в предыдущем пункте?</p></li>
+<li><p>Проверьте гипотезу о значиомсти эффекта образования в зависимости
+от образования матери (используйте функцию <code>margins()</code> из
+пакета <code>margins</code>, а также постройте график этого
+эффекта).</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Оцените изучаемую взаимосвязь с использованием инструментальных
+переменных и двухшагового метода наименьших квадратов:</li>
+</ol>
+<ul>
+<li><p>Используйте функцию <code>ivreg()</code> из пакета
+<code>AER</code>.</p></li>
+<li><p>Как она изменилась по сравнению с ответами в предыдущих
+пунктах?</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Сведите результаты оценки всех регрессий в одну таблицу.</p></li>
+<li><p>Проинтерпретируйте полученные результаты.</p></li>
+<li><p>Оформите скрипт R так, чтобы он был понятным и
+воспроизводимым.</p></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
