@@ -1,0 +1,218 @@
+---
+title: "Семинар 12. Задание."
+output:  
+  html_document:  
+    self_contained: no  
+    theme: cosmo
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 2
+    css: ../extra.css
+mainfont: Liberation Serif
+monofont: Liberation Mono
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Часть 1. Упражнения и вопросы
+
+## SW, глава 12, упражнение 12.5
+Рассмотрим модель регрессии с инструментальными переменными следующего вида:
+
+\[ y_i = \beta_0 + \beta_1 x_i + \beta_2 w_i + u_i \]
+
+где \(x_i\) коррелирована с \(u_i\), а \(z_i\) --- инструмент. Предположим, что три основных предположения из вставки "Основные понятия 12.4" выполнены. Какое из условий инструментальных переменных не выполняется, если:
+
+
+a. \(z_i\) не зависит от \( (y_i, x_i, w_i) \)?
+
+b. \(z_i = w_i\)?
+
+c. \(w_i = 1\) для всех \(i\)?
+
+d. \(z_i = x_i\)?
+
+
+## SW, глава 12, упражнение 12.10
+Рассмотрим модель регрессии с инструментальными переменными $Y_i = \beta_0 + \beta_1 X_i + \beta_2 W_i + u_i$, где $Z_i$ --- инструментальная переменная. Предположим, что данные по $W_i$ недоступны, а модель оценивается с исключением из нее переменной $W_i$.
+
+a. Предположим, что $Z_i$ и $W_i$ не коррелированы. Являются ли IV-оценки состоятельными?
+
+b. Предположим, что $Z_i$ и $W_i$ коррелированы. Являются ли IV-оценки состоятельными?
+
+
+## HE, ch.12, ex. 12.8
+Suppose that price and quantity are determined by the intersection of the linear demand and supply curves
+
+- Demand: \(Q = a_0 + a_1 P + a_2 Y + u_1\)
+
+- Supply: \(Q = b_0 + b_1 P + b_2 W + u_2\)
+
+where income ($Y$) and wage ($W$) are determined outside the market.
+
+**In this model are the parameters identified?**
+
+
+## HE, ch. 12, ex. 12.15
+Take the linear instrumental variables equation: 
+
+\[
+y_i = \beta_0 + \beta_1 x_i + \beta_2 z_i + u_i, 
+\]
+
+with \(\mathbb{E}(u_i | z_i) = 0\) where both \(x_i\) and \(z_i\) are scalar \(1 \times 1\).
+
+
+a. Can the coefficients be estimated by 2SLS using \(z_i\) as an instrument for \(x_i\)? Why or why not?
+
+b. Can the coefficients be estimated by 2SLS using \(z_i\) и \(z_i^2\) as instruments? Why or why not?
+
+c. For the 2SLS estimator suggested in (b), what is the implicit exclusion restriction?
+
+d. In (b) what is the implicit assumption about instrument relevance?
+
+e. In a generic application would you be comfortable with the assumptions in (c) and (d)?
+
+
+# Часть 2. Эмпирический пример
+
+Ваша задача --- исследовать взаимосвязь между заработной платой и образованием. 
+
+## Исследовательский вопрос
+
+1. Сформулируйте исследовательский вопрос.
+
+2. Сформулируйте исследовательскую гипотезу.
+
+3. Обсудите экономический механизм, который бы ее объяснял.  
+
+
+## Модель
+
+1. Обсудите ММЛР, которая подходит для описания изучаемых взаимосвязей. 
+
+2. Обсудите проблему эндогенности. К каким последствиям она может привести?
+
+3. Обсудите, какие инструментальные переменные необходимо включить в модель для решения проблемы эндогенности.
+
+
+## Загрузка пакетов
+
+Не забудьте загрузить необходимые пакеты.
+
+
+## Набор данных
+
+На этом семинаре мы работаем с материалами исследования **Card, D. (1993). Using geographic variation in college proximity to estimate the return to schooling**. Работа доступна по [ссылке](https://www.nber.org/papers/w4483).
+
+Данные для воспроизведения результатов исследования можно скачать по [ссылке](datasets/Card1995.txt) в формате .txt. Это выборка из обследования молодых американцев (National Longitudinal Survey of Young Men). Обследование проводилось дважды: в 1966 и 1976 гг. 
+
+Также данные и другие материалы доступны на [странице автора](http://davidcard.berkeley.edu/data_sets.html).
+
+Загрузите и изучите данные. Обсудите, какие переменные лучше всего подходят для ответа на поставленный исследовательский вопрос.
+
+<details>
+  <summary>Описание переменных</summary>
+| Name     | Label                                        |
+|----------|----------------------------------------------|
+| id       | sequential id runs from 1 to 5225            |
+| nearc2   | grew up near 2-yr college                    |
+| nearc4   | grew up near 4-yr college                    |
+| nearc4a  | grew up near 4-yr public college             |
+| nearc4b  | grew up near 4-yr priv college               |
+| ed76     | education in 1976                            |
+| ed66     | education in 1966                            |
+| age76    | age in 1976                                  |
+| daded    | dads education missing=avg                   |
+| nodaded  | 1 if daded imputed                           |
+| momed    | moms education                               |
+| nomomed  | 1 if momed imputed                           |
+| weight   | nls weight for 1976 cross-section            |
+| momdad14 | 1 if live with mom and dad age 14            |
+| sinmom14 | lived with single mom age 14                 |
+| step14   | lived step parent age 14                     |
+| reg661   | dummy for region=1 in 1966                   |
+| reg662   | dummy for region=2 in 1966                   |
+| reg663   | dummy for region=3 in 1966                   |
+| reg664   | dummy for region=4 in 1966                   |
+| reg665   | dummy for region=5 in 1966                   |
+| reg666   | dummy for region=6 in 1966                   |
+| reg667   | dummy for region=7 in 1966                   |
+| reg668   | dummy for region=8 in 1966                   |
+| reg669   | dummy for region=9 in 1966                   |
+| south66  | lived in south in 1966                       |
+| work76   | worked in 1976                               |
+| work78   | worked in 1978                               |
+| lwage76  | log wage (outliers trimmed) 1976             |
+| lwage78  | log wage in 1978 outliers trimmed            |
+| famed    | mom-dad education class 1-9                  |
+| black    | 1 if black                                   |
+| smsa76r  | in smsa in 1976                              |
+| smsa78r  | in smsa in 1978                              |
+| reg76r   | in south in 1976                             |
+| reg78r   | in south in 1978                             |
+| reg80r   | in south in 1980                             |
+| smsa66r  | in smsa in 1966                              |
+| wage76   | raw wage cents per hour 1976                 |
+| wage78   | raw wage cents per hour 1978                 |
+| wage80   | raw wage cents per hour 1980                 |
+| noint78  | if noninterview in 1978                      |
+| noint80  | if noninterview in 1980                      |
+| enroll76 | 1 if enrolled in 1976                        |
+| enroll78 | 1 if enrolled in 1978                        |
+| enroll80 | 1 if enrolled in 1980                        |
+| kww      | the kww score                                |
+| iq       | a normed iq score                            |
+| marsta76 | mar status in 1976 1=married, spouse present |
+| marsta78 | mar status in 1978 1=married, spouse present |
+| marsta80 | mar status in 1980 1=married, spouse present |
+| libcrd14 | 1 if library card in home age 14             |
+</details>
+
+## Разведывательный анализ данных
+
+Проведите разведывательный анализ данных: 
+
+1. Постройте таблицу с описательными статистиками основных переменных.
+
+2. Постройте графики, визуализирующие изучаемую взаимосвязь.
+
+3. Сделайте выводы о качестве данных.
+
+4. Обсудите, можно ли провести разведанализ для подтверждения силы инструментов? Годности? Если да, то как его провести?
+
+
+## Регрессионный анализ
+
+Проведите регрессионный анализ: 
+
+1. Оцените базовую ММЛР (рекомендация на основе статьи: $\log(wage_i) = \beta_0 + \beta_1 educ_i + \beta_2 exper_i + \beta_3 exper_i^2 + \beta_4 black_i + \beta_5 smsa_i + u_i$). Проинтерпретируйте результаты. 
+
+2. Добавьте в модель образование матери. 
+
+* Что показывает коэффициент при новой переменной? Имеет ли он ожидаемый знак? Значим ли этот коэффициент в ваших расчетах?
+
+* Чему равна отдача от образования в данном случае? Как она изменилась по сравнению с ответом в предыдущем пункте? 
+
+3. Добавьте в модель кросс-эффект образования матери и образования самого респондента. 
+
+* Что показывает коэффициент при новой переменной? Имеет ли он ожидаемый знак? Значим ли этот коэффициент в ваших расчетах?
+
+* Чему равна отдача от образования в данном случае? Как она изменилась по сравнению с ответом в предыдущем пункте? 
+
+* Проверьте гипотезу о значиомсти эффекта образования в зависимости от образования матери (используйте функцию `margins()` из пакета `margins`, а также постройте график этого эффекта). 
+
+4. Оцените изучаемую взаимосвязь с использованием инструментальных переменных и двухшагового метода наименьших квадратов: 
+
+* Используйте функцию `ivreg()` из пакета `AER`. 
+
+* Как она изменилась по сравнению с ответами в предыдущих пунктах? 
+
+5. Сведите результаты оценки всех регрессий в одну таблицу. 
+
+6. Проинтерпретируйте полученные результаты.
+
+7. Оформите скрипт R так, чтобы он был понятным и воспроизводимым. 
