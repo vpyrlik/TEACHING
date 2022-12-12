@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Семинар 14. Задание.</title>
+
+<script src="sem14_bin2_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="sem14_bin2_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sem14_bin2_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="sem14_bin2_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sem14_bin2_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sem14_bin2_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="sem14_bin2_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sem14_bin2_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sem14_bin2_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sem14_bin2_files/navigation-1.1/tabsets.js"></script>
+<link href="sem14_bin2_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="sem14_bin2_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../extra.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Семинар 14. Задание.</h1>
+
+</div>
+
+
+<div id="часть-1.-упражнения-и-вопросы" class="section level1">
+<h1>Часть 1. Упражнения и вопросы</h1>
+<div id="sw-глава-11-упражнение-11.10" class="section level2">
+<h2>SW, глава 11, упражнение 11.10</h2>
+<p>(Необходимо изучить материал раздела 11.3 и использовать
+дифференциальное исчисление.)</p>
+<p>Предположим, что случайная величина <span
+class="math inline">\(Y\)</span> имеет распределение <span
+class="math inline">\(\Pr(Y = 1) = p\)</span>, <span
+class="math inline">\(\Pr(Y = 2) = q\)</span> и <span
+class="math inline">\(\Pr(Y = 3) = 1 − p − q\)</span>. Случайная выборка
+размера <span class="math inline">\(n\)</span> формируется из
+генеральной совокупности с вышеуказанным распределением, случайные
+величины обозначаются как <span class="math inline">\(Y_1, Y_2, \dots,
+Y_n\)</span>.</p>
+<p>а. Запишите функцию правдоподобия для параметров <span
+class="math inline">\(p\)</span> и <span
+class="math inline">\(q\)</span>.</p>
+<p>б. Постройте формулы оценок максимального правдоподобия (ОМП) для
+параметров <span class="math inline">\(p\)</span> и <span
+class="math inline">\(q\)</span>.</p>
+</div>
+<div id="sw-глава-11-упражнения-11.111.5" class="section level2">
+<h2>SW, глава 11, упражнения 11.1–11.5</h2>
+<p>Упражнения 11.1–11.5 основываются на следующих предположениях.
+Случайным образом были опрошены четыреста претендентов на получение
+водительского удостоверения. Каждому из них был задан вопрос о том,
+сдали ли они свой экзамен на получение водительского удостоверения
+(<span class="math inline">\(Pass_i = 1\)</span>) или провалили (<span
+class="math inline">\(Pass_i = 0\)</span>). Также дополнительно были
+собраны данные о половой принадлежности респондентов (<span
+class="math inline">\(Male_i = 1\)</span>, если респондент является
+мужчиной, и <span class="math inline">\(Male_i = 0\)</span>, если
+респондент является женщиной) и их водительском опыте (<span
+class="math inline">\(Experience_i\)</span> — водительский стаж в
+годах). В приведенной ниже таблице представлены результаты оценок
+нескольких моделей.</p>
+<p><img src="images/SW_p427.png" /></p>
+<div id="section" class="section level3">
+<h3>11.1</h3>
+<p>Используя результаты из столбца (1), ответьте на вопросы:</p>
+<p>а) Зависит ли вероятность успешной сдачи теста от <span
+class="math inline">\(Experience\)</span>? Поясните свой ответ.</p>
+<p>б) Водительский стаж Мэтью составляет 10 лет. Какова вероятность
+того, что он успешно сдаст тест?</p>
+<p>в) Кристофер — начинающий водитель (не имеет опыта вождения). Какова
+вероятность того, что он сдаст тест?</p>
+<p>г) Выборка содержала значения <span
+class="math inline">\(Experience\)</span> в интервале от 0 до 40 лет, но
+только четыре человека в выборке имели стаж вождения более 30 лет. Джеду
+95 лет, он водит автомобиль с тех пор, как ему исполнилось 15 лет.
+Какова, согласно модели, вероятность того, что Джед успешно сдаст тест?
+Считаете ли Вы, что это значение является надежным? Поясните свой
+ответ.</p>
+</div>
+<div id="section-1" class="section level3">
+<h3>11.2</h3>
+<p>Используя таблицу, представленную выше, ответьте на следующие
+вопросы:</p>
+<p>а) Ответьте на пункты (а) — (в) упражнения 11.1, используя
+результаты, представленные в столбце (2);</p>
+<p>б) Выпишите предсказанные вероятности на основе пробит- и
+логит-моделей из столбцов (1) и (2) для значений Experience в интервале
+от 0 до 60 лет. Похожи ли результаты, полученные на основе оценок
+пробит- и логит-моделей?</p>
+</div>
+<div id="section-2" class="section level3">
+<h3>11.3.</h3>
+<p>а) Ответьте на пункты (а) — (с) из упражнения 11.1, используя
+результаты столбца (3).</p>
+<p>б) Выпишите предсказанные вероятности на основе пробит- и
+логит-моделей из столбцов (1) и (3) как функции от <span
+class="math inline">\(Experience\)</span> для значений <span
+class="math inline">\(Experience\)</span> в интервале от 0 до 60 лет.
+Как вы считаете, можно ли использовать в данном случае линейную
+вероятностную модель? Поясните свой ответ.</p>
+</div>
+<div id="section-3" class="section level3">
+<h3>11.4</h3>
+<p>Используя результаты столбцов (4) — (6):</p>
+<p>а) Вычислите оценки вероятностей успешной сдачи теста для мужчины и
+для женщины.</p>
+<p>б) Различаются ли модели в столбцах (4) — (6)? Поясните свой
+ответ.</p>
+</div>
+<div id="section-4" class="section level3">
+<h3>11.5</h3>
+<p>Используя результаты столбца (7):</p>
+<p>а) Акира — мужчина с 10-летним стажем вождения. Какова вероятность
+того, что он успешно сдаст тест?</p>
+<p>б) Джейн — женщина с двухлетним стажем вождения. Какова вероятность
+того, что она успешно сдаст тест?</p>
+<p>в) Зависит ли влияние водительского стажа на прохождение теста от
+пола испытуемого? Проясните свой ответ.</p>
+</div>
+</div>
+</div>
+<div id="часть-2.-эмпирический-пример" class="section level1">
+<h1>Часть 2. Эмпирический пример</h1>
+<div id="вопрос-и-данные" class="section level2">
+<h2>Вопрос и данные</h2>
+<p>Файл <a href="datasets/default.csv">default.csv</a> содержит
+финансовую и демографическую информацию о 850 бывших и потенциальных
+клиентах. Первые 700 наблюдений — это клиенты, которые ранее получали
+кредиты. Последние 150 наблюдений представляют собой потенциальных
+клиентов, которых банку нужно классифицировать как хорошие или плохие
+риски кредитования.</p>
+<p><img src="images/default_vars.jpg" /></p>
+</div>
+<div id="задание" class="section level2">
+<h2>Задание</h2>
+<ol style="list-style-type: decimal">
+<li><p>Оцените logit-модель и probit-модель вероятности дефолта.
+Рассмотрите различные спецификации моделей.</p></li>
+<li><p>Рассчитайте предельный эффект от изменения отношения объема
+задолженности к доходу респондента (DTI) на вероятность
+дефолта.</p></li>
+<li><p>Проверьте гипотезу о совместной значимости переменных ADDRESS и
+EMPLOY.</p></li>
+<li><p>Рассчитайте предсказанные вероятности для клиентов банка.
+Предскажите дефолты. Оцените предсказательную силу модели, используя
+показатели чувствительности и специфичности. Постройте ROC-кривую.
+Проинтерпретируйте результаты.</p></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
