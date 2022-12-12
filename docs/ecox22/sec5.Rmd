@@ -93,3 +93,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - [Слайды](lect12_bin2.pdf)
 
+## Семинар 14
+Модели бинарного выбора (2)
+
+- [Задание](sem14_bin2.html)
