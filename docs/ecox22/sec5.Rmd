@@ -97,3 +97,7 @@ knitr::opts_chunk$set(echo = FALSE)
 Модели бинарного выбора (2)
 
 - [Задание](sem14_bin2.html)
+
+- [Скрипт](sem14_bin2.R)
+
+- [Данные](datasets/default.csv)
