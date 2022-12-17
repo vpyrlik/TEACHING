@@ -101,3 +101,8 @@ knitr::opts_chunk$set(echo = FALSE)
 - [Скрипт](sem14_bin2.R)
 
 - [Данные](datasets/default.csv)
+
+## Лекция 13
+Отчеты о проектах и защита проектов. Структура и оформление
+
+- [Слайды](lect13_reports.pdf)
